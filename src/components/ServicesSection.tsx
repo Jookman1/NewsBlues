@@ -28,7 +28,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <div className="py-20 bg-black/95">
+    <div id="services" className="py-20 bg-black/95">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>

@@ -1,0 +1,6 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M600 100 L300 500 L600 900 L900 500 L600 100 Z" fill="#7CB9E8"/>
+  <path d="M300 500 L450 750 L600 900 L750 750 L900 500 L600 700 L300 500 Z" fill="#A5D3FF"/>
+  <path d="M450 750 L600 900 L750 750 L600 800 L450 750 Z" fill="#5A9AD6"/>
+  <text x="600" y="1000" text-anchor="middle" fill="#4A4A4A" font-family="Arial" font-weight="bold" font-size="120">KAIROSEC</text>
+</svg>

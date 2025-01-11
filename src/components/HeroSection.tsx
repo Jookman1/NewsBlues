@@ -1,14 +1,22 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+import Logo from './Logo';
 
 export default function HeroSection() {
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative h-screen flex items-center justify-center cyber-grid overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/70" />
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div className="mb-8 relative scanner">
-          <Shield className="h-24 w-24 mx-auto text-primary glitch-effect" />
+          <Logo size="xl" className="mx-auto" />
         </div>
         
         <h1 className="text-6xl md:text-8xl font-bold mb-6 neon-text">
@@ -20,18 +28,18 @@ export default function HeroSection() {
         </p>
         
         <div className="flex justify-center gap-4">
-          <a 
-            href="#services" 
+          <button 
+            onClick={scrollToServices}
             className="bg-primary/90 px-8 py-3 rounded-lg font-bold hover-glow neon-border"
           >
             Our Services
-          </a>
-          <a 
-            href="#contact" 
+          </button>
+          <button 
+            onClick={scrollToContact}
             className="bg-transparent px-8 py-3 rounded-lg font-bold border-2 border-primary/50 hover-glow"
           >
             Contact Us
-          </a>
+          </button>
         </div>
       </div>
       

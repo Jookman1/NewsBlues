@@ -1,6 +1,6 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 export default function Navbar() {
   return (
@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
+            <Logo size="sm" />
             <span className="text-xl font-bold">KAIRO SECURITY</span>
           </Link>
           

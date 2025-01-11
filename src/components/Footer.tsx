@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -7,11 +8,14 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">KAIRO SECURITY LTD</h3>
+            <div className="flex items-center space-x-2 mb-4">
+              <Logo size="sm" />
+              <h3 className="text-xl font-bold">KAIRO SECURITY LTD</h3>
+            </div>
             <p className="text-gray-400">Where Vigilance Meets Brilliance</p>
             <div className="flex items-center mt-4 space-x-2">
               <Phone className="h-5 w-5" />
-              <span>+44 20 3883 1389</span>
+              <span>07939119680</span>
             </div>
             <p className="mt-2">Company No. 13428156</p>
           </div>
