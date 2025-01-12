@@ -5,6 +5,7 @@ import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactForm from '../components/ContactForm';
 import CoursesSection from '../components/CoursesSection';
+import { FEATURES } from '../config/features';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <ServicesSection />
       <StatsSection />
       <TestimonialsSection />
-      <CoursesSection />
+      {FEATURES.COURSES_ENABLED && <CoursesSection />}
       <ContactForm />
     </div>
   );

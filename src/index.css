@@ -36,36 +36,6 @@
   }
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
 /* Custom Classes */
 .cyber-grid {
   background-image: 
@@ -88,25 +58,6 @@
   box-shadow: 0 0 10px rgba(124, 185, 232, 0.3),
               0 0 20px rgba(124, 185, 232, 0.2),
               0 0 30px rgba(124, 185, 232, 0.1);
-}
-
-.scanner::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(to right, 
-    transparent, 
-    rgba(124, 185, 232, 0.5), 
-    transparent
-  );
-  animation: scanline 2s linear infinite;
-}
-
-.glitch-effect {
-  animation: glitch 2s infinite;
 }
 
 .neon-border {
