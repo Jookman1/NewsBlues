@@ -15,8 +15,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/70" />
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <div className="mb-8 relative scanner">
-          <Logo size="xl" className="mx-auto" />
+        <div className="mb-8 animate-pulse">
+          <Logo size="xl" className="mx-auto hover:scale-105 transition-transform duration-300" />
         </div>
         
         <h1 className="text-6xl md:text-8xl font-bold mb-6 neon-text">

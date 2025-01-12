@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Courses from './pages/Courses';
 import Join from './pages/Join';
+import { FEATURES } from './config/features';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/courses" element={<Courses />} />
+            {FEATURES.COURSES_ENABLED && <Route path="/courses" element={<Courses />} />}
             <Route path="/join" element={<Join />} />
           </Routes>
         </main>

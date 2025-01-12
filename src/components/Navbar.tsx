@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { FEATURES } from '../config/features';
 
 export default function Navbar() {
   return (
@@ -16,7 +17,9 @@ export default function Navbar() {
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <Link to="/about" className="hover:text-primary transition-colors">About Us</Link>
             <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
-            <Link to="/courses" className="hover:text-primary transition-colors">Courses</Link>
+            {FEATURES.COURSES_ENABLED && (
+              <Link to="/courses" className="hover:text-primary transition-colors">Courses</Link>
+            )}
             <Link to="/join" className="hover:text-primary transition-colors">Join the Team</Link>
           </div>
         </div>

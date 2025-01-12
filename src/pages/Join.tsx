@@ -244,7 +244,7 @@ export default function Join() {
                 <Phone className="h-6 w-6 text-primary mr-3" />
                 <div>
                   <h3 className="font-bold">Phone</h3>
-                  <p className="text-gray-300">07939119680</p>
+                  <p className="text-gray-300">020 3883 1389</p>
                 </div>
               </div>
               <div className="flex items-center">

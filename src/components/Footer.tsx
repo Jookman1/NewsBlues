@@ -15,7 +15,7 @@ export default function Footer() {
             <p className="text-gray-400">Where Vigilance Meets Brilliance</p>
             <div className="flex items-center mt-4 space-x-2">
               <Phone className="h-5 w-5" />
-              <span>07939119680</span>
+              <span>020 3883 1389</span>
             </div>
             <p className="mt-2">Company No. 13428156</p>
           </div>
