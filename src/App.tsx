@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-900">
         <Navbar />
-        <main className="pt-20">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
