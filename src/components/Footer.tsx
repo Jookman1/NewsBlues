@@ -34,8 +34,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-primary"><Facebook className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-primary"><Instagram className="h-6 w-6" /></a>
+              <a href="https://www.facebook.com/Kairosec.ne" className="hover:text-primary"><Facebook className="h-6 w-6" /></a>
+              <a href="http://www.instagram.com/kairosecurity" className="hover:text-primary"><Instagram className="h-6 w-6" /></a>
               <a href="#" className="hover:text-primary"><Linkedin className="h-6 w-6" /></a>
             </div>
           </div>
