@@ -16,13 +16,23 @@ const services = [
   },
   {
     icon: Camera,
-    title: "CCTV Operators & Site Security",
+    title: "Man Guarding & CCTV Operators",
     description: "24/7 CCTV monitoring and comprehensive site security solutions for complete peace of mind."
   },
   {
     icon: UserCheck,
     title: "Close Protection & Residential",
-    description: "Specialized close protection services and residential security for ultimate safety and privacy."
+    description: "Specialised close protection services and residential security for ultimate safety and privacy."
+  },
+  {
+    icon: UserCheck,
+    title: "Key Holding & Alarm Response",
+    description: "Locks & Unlocks, Site Patrols, VPI (Vacant Property Inspections."
+  },
+  {
+    icon: UserCheck,
+    title: "Cleaning Services",
+    description: "Commercial Cleaning, Deep Cleaning, Domestic Cleaning, End of tenacy & Residental Cleaning"
   }
 ];
 
