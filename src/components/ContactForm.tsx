@@ -15,7 +15,7 @@ export default function ContactForm() {
     
     try {
       // Replace this URL with your actual make.com webhook URL
-      const webhookUrl = 'YOUR_MAKE_WEBHOOK_URL';
+      const webhookUrl = 'https://hook.eu2.make.com/h0br5uocr5cgww2c71mpwd5ozbzi2mwg';
       
       const response = await fetch(webhookUrl, {
         method: 'POST',
