@@ -28,6 +28,15 @@ export default function About() {
             <p className="text-right italic">~Ryan</p>
           </div>
 
+          {/* ✅ SEO Hidden Text */}
+          <div style={{ position: 'absolute', left: '-9999px', top: '-9999px', height: 0, width: 0, overflow: 'hidden' }}>
+            Kairo Security provides professional security services across Buckinghamshire and Teesside, including areas like 
+            High Wycombe, Amersham, Aylesbury, Chesham, Chalfont, Rickmansworth, Watford, Hemel Hempstead, Middlesbrough, 
+            Billingham, Thornaby, Stockton-on-Tees, Yarm, and Hartlepool. Our services include manned guarding, mobile 
+            patrols, alarm response, key holding, lock ups and unlocks, event security, and vacant property inspections. 
+            We are trusted by commercial and residential clients for reliable protection and peace of mind.
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {teamTestimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-800 p-6 rounded-lg">
