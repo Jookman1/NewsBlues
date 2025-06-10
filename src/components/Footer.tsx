@@ -1,50 +1,91 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Phone } from 'lucide-react';
-import Logo from './Logo';
+import { smoothScrollToId } from '../utils/smoothScroll';
 
-export default function Footer() {
+export const Footer: React.FC = () => {
+  const handleContactClick = () => {
+    smoothScrollToId('contact');
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    smoothScrollToId(sectionId);
+  };
+
   return (
-    <footer className="bg-black/95 text-white py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-900 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Logo size="sm" />
-              <h3 className="text-xl font-bold">KAIRO SECURITY LTD</h3>
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src="/rfowler%20logos.png" 
+                alt="Kairo Security Logo" 
+                className="h-12 w-12"
+              />
+              <span className="text-xl font-bold text-white tracking-wide">
+                KAIRO SECURITY LTD
+              </span>
             </div>
-            <p className="text-gray-400">Where Vigilance Meets Brilliance</p>
-            <div className="flex items-center mt-4 space-x-2">
-              <Phone className="h-5 w-5" />
-              <span>020 3883 1389</span>
-            </div>
-            <p className="mt-2">Company No. 13428156</p>
+            <p className="text-gray-400 mb-4 text-lg">
+              Where Vigilance Meets Brilliance
+            </p>
+            <p className="text-gray-400">
+              Phone: <span className="text-white">020 3883 1389</span>
+            </p>
+            <p className="text-gray-400">
+              Company No: <span className="text-white">13428156</span>
+            </p>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
-              <li><a href="/about" className="hover:text-primary">About Us</a></li>
-              <li><a href="/services" className="hover:text-primary">Services</a></li>
-              <li><a href="/courses" className="hover:text-primary">Courses</a></li>
-              <li><a href="/join" className="hover:text-primary">Join the Team</a></li>
-            </ul>
+            <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
+            <div className="space-y-3">
+              <button 
+                onClick={() => handleNavClick('home')}
+                className="block text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => handleNavClick('about')}
+                className="block text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                About Us
+              </button>
+              <button 
+                onClick={() => handleNavClick('services')}
+                className="block text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => handleNavClick('join')}
+                className="block text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                Join the Team
+              </button>
+            </div>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/Kairosec.ne" className="hover:text-primary"><Facebook className="h-6 w-6" /></a>
-              <a href="http://www.instagram.com/kairosecurity" className="hover:text-primary"><Instagram className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-primary"><Linkedin className="h-6 w-6" /></a>
-            </div>
+            <h3 className="text-white font-bold text-lg mb-6">Get In Touch</h3>
+            <p className="text-gray-400 mb-4">
+              Ready to secure your business? Contact us today for a free consultation.
+            </p>
+            <button 
+              onClick={handleContactClick}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Kairo Security Ltd. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p className="text-gray-400">
+            © 2025 Kairo Security Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};

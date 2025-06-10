@@ -1,31 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Courses from './pages/Courses';
-import Join from './pages/Join';
-import { FEATURES } from './config/features';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
+import { Services } from './components/Services';
+import { Statistics } from './components/Statistics';
+import { Testimonials } from './components/Testimonials';
+import { JoinTeam } from './components/JoinTeam';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { ScrollProgress } from './components/ScrollProgress';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-900">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            {FEATURES.COURSES_ENABLED && <Route path="/courses" element={<Courses />} />}
-            <Route path="/join" element={<Join />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="min-h-screen bg-black">
+      <ScrollProgress />
+      <Header />
+      <Hero />
+      <About />
+      <Services />
+      <Statistics />
+      <Testimonials />
+      <JoinTeam />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
 
