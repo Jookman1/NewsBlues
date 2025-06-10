@@ -25,15 +25,15 @@ export const Header: React.FC = () => {
           : 'bg-black/90 backdrop-blur-sm border-b border-gray-800'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-24">
             <div 
-              className="flex items-center space-x-3 cursor-pointer group"
+              className="flex items-center space-x-5 cursor-pointer group"
               onClick={() => handleNavClick('home')}
             >
               <img 
                 src="/rfowler%20logos.png" 
                 alt="Kairo Security Logo" 
-                className={`h-12 w-12 transition-all duration-300 ${
+                className={`h-20 w-20 transition-all duration-300 ${
                   isScrolled ? 'group-hover:scale-110' : ''
                 }`}
               />

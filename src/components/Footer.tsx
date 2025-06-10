@@ -1,4 +1,5 @@
 import React from 'react';
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { smoothScrollToId } from '../utils/smoothScroll';
 
 export const Footer: React.FC = () => {
@@ -71,12 +72,62 @@ export const Footer: React.FC = () => {
             <p className="text-gray-400 mb-4">
               Ready to secure your business? Contact us today for a free consultation.
             </p>
-            <button 
-              onClick={handleContactClick}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
+            <div className="flex flex-col space-y-4">
+              <button 
+                onClick={handleContactClick}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              >
+                Contact Us
+              </button>
+              
+              {/* Social Media Section */}
+              <div className="pt-4 border-t border-gray-700">
+                <h4 className="text-white font-semibold text-sm mb-3">Follow Us</h4>
+                <div className="flex flex-col space-y-3">
+                  <a
+                    href="https://www.facebook.com/Kairosec.ne"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-all duration-300"
+                  >
+                    <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-blue-500/10 group-hover:border-blue-500/30 border border-gray-700 transition-all duration-300">
+                      <Facebook className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="font-medium group-hover:translate-x-1 transition-transform duration-300">
+                      Facebook
+                    </span>
+                  </a>
+                  
+                  <a
+                    href="https://www.instagram.com/kairosecurity/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center space-x-2 text-gray-400 hover:text-pink-400 transition-all duration-300"
+                  >
+                    <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-pink-500/10 group-hover:border-pink-500/30 border border-gray-700 transition-all duration-300">
+                      <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="font-medium group-hover:translate-x-1 transition-transform duration-300">
+                      Instagram
+                    </span>
+                  </a>
+                  
+                  <a
+                    href="https://wa.me/message/BNFMV2FTWBKAI1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-all duration-300"
+                  >
+                    <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-green-500/10 group-hover:border-green-500/30 border border-gray-700 transition-all duration-300">
+                      <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="font-medium group-hover:translate-x-1 transition-transform duration-300">
+                      WhatsApp
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
