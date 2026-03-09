@@ -7,4 +7,17 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  publicDir: 'public',
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.includes(' ')) {
+            return assetInfo.name.replace(/\s+/g, '-');
+          }
+          return assetInfo.name || 'asset';
+        },
+      },
+    },
+  },
 });

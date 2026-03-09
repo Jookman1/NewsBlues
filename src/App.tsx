@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
+import { TwoBoxesLanding } from './components/TwoBoxesLanding';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { Statistics } from './components/Statistics';
@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen bg-black">
       <ScrollProgress />
       <Header />
-      <Hero />
+      <TwoBoxesLanding />
       <About />
       <Services />
       <Statistics />
