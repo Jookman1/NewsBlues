@@ -56,11 +56,6 @@ export default function Navigation() {
 
         {isOpen && (
           <div className="md:hidden bg-[#0a0a0a] border-t border-white/10 pb-6 px-6">
-            <div className="py-3 mb-3 border-b border-white/10">
-              <div className="text-xl font-black uppercase tracking-tight">
-                <span className="text-white">Kairo</span><span style={{ color: brandColor }}>{brandName}</span>
-              </div>
-            </div>
             {navItems.map((item) => (
               <a
                 key={item.label}

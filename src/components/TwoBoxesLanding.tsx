@@ -29,7 +29,7 @@ export const TwoBoxesLanding: React.FC = () => {
             transform: `scale(${hoveredPanel === 'kairosec' ? 1.06 : 1.03})`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/45 via-blue-900/20 to-black/55" />
+        <div className="absolute inset-0 bg-black/35" />
 
         {/* Card */}
         <div className="relative z-10 w-full flex justify-center px-5 md:px-10">
@@ -98,7 +98,7 @@ export const TwoBoxesLanding: React.FC = () => {
             transform: `scale(${hoveredPanel === 'kairoclean' ? 1.06 : 1.03})`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-950/45 via-pink-900/20 to-black/55" />
+        <div className="absolute inset-0 bg-black/35" />
 
         {/* Card */}
         <div className="relative z-10 w-full flex justify-center px-5 md:px-10">
