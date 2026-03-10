@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Phone, Star, Sparkles, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
+import heroImage from '../assets/image copy copy copy copy copy copy copy.png';
 
 const PINK = '#FF66C4';
 
@@ -77,7 +78,10 @@ export default function KairoCleanLanding() {
                 Cleaning Services
               </span>
             </div>
-            
+
+            {/* Hero Image */}
+            <img src={heroImage} alt="KairoClean Logo" className="h-32 md:h-40 w-auto mb-6 drop-shadow-lg" />
+
             {/* Headline */}
             <h1 className="text-6xl md:text-7xl lg:text-[6.5rem] font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FF66C4] to-[#b30f60] leading-[0.95] mb-6 tracking-tighter uppercase drop-shadow-sm">
               Where<br />
