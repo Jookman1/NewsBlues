@@ -8,36 +8,34 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
     const completeTimer = setTimeout(() => {
       setIsLoading(false);
       setTimeout(() => onComplete(), 300);
-    }, 1000);
+    }, 1200);
 
     return () => {
       clearTimeout(completeTimer);
     };
   }, [onComplete]);
 
-  const DirtySponge = () => (
-    <svg width="200" height="200" viewBox="0 0 140 140" className="drop-shadow-2xl">
+  const WindowCleaner = () => (
+    <svg width="120" height="140" viewBox="0 0 120 140" className="drop-shadow-2xl">
       <defs>
-        <filter id="dirtySurface" x="-50%" y="-50%" width="200%" height="200%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise" seed="2" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
+        <linearGradient id="squeegeeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style={{ stopColor: '#1f2937', stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: '#374151', stopOpacity: 1 }} />
+        </linearGradient>
       </defs>
 
-      <rect x="20" y="20" width="100" height="100" rx="15" fill="#F4D03F" filter="url(#dirtySurface)" />
+      <rect x="10" y="10" width="100" height="100" rx="8" fill="#64748b" />
+      <rect x="15" y="15" width="90" height="90" fill="#e5e7eb" />
 
-      <g opacity="0.15">
-        <circle cx="45" cy="35" r="8" fill="#3D2817" />
-        <circle cx="92" cy="52" r="6" fill="#3D2817" />
-        <circle cx="35" cy="78" r="7" fill="#3D2817" />
-        <circle cx="105" cy="85" r="9" fill="#3D2817" />
-        <circle cx="65" cy="110" r="6" fill="#3D2817" />
-        <ellipse cx="50" cy="65" rx="10" ry="6" fill="#3D2817" opacity="0.12" />
-        <path d="M 70 40 Q 75 45 70 50" stroke="#3D2817" strokeWidth="2" fill="none" opacity="0.15" />
-        <path d="M 30 95 Q 35 98 40 95" stroke="#3D2817" strokeWidth="2" fill="none" opacity="0.15" />
-      </g>
+      <ellipse cx="35" cy="35" rx="12" ry="14" fill="#9ca3af" opacity="0.4" />
+      <ellipse cx="75" cy="45" rx="15" ry="18" fill="#9ca3af" opacity="0.5" />
+      <circle cx="50" cy="70" r="10" fill="#9ca3af" opacity="0.35" />
 
-      <text x="70" y="95" textAnchor="middle" fill="#FFF" fontSize="40" fontWeight="bold" opacity="0.3">✓</text>
+      <rect x="20" y="75" width="60" height="22" rx="4" fill="url(#squeegeeGrad)" />
+      <rect x="22" y="77" width="56" height="3" fill="#fbbf24" />
+
+      <line x1="50" y1="75" x2="45" y2="50" stroke="#1f2937" strokeWidth="3" />
+      <circle cx="50" cy="45" r="6" fill="#1f2937" />
     </svg>
   );
 
@@ -45,37 +43,55 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[100] pointer-events-none overflow-hidden"
+          className="fixed inset-0 z-[100] pointer-events-none overflow-hidden flex items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
         >
           <motion.div
-            className="absolute inset-0 bg-slate-300"
+            className="absolute inset-0 bg-gradient-to-br from-slate-400 via-slate-300 to-slate-400"
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
           />
 
           <motion.div
-            className="absolute top-0 left-0 z-20 will-change-transform"
-            initial={{
-              x: '-100vw',
-              y: '-100vh'
-            }}
-            animate={[
-              { x: '100vw', y: '-100vh' },
-              { x: '100vw', y: '50vh' },
-              { x: '-100vw', y: '50vh' },
-              { x: '-100vw', y: '100vh' }
-            ]}
-            transition={{
-              duration: 1,
-              times: [0, 0.33, 0.66, 1],
-              ease: 'easeInOut'
-            }}
+            className="relative w-80 h-96 will-change-transform"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
           >
-            <DirtySponge />
+            <motion.div
+              className="absolute inset-0 bg-white/80 rounded-lg shadow-2xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+            />
+
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-b from-slate-400/50 to-transparent rounded-lg"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: 'easeInOut' }}
+            />
+
+            <motion.div
+              className="absolute -top-12 left-1/2 -translate-x-1/2 will-change-transform"
+              initial={{ y: -150, rotate: -45 }}
+              animate={[
+                { y: -150, rotate: -45 },
+                { y: 0, rotate: 0, x: -80 },
+                { y: 0, rotate: 0, x: 80 },
+                { y: 380, rotate: 45 }
+              ]}
+              transition={{
+                duration: 1.2,
+                times: [0, 0.25, 0.75, 1],
+                ease: 'easeInOut'
+              }}
+            >
+              <WindowCleaner />
+            </motion.div>
           </motion.div>
         </motion.div>
       )}
