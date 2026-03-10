@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Users, Camera, Home, Key, Sparkles } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import kairoSecLogo from '../assets/KairoSecuritybluelogonew.png';
 
 const services = [
   {
@@ -37,10 +38,20 @@ const services = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-gray-900 pt-32">
+    <section id="services" className="py-24 pt-32 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
           <div className="text-center mb-20">
+            <div className="flex justify-center mb-8">
+              <img
+                src={kairoSecLogo}
+                alt="KairoSec"
+                className="h-32 w-auto"
+                style={{
+                  filter: 'drop-shadow(0 0 15px rgba(59, 130, 246, 0.4))',
+                }}
+              />
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Services
             </h2>
@@ -52,20 +63,20 @@ export const Services: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <AnimatedSection 
-              key={index} 
-              animation="fadeInUp" 
+            <AnimatedSection
+              key={index}
+              animation="fadeInUp"
               delay={200 + (index * 100)}
             >
-              <div className="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/15">
+              <div className="group bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8 hover:border-blue-500/60 hover:bg-black/60 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
                 <div className="mb-6">
                   <service.icon className="h-12 w-12 text-blue-400 group-hover:text-blue-300 transition-all duration-300 group-hover:scale-110" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {service.description}
                 </p>

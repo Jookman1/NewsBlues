@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-black pt-32">
+    <section id="about" className="py-24 pt-32 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
           <div className="text-center mb-20">
@@ -20,7 +20,7 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <AnimatedSection animation="fadeInLeft" delay={200}>
             <div className="space-y-8">
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-500/30 transition-all duration-500">
+              <div className="bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8 hover:border-blue-500/50 transition-all duration-500">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
                   In my role as the Managing Director, Security Consultant, and Operations Manager at Kairosec Ltd,
                   I bring over a decade of experience in the security industry. With a track record of successfully aiding
@@ -52,7 +52,7 @@ export const About: React.FC = () => {
                   { icon: Target, title: "Tailored", desc: "Custom Solutions", delay: 300 }
                 ].map((item, index) => (
                   <AnimatedSection key={index} animation="scaleIn" delay={400 + item.delay}>
-                    <div className="group bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 hover:bg-gray-900/70 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10">
+                    <div className="group bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-6 hover:border-blue-500/60 hover:bg-black/60 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20">
                       <item.icon className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-all duration-300 mb-4 group-hover:scale-110" />
                       <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-100 transition-colors duration-300">
                         {item.title}
@@ -66,10 +66,10 @@ export const About: React.FC = () => {
               </div>
 
               <AnimatedSection animation="fadeInUp" delay={800}>
-                <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 rounded-xl p-6 hover:from-blue-500/15 hover:to-blue-600/15 hover:border-blue-500/30 transition-all duration-500">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6 hover:bg-blue-500/15 hover:border-blue-500/50 transition-all duration-500 backdrop-blur-md">
                   <h3 className="text-xl font-bold text-white mb-3">Our Commitment</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    We are dedicated to providing superior security solutions that are tailored precisely to your requirements, 
+                    We are dedicated to providing superior security solutions that are tailored precisely to your requirements,
                     maintaining the highest standards of excellence, reliability, and professionalism.
                   </p>
                 </div>

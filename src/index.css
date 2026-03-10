@@ -16,7 +16,7 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - KairoSec (Blue) - Default */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -32,6 +32,24 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #3b82f6, #2563eb);
+}
+
+/* Custom scrollbar - KairoClean (Pink) */
+[data-brand="kairoclean"]::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-brand="kairoclean"]::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+[data-brand="kairoclean"]::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF66C4, #CF66C4);
+  border-radius: 4px;
+}
+
+[data-brand="kairoclean"]::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #CF66C4, #EC4899);
 }
 
 /* Enhanced Animation classes */

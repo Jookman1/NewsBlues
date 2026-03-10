@@ -30,8 +30,8 @@ export const Header: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? 'bg-black/95 backdrop-blur-md border-b border-gray-700 shadow-lg shadow-black/20'
-          : 'bg-black/90 backdrop-blur-sm border-b border-gray-800'
+          ? 'bg-[#050505]/95 backdrop-blur-md border-b border-gray-700 shadow-lg shadow-black/20'
+          : 'bg-[#050505]/90 backdrop-blur-sm border-b border-gray-800'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-28 gap-4">
@@ -40,9 +40,6 @@ export const Header: React.FC = () => {
               onClick={handleLogoClick}
             >
               <Logo brand="kairosec" size="md" className="transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
-              <span className="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300 hidden sm:inline bg-gradient-to-r from-white to-blue-100 bg-clip-text">
-                KAIROSEC
-              </span>
             </div>
 
             <nav className="hidden md:flex items-center space-x-8 flex-1 justify-center">

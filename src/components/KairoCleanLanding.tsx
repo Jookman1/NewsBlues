@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check, Phone, Star, Sparkles, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
-import heroImage from '../assets/image copy copy copy copy copy copy copy.png';
+import heroImage from '../assets/image copy copy copy copy copy copy copy copy copy copy.png';
 
 const PINK = '#FF66C4';
 
@@ -68,8 +68,13 @@ export default function KairoCleanLanding() {
           
           {/* Left Side: Marketing Copy (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start z-20">
+            {/* Hero Image - Top */}
+            <a href="/" className="transition-transform duration-300 hover:scale-105 inline-block">
+              <img src={heroImage} alt="KairoClean Logo" className="h-64 md:h-80 w-auto mb-8 drop-shadow-2xl" />
+            </a>
+
             {/* Premium Badges */}
-            <div className="flex items-center gap-3 mb-8 rounded-full overflow-hidden border border-[#FF66C4]/50 shadow-[0_0_20px_rgba(255,102,196,0.15)] bg-[#0a0a0a] px-2 py-2">
+            <a href="/" className="flex items-center gap-3 mb-8 rounded-full overflow-hidden border border-[#FF66C4]/50 shadow-[0_0_20px_rgba(255,102,196,0.15)] bg-[#0a0a0a] px-2 py-2 transition-transform duration-300 hover:scale-105">
               <Logo brand="kairoclean" size="sm" className="transition-all duration-300" />
               <span className="bg-[#FF66C4] text-white font-black px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
                 KAIROCLEAN
@@ -77,10 +82,7 @@ export default function KairoCleanLanding() {
               <span className="text-[#FF66C4] font-bold px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
                 Cleaning Services
               </span>
-            </div>
-
-            {/* Hero Image */}
-            <img src={heroImage} alt="KairoClean Logo" className="h-32 md:h-40 w-auto mb-6 drop-shadow-lg" />
+            </a>
 
             {/* Headline */}
             <h1 className="text-6xl md:text-7xl lg:text-[6.5rem] font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FF66C4] to-[#b30f60] leading-[0.95] mb-6 tracking-tighter uppercase drop-shadow-sm">

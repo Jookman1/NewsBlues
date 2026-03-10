@@ -57,10 +57,10 @@ export const Contact: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contact" className="py-24 bg-black">
+      <section id="contact" className="py-24 relative">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-green-500/30 rounded-xl p-12">
+            <div className="bg-black/40 backdrop-blur-md border border-green-500/30 rounded-xl p-12">
               <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-white mb-4">
                 Thank You!
@@ -82,7 +82,7 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-24 bg-black">
+    <section id="contact" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
             <p className="text-xl text-gray-400 mb-8">
               Get in touch with our security experts today
             </p>
-            
+
             <div className="space-y-6">
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-blue-400 mr-4" />
@@ -104,21 +104,20 @@ export const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-            <form 
-              onSubmit={handleSubmit} 
+
+          <div className="bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8">
+            <form
+              onSubmit={handleSubmit}
               action="https://formsubmit.co/Rfowler@kairosecurity.co.uk"
               method="POST"
               className="space-y-6"
             >
-              {/* Hidden fields for FormSubmit configuration */}
               <input type="hidden" name="_honey" style={{ display: 'none' }} />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#contact'} />
               <input type="hidden" name="_subject" value="New Contact Form Submission - Kairosec" />
               <input type="hidden" name="_template" value="table" />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <input
@@ -127,7 +126,7 @@ export const Contact: React.FC = () => {
                     placeholder="First Name"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
+                    className="w-full bg-black/60 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                     required
                     disabled={isSubmitting}
                   />
@@ -139,13 +138,13 @@ export const Contact: React.FC = () => {
                     placeholder="Last Name"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
+                    className="w-full bg-black/60 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                     required
                     disabled={isSubmitting}
                   />
                 </div>
               </div>
-              
+
               <div>
                 <input
                   type="email"
@@ -153,12 +152,12 @@ export const Contact: React.FC = () => {
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
+                  className="w-full bg-black/60 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                   required
                   disabled={isSubmitting}
                 />
               </div>
-              
+
               <div>
                 <input
                   type="tel"
@@ -166,12 +165,12 @@ export const Contact: React.FC = () => {
                   placeholder="Phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
+                  className="w-full bg-black/60 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                   required
                   disabled={isSubmitting}
                 />
               </div>
-              
+
               <div>
                 <textarea
                   name="message"
@@ -179,7 +178,7 @@ export const Contact: React.FC = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200 resize-none"
+                  className="w-full bg-black/60 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-200 resize-none"
                   required
                   disabled={isSubmitting}
                 ></textarea>

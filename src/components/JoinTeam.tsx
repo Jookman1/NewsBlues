@@ -33,7 +33,7 @@ export const JoinTeam: React.FC = () => {
   };
 
   return (
-    <section id="join" className="py-24 bg-gray-900">
+    <section id="join" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -44,9 +44,9 @@ export const JoinTeam: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 mb-16">
+        <div className="bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8 mb-16">
           <p className="text-lg text-gray-300 leading-relaxed text-center">
-            Join one of the UK's most professional and respected security companies. We're always looking 
+            Join one of the UK's most professional and respected security companies. We're always looking
             for talented individuals who share our commitment to excellence and professionalism.
           </p>
         </div>
@@ -55,7 +55,7 @@ export const JoinTeam: React.FC = () => {
           {jobPositions.map((position, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8 hover:border-blue-500/60 hover:bg-black/60 transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="mb-6">
                 <Briefcase className="h-12 w-12 text-blue-400 group-hover:text-blue-300 transition-colors duration-300 mb-4" />
@@ -80,7 +80,7 @@ export const JoinTeam: React.FC = () => {
                 </ul>
               </div>
 
-              <button 
+              <button
                 onClick={handleApplyClick}
                 className="group/btn bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
               >
@@ -91,22 +91,22 @@ export const JoinTeam: React.FC = () => {
           ))}
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
+        <div className="bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Contact Us</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <Phone className="h-8 w-8 text-blue-400 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Phone</h4>
               <p className="text-gray-300">020 3883 1389</p>
             </div>
-            
+
             <div className="text-center">
               <Mail className="h-8 w-8 text-blue-400 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Email</h4>
               <p className="text-gray-300">careers@kairosecurity.co.uk</p>
             </div>
-            
+
             <div className="text-center">
               <MapPin className="h-8 w-8 text-blue-400 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Location</h4>
