@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +35,9 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button and Logo */}
-          <div className="md:hidden flex items-center gap-4">
-            <a href="#hero" className="flex-shrink-0">
-              <img src={logo} alt="Kairo Clean" className="h-12 w-auto" />
+          <div className="md:hidden flex items-center justify-between w-full">
+            <a href="#hero" className="font-black text-xl tracking-widest text-white hover:text-[#E1147B] transition-colors">
+              KairoClean
             </a>
             <button
               className="p-2 text-white hover:text-[#E1147B] transition-colors z-50"

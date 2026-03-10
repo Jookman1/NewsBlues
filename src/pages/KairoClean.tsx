@@ -21,11 +21,6 @@ export default function KairoClean() {
     <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
       <Navigation />
 
-      {/* 1. LOGO TOP */}
-      <header className="flex justify-center pt-32 pb-8 relative z-10">
-        <h4 className="text-6xl md:text-7xl font-black uppercase tracking-wider text-white"></h4>
-      </header>
-
       {/* 2. HERO */}
       <section id="hero" className="px-6 py-12 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
