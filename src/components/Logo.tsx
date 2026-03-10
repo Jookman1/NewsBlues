@@ -23,12 +23,23 @@ export default function Logo({ className = '', size = 'md', brand = 'kairosec' }
       lg: 80,
       xl: 120,
     };
+    const textSizes = {
+      sm: 'text-sm',
+      md: 'text-lg',
+      lg: 'text-3xl',
+      xl: 'text-4xl',
+    };
     return (
-      <Sparkles
-        size={iconSizes[size]}
-        className={`text-pink-400 drop-shadow-2xl ${className}`}
-        strokeWidth={1.5}
-      />
+      <div className={`flex items-center gap-2 ${className}`}>
+        <Sparkles
+          size={iconSizes[size]}
+          className="text-pink-400 drop-shadow-2xl"
+          strokeWidth={1.5}
+        />
+        <span className={`${textSizes[size]} font-bold text-pink-400 drop-shadow-2xl`}>
+          KairoClean
+        </span>
+      </div>
     );
   }
 
