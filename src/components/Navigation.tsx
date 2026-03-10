@@ -20,7 +20,11 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#0a0a0a] border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between py-4 h-20">
+        <div className="flex items-center justify-between py-2 h-20">
+          <a href="#hero" className="flex-shrink-0">
+            <img src={logo} alt="Kairo Clean" className="h-16 w-auto" />
+          </a>
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
@@ -34,20 +38,15 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Mobile Menu Button and Logo */}
-          <div className="md:hidden flex items-center gap-4">
-            <a href="#hero" className="flex-shrink-0">
-              <img src={logo} alt="Kairo Clean" className="h-12 w-auto" />
-            </a>
-            <button
-              className="p-2 text-white hover:text-[#E1147B] transition-colors z-50"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              type="button"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-white hover:text-[#E1147B] transition-colors z-50"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            type="button"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
         {/* Mobile Menu */}
