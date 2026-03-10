@@ -10,18 +10,8 @@ export const LogosShowcase: React.FC = () => {
           <p className="text-gray-400 text-lg">Excellence in Security and Cleanliness</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-5xl mx-auto">
-          <div className="group flex flex-col items-center justify-center p-12 rounded-2xl bg-gradient-to-br from-blue-950/20 to-transparent border border-blue-900/30 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20">
-            <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
-              <Logo brand="kairosec" size="xl" />
-            </div>
-            <h3 className="text-white text-2xl font-bold mb-3 tracking-wide">KAIROSEC</h3>
-            <p className="text-gray-400 text-center text-base leading-relaxed">
-              Comprehensive Security Solutions
-            </p>
-          </div>
-
-          <div className="group flex flex-col items-center justify-center p-12 rounded-2xl bg-gradient-to-br from-pink-950/20 to-transparent border border-pink-900/30 hover:border-pink-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-900/20">
+        <div className="flex justify-center">
+          <div className="group flex flex-col items-center justify-center p-12 rounded-2xl bg-gradient-to-br from-pink-950/20 to-transparent border border-pink-900/30 hover:border-pink-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-900/20 max-w-sm">
             <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
               <Logo brand="kairoclean" size="xl" />
             </div>
