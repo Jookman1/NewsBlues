@@ -37,7 +37,7 @@ const services = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-gray-900">
+    <section id="services" className="py-24 bg-gray-900 pt-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
           <div className="text-center mb-20">
