@@ -30,15 +30,15 @@ export default function KairoClean() {
 
   return (
     <>
-      {isLoading && <SpongeWipeLoader onComplete={() => setIsLoading(false)} />}
+      <SpongeWipeLoader onComplete={() => setIsLoading(false)} />
 
-      <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
+      <div className={`w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B] transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         <Navigation />
 
       {/* 2. HERO */}
       <section id="hero" className="px-6 py-12 pt-32 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className={`text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic">
             Where <span className="text-[#E1147B]">Precision</span><br />
             Meets <span className="text-[#E1147B]">Perfection</span>
           </h1>

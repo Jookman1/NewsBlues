@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 
 export default function SpongeWipeLoader({ onComplete }: { onComplete: () => void }) {
+  const [isLoading, setIsLoading] = useState(true);
   const [showSparkle, setShowSparkle] = useState(false);
 
   useEffect(() => {
@@ -11,7 +12,8 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
     }, 2500);
 
     const completeTimer = setTimeout(() => {
-      onComplete();
+      setIsLoading(false);
+      setTimeout(() => onComplete(), 500);
     }, 3200);
 
     return () => {
@@ -22,12 +24,13 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-[100] pointer-events-none"
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 z-[100] pointer-events-none"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-zinc-700 via-zinc-600 to-zinc-700"
           style={{
@@ -81,7 +84,8 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
             <Sparkles size={120} className="text-[#E1147B]" />
           </motion.div>
         )}
-      </motion.div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }
