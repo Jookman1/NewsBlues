@@ -52,7 +52,7 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
             }}
           >
             <img
-              src="/rfowler-logos.png"
+              src="/rfowler logos.png"
               alt="brush"
               style={{
                 width: brushWidth,
