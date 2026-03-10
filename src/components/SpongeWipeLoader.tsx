@@ -16,26 +16,36 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
   }, [onComplete]);
 
   const WindowCleaner = () => (
-    <svg width="120" height="140" viewBox="0 0 120 140" className="drop-shadow-2xl">
+    <svg width="140" height="180" viewBox="0 0 140 180" className="drop-shadow-2xl">
       <defs>
-        <linearGradient id="squeegeeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: '#1f2937', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#374151', stopOpacity: 1 }} />
+        <linearGradient id="poleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style={{ stopColor: '#d1d5db', stopOpacity: 1 }} />
+          <stop offset="50%" style={{ stopColor: '#f3f4f6', stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: '#d1d5db', stopOpacity: 1 }} />
         </linearGradient>
       </defs>
 
-      <rect x="10" y="10" width="100" height="100" rx="8" fill="#64748b" />
-      <rect x="15" y="15" width="90" height="90" fill="#e5e7eb" />
+      <line x1="70" y1="10" x2="70" y2="130" stroke="url(#poleGrad)" strokeWidth="8" strokeLinecap="round" />
 
-      <ellipse cx="35" cy="35" rx="12" ry="14" fill="#9ca3af" opacity="0.4" />
-      <ellipse cx="75" cy="45" rx="15" ry="18" fill="#9ca3af" opacity="0.5" />
-      <circle cx="50" cy="70" r="10" fill="#9ca3af" opacity="0.35" />
+      <rect x="45" y="30" width="50" height="50" rx="6" fill="#64748b" />
+      <rect x="50" y="35" width="40" height="40" fill="#e5e7eb" />
 
-      <rect x="20" y="75" width="60" height="22" rx="4" fill="url(#squeegeeGrad)" />
-      <rect x="22" y="77" width="56" height="3" fill="#fbbf24" />
+      <ellipse cx="65" cy="50" rx="8" ry="10" fill="#9ca3af" opacity="0.5" />
+      <ellipse cx="85" cy="58" rx="10" ry="12" fill="#9ca3af" opacity="0.4" />
+      <circle cx="75" cy="75" r="7" fill="#9ca3af" opacity="0.35" />
 
-      <line x1="50" y1="75" x2="45" y2="50" stroke="#1f2937" strokeWidth="3" />
-      <circle cx="50" cy="45" r="6" fill="#1f2937" />
+      <ellipse cx="70" cy="120" rx="26" ry="16" fill="#ef4444" opacity="0.9" />
+      <ellipse cx="70" cy="115" rx="24" ry="14" fill="#f87171" />
+
+      <g opacity="0.8">
+        <ellipse cx="50" cy="115" rx="4" ry="8" fill="#60a5fa" />
+        <ellipse cx="90" cy="115" rx="4" ry="8" fill="#60a5fa" />
+        <ellipse cx="60" cy="125" rx="3" ry="6" fill="#60a5fa" />
+        <ellipse cx="80" cy="125" rx="3" ry="6" fill="#60a5fa" />
+      </g>
+
+      <rect x="35" y="135" width="70" height="6" rx="3" fill="#6b7280" />
+      <rect x="35" y="145" width="70" height="6" rx="3" fill="#6b7280" />
     </svg>
   );
 
