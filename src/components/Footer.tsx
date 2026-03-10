@@ -1,30 +1,8 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React from 'react';
 import { Facebook, Instagram, MessageCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { smoothScrollToId } from '../utils/smoothScroll';
 
-const REQUIRED_CLICKS = 6;
-const RESET_MS = 3000;
-
 export const Footer: React.FC = () => {
-  const navigate = useNavigate();
-  const [clickCount, setClickCount] = useState(0);
-  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleLogoClick = useCallback(() => {
-    if (resetTimer.current) clearTimeout(resetTimer.current);
-
-    setClickCount(prev => {
-      const next = prev + 1;
-      if (next >= REQUIRED_CLICKS) {
-        setTimeout(() => navigate('/admin'), 0);
-        return 0;
-      }
-      resetTimer.current = setTimeout(() => setClickCount(0), RESET_MS);
-      return next;
-    });
-  }, [navigate]);
-
   const handleContactClick = () => {
     smoothScrollToId('contact');
   };
@@ -39,27 +17,11 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="relative flex-shrink-0">
-                <img
-                  src="/src/assets/KairoSecuritybluelogonew copy copy.png"
-                  alt="Kairosec Logo"
-                  className="h-12 w-12 cursor-pointer select-none"
-                  onClick={handleLogoClick}
-                  draggable={false}
-                />
-                {clickCount > 0 && (
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-0.5">
-                    {Array.from({ length: REQUIRED_CLICKS }).map((_, i) => (
-                      <span
-                        key={i}
-                        className={`block w-1 h-1 rounded-full transition-colors duration-200 ${
-                          i < clickCount ? 'bg-blue-400' : 'bg-gray-700'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
+              <img
+                src="/src/assets/KairoSecuritybluelogonew copy copy.png"
+                alt="Kairosec Logo"
+                className="h-12 w-12"
+              />
               <span className="text-xl font-bold text-white tracking-wide">
                 KAIROSECURITY LTD
               </span>

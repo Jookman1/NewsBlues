@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Home as KairoSecHome } from './pages/Home.tsx';
 import App from './App.tsx';
 import KairoClean from './pages/KairoClean.tsx';
-import AdminLogin from './pages/AdminLogin.tsx';
-import Dashboard from './pages/Dashboard.tsx';
 import './index.css';
 
 function BrandProvider({ children }: { children: React.ReactNode }) {
@@ -33,8 +31,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />} />
           <Route path="/kairosec" element={<KairoSecHome />} />
           <Route path="/kairoclean" element={<KairoClean />} />
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrandProvider>
     </Router>
