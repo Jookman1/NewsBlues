@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '../assets/logo.png';
 
 interface LogoProps {
   className?: string;
@@ -15,7 +16,7 @@ export default function Logo({ className = '', size = 'md' }: LogoProps) {
 
   return (
     <img
-      src="https://i.imgur.com/CHctNu1.png"
+      src={logoImg}
       alt="Kairosec Logo"
       className={`${sizes[size]} w-auto object-contain ${className}`}
     />
