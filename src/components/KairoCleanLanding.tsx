@@ -1,7 +1,8 @@
 import React from 'react';
 import { Phone, Sparkles, Star } from 'lucide-react';
 
-const PINK = '#FF66C4';
+const PINK = '#E1147B';
+const PINK_RGB = '225,20,123';
 
 const TikTokIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -61,7 +62,7 @@ const KairoCleanLanding: React.FC = () => {
               <polygon
                 points="40,2 78,23 78,69 40,90 2,69 2,23"
                 fill="none"
-                stroke="rgba(255,102,196,0.07)"
+                stroke={`rgba(${PINK_RGB},0.07)`}
                 strokeWidth="1"
               />
             </pattern>
@@ -70,9 +71,7 @@ const KairoCleanLanding: React.FC = () => {
         </svg>
       </div>
 
-      {/* ============================================================
-          SECTION 1 — HERO
-      ============================================================ */}
+      {/* SECTION 1 — HERO */}
       <section
         className="relative px-6 md:px-12 lg:px-20 pt-16 pb-48 md:pb-56"
         style={{ zIndex: 1 }}
@@ -126,27 +125,24 @@ const KairoCleanLanding: React.FC = () => {
                   width: '340px',
                   height: '520px',
                   background: 'linear-gradient(160deg, #1a1a1a 0%, #242424 50%, #161616 100%)',
-                  border: '1px solid rgba(255,102,196,0.15)',
+                  border: `1px solid rgba(${PINK_RGB},0.15)`,
                   boxShadow: '0 40px 80px rgba(0,0,0,0.6)',
                 }}
               >
-                {/* Faint inner glow top */}
                 <div
                   className="absolute inset-x-0 top-0 h-32 pointer-events-none"
-                  style={{ background: 'linear-gradient(to bottom, rgba(255,102,196,0.06), transparent)' }}
+                  style={{ background: `linear-gradient(to bottom, rgba(${PINK_RGB},0.06), transparent)` }}
                 />
-                {/* Fade bottom */}
                 <div
                   className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
                   style={{ background: 'linear-gradient(to top, #0a0a0a, transparent)' }}
                 />
-
                 <div className="w-full h-full flex flex-col items-center justify-center gap-5">
                   <div
                     className="w-24 h-24 rounded-full flex items-center justify-center"
                     style={{
                       border: `2px solid ${PINK}`,
-                      boxShadow: `0 0 20px rgba(255,102,196,0.3)`,
+                      boxShadow: `0 0 20px rgba(${PINK_RGB},0.3)`,
                     }}
                   >
                     <svg
@@ -166,14 +162,10 @@ const KairoCleanLanding: React.FC = () => {
                 </div>
               </div>
 
-              {/* Diamond KC Logo — absolute, overlapping bottom-left */}
+              {/* Diamond KC Logo */}
               <div
                 className="absolute"
-                style={{
-                  bottom: '-24px',
-                  left: '-16px',
-                  zIndex: 10,
-                }}
+                style={{ bottom: '-24px', left: '-16px', zIndex: 10 }}
               >
                 <div
                   style={{
@@ -182,22 +174,19 @@ const KairoCleanLanding: React.FC = () => {
                     transform: 'rotate(45deg)',
                     border: `4px solid ${PINK}`,
                     backgroundColor: '#0a0a0a',
-                    boxShadow: `0 0 30px rgba(255,102,196,0.5), 0 0 60px rgba(255,102,196,0.2), inset 0 0 20px rgba(255,102,196,0.05)`,
+                    boxShadow: `0 0 30px rgba(${PINK_RGB},0.5), 0 0 60px rgba(${PINK_RGB},0.2), inset 0 0 20px rgba(${PINK_RGB},0.05)`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
                   <div style={{ transform: 'rotate(-45deg)', textAlign: 'center' }}>
-                    <div
-                      className="font-black leading-none"
-                      style={{ fontSize: '2.5rem', color: PINK }}
-                    >
+                    <div className="font-black leading-none" style={{ fontSize: '2.5rem', color: PINK }}>
                       KC
                     </div>
                     <div
                       className="font-bold tracking-widest mt-1"
-                      style={{ fontSize: '0.6rem', color: 'rgba(255,102,196,0.5)' }}
+                      style={{ fontSize: '0.6rem', color: `rgba(${PINK_RGB},0.5)` }}
                     >
                       LOGO
                     </div>
@@ -209,37 +198,28 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 2 — DRAMATIC WAVE DIVIDER
-      ============================================================ */}
-      <div
-        className="relative w-full"
-        style={{ marginTop: '-200px', zIndex: 2 }}
-      >
+      {/* SECTION 2 — WAVE DIVIDER */}
+      <div className="relative w-full" style={{ marginTop: '-200px', zIndex: 2 }}>
         <svg
           viewBox="0 0 1440 260"
           preserveAspectRatio="none"
           className="w-full block"
           style={{ height: '260px' }}
         >
-          {/* Pink glow ghost layer */}
           <path
             d="M0,180 C180,80 360,230 720,140 C1080,50 1260,200 1440,120 L1440,260 L0,260 Z"
             fill={PINK}
             opacity="0.08"
           />
-          {/* Second ghost for depth */}
           <path
             d="M0,200 C200,100 440,240 720,155 C1000,70 1240,210 1440,135 L1440,260 L0,260 Z"
             fill={PINK}
             opacity="0.05"
           />
-          {/* Main dark fill */}
           <path
             d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148 L1440,260 L0,260 Z"
             fill="#111111"
           />
-          {/* Pink crest stroke */}
           <path
             d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148"
             fill="none"
@@ -247,7 +227,6 @@ const KairoCleanLanding: React.FC = () => {
             strokeWidth="2"
             opacity="0.5"
           />
-          {/* Thin secondary echo */}
           <path
             d="M0,228 C220,130 460,255 720,180 C980,105 1220,228 1440,165"
             fill="none"
@@ -258,9 +237,7 @@ const KairoCleanLanding: React.FC = () => {
         </svg>
       </div>
 
-      {/* ============================================================
-          SECTION 3 — SERVICES & SOCIAL PROOF
-      ============================================================ */}
+      {/* SECTION 3 — SERVICES & SOCIAL PROOF */}
       <section
         className="relative px-6 md:px-12 lg:px-20 pt-6 pb-20"
         style={{ backgroundColor: '#111111', zIndex: 1 }}
@@ -278,7 +255,6 @@ const KairoCleanLanding: React.FC = () => {
                   Find us on...
                 </h2>
 
-                {/* Social icons */}
                 <div className="flex gap-3 justify-center">
                   {socialIcons.map(({ Icon, label }) => (
                     <button
@@ -292,7 +268,7 @@ const KairoCleanLanding: React.FC = () => {
                       onMouseEnter={e => {
                         (e.currentTarget as HTMLButtonElement).style.color = PINK;
                         (e.currentTarget as HTMLButtonElement).style.borderColor = PINK;
-                        (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 16px rgba(255,102,196,0.3)`;
+                        (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 16px rgba(${PINK_RGB},0.3)`;
                       }}
                       onMouseLeave={e => {
                         (e.currentTarget as HTMLButtonElement).style.color = '';
@@ -305,14 +281,13 @@ const KairoCleanLanding: React.FC = () => {
                   ))}
                 </div>
 
-                {/* 5 stars centered under icons */}
                 <div className="flex gap-2 justify-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       size={30}
                       fill={PINK}
-                      style={{ color: PINK, filter: `drop-shadow(0 0 6px rgba(255,102,196,0.6))` }}
+                      style={{ color: PINK, filter: `drop-shadow(0 0 6px rgba(${PINK_RGB},0.6))` }}
                     />
                   ))}
                 </div>
@@ -324,15 +299,12 @@ const KairoCleanLanding: React.FC = () => {
             {/* RIGHT — Services */}
             <div className="flex flex-col">
               <div className="flex items-center gap-3 mb-10">
-                <h2
-                  className="text-5xl md:text-6xl font-black"
-                  style={{ color: PINK }}
-                >
+                <h2 className="text-5xl md:text-6xl font-black" style={{ color: PINK }}>
                   We Provide
                 </h2>
                 <Sparkles
                   size={32}
-                  style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(255,102,196,0.6))` }}
+                  style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(${PINK_RGB},0.6))` }}
                 />
               </div>
 
@@ -341,16 +313,11 @@ const KairoCleanLanding: React.FC = () => {
                   <li key={i} className="flex items-center gap-5">
                     <span
                       className="text-3xl font-black leading-none flex-shrink-0"
-                      style={{
-                        color: PINK,
-                        textShadow: `0 0 12px rgba(255,102,196,0.6)`,
-                      }}
+                      style={{ color: PINK, textShadow: `0 0 12px rgba(${PINK_RGB},0.6)` }}
                     >
                       ✓
                     </span>
-                    <span
-                      className="text-2xl md:text-3xl font-semibold text-white leading-snug"
-                    >
+                    <span className="text-2xl md:text-3xl font-semibold text-white leading-snug">
                       {service}
                     </span>
                   </li>
@@ -361,9 +328,7 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 4 — TRUST BADGES
-      ============================================================ */}
+      {/* TRUST BADGES */}
       <section
         className="relative px-6 md:px-12 py-10"
         style={{ backgroundColor: '#0a0a0a', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.06)' }}
@@ -374,7 +339,7 @@ const KairoCleanLanding: React.FC = () => {
               <div key={item} className="flex items-center gap-3">
                 <span
                   className="text-2xl font-black"
-                  style={{ color: PINK, textShadow: `0 0 10px rgba(255,102,196,0.5)` }}
+                  style={{ color: PINK, textShadow: `0 0 10px rgba(${PINK_RGB},0.5)` }}
                 >
                   ✓
                 </span>
@@ -385,9 +350,7 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 4 — HERO CTA PILL
-      ============================================================ */}
+      {/* CTA PILL */}
       <section
         className="relative px-4 md:px-8 pb-20 pt-6"
         style={{ backgroundColor: '#0a0a0a', zIndex: 1 }}
@@ -398,42 +361,33 @@ const KairoCleanLanding: React.FC = () => {
             style={{
               border: `3px solid ${PINK}`,
               backgroundColor: 'transparent',
-              boxShadow: `0 0 40px rgba(255,102,196,0.45), 0 0 80px rgba(255,102,196,0.2), 0 0 120px rgba(255,102,196,0.08)`,
+              boxShadow: `0 0 40px rgba(${PINK_RGB},0.45), 0 0 80px rgba(${PINK_RGB},0.2), 0 0 120px rgba(${PINK_RGB},0.08)`,
             }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 60px rgba(255,102,196,0.65), 0 0 100px rgba(255,102,196,0.3), 0 0 140px rgba(255,102,196,0.12)`;
+              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 60px rgba(${PINK_RGB},0.65), 0 0 100px rgba(${PINK_RGB},0.3), 0 0 140px rgba(${PINK_RGB},0.12)`;
             }}
             onMouseLeave={e => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px rgba(255,102,196,0.45), 0 0 80px rgba(255,102,196,0.2), 0 0 120px rgba(255,102,196,0.08)`;
+              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px rgba(${PINK_RGB},0.45), 0 0 80px rgba(${PINK_RGB},0.2), 0 0 120px rgba(${PINK_RGB},0.08)`;
             }}
           >
-            {/* Left */}
             <div className="flex flex-col items-center sm:items-start">
-              <span
-                className="text-3xl md:text-4xl font-extrabold leading-tight"
-                style={{ color: PINK }}
-              >
+              <span className="text-3xl md:text-4xl font-extrabold leading-tight" style={{ color: PINK }}>
                 Call now for a
               </span>
-              <span
-                className="text-3xl md:text-4xl font-extrabold leading-tight"
-                style={{ color: PINK }}
-              >
+              <span className="text-3xl md:text-4xl font-extrabold leading-tight" style={{ color: PINK }}>
                 free quote
               </span>
             </div>
 
-            {/* Divider */}
             <div
               className="hidden sm:block w-px self-stretch"
               style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
             />
 
-            {/* Right */}
             <div className="flex items-center gap-5">
               <Phone
                 size={40}
-                style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(255,102,196,0.6))` }}
+                style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(${PINK_RGB},0.6))` }}
               />
               <span className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-wide">
                 033 0043 1631
@@ -443,9 +397,7 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          FOOTER
-      ============================================================ */}
+      {/* FOOTER */}
       <footer
         className="relative px-6 py-10 text-center"
         style={{
@@ -459,10 +411,7 @@ const KairoCleanLanding: React.FC = () => {
             WWW.KAIROSECURITY.CO.UK
           </p>
           <p className="text-gray-400 text-sm">Enquiries@kairosecurity.co.uk</p>
-          <p
-            className="font-black text-sm tracking-[0.25em] uppercase mt-3"
-            style={{ color: PINK }}
-          >
+          <p className="font-black text-sm tracking-[0.25em] uppercase mt-3" style={{ color: PINK }}>
             KAIRO SECURITY LTD
           </p>
           <p className="text-gray-600 text-xs">(Registered in England and Wales)</p>
