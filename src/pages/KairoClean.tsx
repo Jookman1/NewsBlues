@@ -4,7 +4,7 @@ import {
   Shield, Users, Building2, Check, Clock, Home,
   Trash2, PartyPopper
 } from 'lucide-react';
-import logoImg from '../assets/image copy copy copy.png';
+import logoImg from '../assets/image1_(1).png';
 import Navigation from '../components/Navigation';
 
 export default function KairoClean() {
@@ -23,7 +23,7 @@ export default function KairoClean() {
 
       {/* 1. LOGO TOP */}
       <header className="flex justify-center pt-32 pb-8 relative z-10">
-        <h1 className="text-6xl md:text-7xl font-black uppercase tracking-wider text-white">KairoClean</h1>
+        <img src={logoImg} alt="KairoClean Logo" className="w-40 h-40 object-contain" />
       </header>
 
       {/* 2. HERO */}
