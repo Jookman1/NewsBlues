@@ -45,12 +45,12 @@ export const Header: React.FC = () => {
                 KAIRO SECURITY
               </span>
             </div>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
               {[
-                { id: 'home', label: 'Home' },
+                { id: 'services', label: 'Home' },
                 { id: 'about', label: 'About Us' },
-                { id: 'services', label: 'Services' },
+                { id: 'contact', label: 'Services' },
                 { id: 'join', label: 'Join the Team' }
               ].map((item) => (
                 <button

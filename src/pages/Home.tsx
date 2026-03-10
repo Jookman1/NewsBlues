@@ -16,8 +16,8 @@ export const Home: React.FC = () => {
       <div className="min-h-screen bg-black">
         <ScrollProgress />
         <Header />
-        <About />
         <Services />
+        <About />
         <Statistics />
         <Testimonials />
         <JoinTeam />
