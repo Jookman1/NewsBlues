@@ -7,8 +7,8 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
   useEffect(() => {
     const completeTimer = setTimeout(() => {
       setIsLoading(false);
-      setTimeout(() => onComplete(), 400);
-    }, 1800);
+      setTimeout(() => onComplete(), 300);
+    }, 1000);
 
     return () => {
       clearTimeout(completeTimer);
@@ -54,18 +54,11 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
             className="absolute inset-0 bg-slate-300"
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
-            transition={{ duration: 1.6, ease: 'easeInOut' }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
           />
 
           <motion.div
-            className="absolute inset-0 bg-gradient-to-b from-slate-200 via-slate-300 to-slate-200 opacity-100"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0 }}
-            transition={{ duration: 1.6, ease: 'easeInOut' }}
-          />
-
-          <motion.div
-            className="absolute top-0 left-0 z-20"
+            className="absolute top-0 left-0 z-20 will-change-transform"
             initial={{
               x: '-100vw',
               y: '-100vh'
@@ -77,23 +70,13 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
               { x: '-100vw', y: '100vh' }
             ]}
             transition={{
-              duration: 1.6,
+              duration: 1,
               times: [0, 0.33, 0.66, 1],
               ease: 'easeInOut'
             }}
           >
             <DirtySponge />
           </motion.div>
-
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.3, 0] }}
-            transition={{ duration: 1.6, ease: 'easeInOut' }}
-            style={{
-              background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.6) 0%, transparent 70%)'
-            }}
-          />
         </motion.div>
       )}
     </AnimatePresence>
