@@ -10,10 +10,10 @@ interface LogoProps {
 
 export default function Logo({ className = '', size = 'md', brand = 'kairosec' }: LogoProps) {
   const sizes = {
-    sm: 'h-10',
-    md: 'h-16',
-    lg: 'h-28',
-    xl: 'h-40',
+    sm: 'h-12',
+    md: 'h-20',
+    lg: 'h-32',
+    xl: 'h-48',
   };
 
   if (brand === 'kairoclean') {

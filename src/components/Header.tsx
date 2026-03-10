@@ -34,9 +34,9 @@ export const Header: React.FC = () => {
           : 'bg-black/90 backdrop-blur-sm border-b border-gray-800'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-28 gap-4">
+          <div className="flex items-center justify-center h-32 gap-4">
             <div
-              className="flex items-center space-x-4 cursor-pointer group flex-shrink-0"
+              className="flex items-center space-x-4 cursor-pointer group"
               onClick={handleLogoClick}
             >
               <Logo brand="kairosec" size="sm" className="transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
