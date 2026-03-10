@@ -1,26 +1,12 @@
 import React from 'react';
-import { Header } from './components/Header';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Statistics } from './components/Statistics';
-import { Testimonials } from './components/Testimonials';
-import { JoinTeam } from './components/JoinTeam';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import { TwoBoxesLanding } from './components/TwoBoxesLanding';
 import { ScrollProgress } from './components/ScrollProgress';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black w-screen overflow-hidden">
       <ScrollProgress />
-      <Header />
-      <About />
-      <Services />
-      <Statistics />
-      <Testimonials />
-      <JoinTeam />
-      <Contact />
-      <Footer />
+      <TwoBoxesLanding />
     </div>
   );
 }
