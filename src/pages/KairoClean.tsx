@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Phone, Mail, MapPin, Sparkles, Star, ChevronRight,
   Shield, Users, Building2, Check, Clock, Home,
   Trash2, PartyPopper
 } from 'lucide-react';
-import logoImg from '../assets/image copy copy copy.png';
+import kairoCleanLogo from '../assets/image1_(2).png';
 import Navigation from '../components/Navigation';
 
 export default function KairoClean() {
@@ -25,6 +25,7 @@ export default function KairoClean() {
       {/* 2. HERO */}
       <section id="hero" className="px-6 py-12 pt-32 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
+          <img src={kairoCleanLogo} alt="KairoClean" className="h-32 w-auto mx-auto mb-8" />
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic">
             Where <span className="text-[#E1147B]">Precision</span><br />
             Meets <span className="text-[#E1147B]">Perfection</span>
@@ -102,7 +103,7 @@ export default function KairoClean() {
             <h2 className="text-4xl md:text-5xl font-black uppercase mb-4 italic">Book a <span className="text-[#E1147B]">Clean</span></h2>
             <p className="text-zinc-500 font-bold uppercase tracking-[0.3em] text-xs underline decoration-[#E1147B] underline-offset-4">Quote within 24 hours</p>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input type="text" required placeholder="FULL NAME" className="bg-[#111] border border-zinc-800 p-4 text-sm font-bold uppercase outline-none focus:border-[#E1147B] transition-all" onChange={e => setFormData({...formData, name: e.target.value})} />
@@ -133,7 +134,7 @@ export default function KairoClean() {
              <span className="block text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#E1147B]">For Quotes</span>
           </div>
           <div className="flex items-center gap-8">
-             <Phone size={60} className="hidden sm:block text-[#E1147B] animate-pulse" />
+             <Phone size={60} className="hidden sm:block text-[#E1147B]" />
              <span className="text-5xl md:text-8xl font-black tracking-tighter drop-shadow-lg">033 0043 1631</span>
           </div>
         </div>

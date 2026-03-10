@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import kairoCleanLogo from '../assets/image1_(2).png';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,11 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 bg-[#0a0a0a] border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between py-4 h-20">
+          {/* Logo */}
+          <a href="#hero" className="flex items-center gap-2">
+            <img src={kairoCleanLogo} alt="KairoClean" className="h-12 w-auto" />
+          </a>
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
@@ -34,20 +40,15 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Mobile Menu Button and Logo */}
-          <div className="md:hidden flex items-center justify-between w-full">
-            <a href="#hero" className="font-black text-xl tracking-widest text-white hover:text-[#E1147B] transition-colors">
-              KairoClean
-            </a>
-            <button
-              className="p-2 text-white hover:text-[#E1147B] transition-colors z-50"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              type="button"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-white hover:text-[#E1147B] transition-colors z-50"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            type="button"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
         {/* Mobile Menu */}
