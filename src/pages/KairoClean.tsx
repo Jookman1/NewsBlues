@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { 
-  Phone, Mail, MapPin, Sparkles, Star, ChevronRight, 
+import {
+  Phone, Mail, MapPin, Sparkles, Star, ChevronRight,
   Shield, Users, Building2, Check, Clock, Home,
   Trash2, PartyPopper
 } from 'lucide-react';
+import logoImg from '../assets/image1_(1).png';
 
 export default function KairoClean() {
   const [formData, setFormData] = useState({
@@ -20,12 +21,7 @@ export default function KairoClean() {
       
       {/* 1. LOGO TOP */}
       <header className="flex justify-center pt-16 pb-8 relative z-10">
-        <div className="w-32 h-32 bg-[#0a0a0a] border-4 border-[#E1147B] rotate-45 flex items-center justify-center shadow-[0_0_40px_rgba(225,20,123,0.3)]">
-          <div className="-rotate-45 text-center">
-            <span className="text-4xl font-black text-[#E1147B]">KC</span>
-            <p className="text-[10px] font-bold tracking-widest uppercase opacity-40">Clean</p>
-          </div>
-        </div>
+        <img src={logoImg} alt="KairoClean Logo" className="w-40 h-40 object-contain" />
       </header>
 
       {/* 2. HERO */}
