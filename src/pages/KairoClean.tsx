@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Phone, Mail, MapPin, Sparkles, Star, ChevronRight,
   Shield, Users, Building2, Check, Clock, Home,
@@ -6,11 +6,22 @@ import {
 } from 'lucide-react';
 import logoImg from '../assets/image copy copy copy.png';
 import Navigation from '../components/Navigation';
+import SpongeWipeLoader from '../components/SpongeWipeLoader';
 
 export default function KairoClean() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', service: '', message: ''
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,13 +29,16 @@ export default function KairoClean() {
   };
 
   return (
-    <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
-      <Navigation />
+    <>
+      {isLoading && <SpongeWipeLoader onComplete={() => setIsLoading(false)} />}
+
+      <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
+        <Navigation />
 
       {/* 2. HERO */}
       <section id="hero" className="px-6 py-12 pt-32 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic">
+          <h1 className={`text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
             Where <span className="text-[#E1147B]">Precision</span><br />
             Meets <span className="text-[#E1147B]">Perfection</span>
           </h1>
@@ -150,6 +164,7 @@ export default function KairoClean() {
         </div>
       </footer>
 
-    </div>
+      </div>
+    </>
   );
 }
