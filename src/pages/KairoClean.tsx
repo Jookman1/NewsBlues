@@ -23,7 +23,7 @@ export default function KairoClean() {
 
       {/* 1. LOGO TOP */}
       <header className="flex justify-center pt-32 pb-8 relative z-10">
-        <h4 className="text-6xl md:text-7xl font-black uppercase tracking-wider text-white">K</h4>
+        <h4 className="text-6xl md:text-7xl font-black uppercase tracking-wider text-white"></h4>
       </header>
 
       {/* 2. HERO */}
