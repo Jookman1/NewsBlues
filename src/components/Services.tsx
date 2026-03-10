@@ -77,7 +77,7 @@ export const Services: React.FC = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300" style={{ boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.15)' }}>
                   {service.description}
                 </p>
               </div>
