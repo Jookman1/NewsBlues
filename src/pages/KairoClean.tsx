@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Sparkles, Star, ChevronRight } from 'lucide-react';
+import { Phone, Sparkles, Star, ChevronRight, ShieldCheck, UserCheck, Clock } from 'lucide-react';
 
 const PINK = '#E1147B';
 const PINK_RGB = '225,20,123';
@@ -51,11 +51,7 @@ const KairoCleanLanding: React.FC = () => {
       style={{ backgroundColor: '#0a0a0a' }}
     >
       {/* FIXED HEXAGON TEXTURE */}
-      <div
-        className="fixed inset-0 pointer-events-none"
-        style={{ zIndex: 0 }}
-        aria-hidden="true"
-      >
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
           <defs>
             <pattern id="kc-hex" x="0" y="0" width="80" height="92" patternUnits="userSpaceOnUse">
@@ -72,145 +68,73 @@ const KairoCleanLanding: React.FC = () => {
       </div>
 
       {/* SECTION 1 — HERO */}
-      <section
-        className="relative px-6 md:px-12 lg:px-20 pt-16 pb-48 md:pb-56"
-        style={{ zIndex: 1 }}
-      >
+      <section className="relative px-6 md:px-12 lg:px-20 pt-16 pb-48 md:pb-56 z-[1]">
         <div className="max-w-7xl mx-auto">
-
           {/* Badges */}
-          <div className="flex items-stretch w-fit mb-12">
-            <span
-              className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-l-full"
-              style={{ backgroundColor: PINK, color: '#0a0a0a' }}
-            >
+          <div className="flex items-stretch w-fit mb-12 shadow-[0_0_20px_rgba(225,20,123,0.1)]">
+            <span className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-l-full" style={{ backgroundColor: PINK, color: '#0a0a0a' }}>
               KAIROCLEAN
             </span>
-            <span
-              className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-r-full border-t border-b border-r"
-              style={{ color: PINK, borderColor: PINK, backgroundColor: 'transparent' }}
-            >
+            <span className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-r-full border-t border-b border-r" style={{ color: PINK, borderColor: PINK, backgroundColor: 'transparent' }}>
               CLEANING SERVICES
             </span>
           </div>
 
-          {/* Hero two-column */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
-
-            {/* LEFT */}
+            {/* LEFT SIDE CONTENT */}
             <div>
-              <h1
-                className="text-7xl md:text-8xl xl:text-9xl font-black leading-[0.95] tracking-tight mb-8"
-                style={{ color: PINK }}
-              >
-                Where<br />
-                Precision<br />
-                Meets<br />
-                Perfection
+              <h1 className="text-7xl md:text-8xl xl:text-9xl font-black leading-[0.95] tracking-tight mb-8" style={{ color: PINK }}>
+                Where<br />Precision<br />Meets<br />Perfection
               </h1>
               <p className="text-gray-400 italic text-xl md:text-2xl font-light leading-relaxed max-w-md">
-                Reliable cleaners with high standards &amp; flexible bookings.
+                Experience the new elite standard in professional cleaning. Reliable, insured, and spotless.
               </p>
               
-              {/* BRAND NEW MARKETING HERO BUTTON */}
-              <button
-                className="mt-8 flex items-center gap-3 px-8 py-4 rounded-full font-black text-lg uppercase transition-all duration-300 group"
-                style={{
-                  backgroundColor: PINK,
-                  color: '#fff',
-                  boxShadow: `0 0 20px rgba(${PINK_RGB}, 0.3)`,
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 40px rgba(${PINK_RGB}, 0.6)`;
-                  (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-4px)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 20px rgba(${PINK_RGB}, 0.3)`;
-                  (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)';
-                }}
-              >
-                Get a Free Quote
-                <ChevronRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              {/* UPGRADED HERO CTAs */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-10">
+                <button
+                  className="flex items-center gap-3 px-8 py-4 rounded-full font-black text-lg uppercase transition-all duration-300 group shadow-[0_0_20px_rgba(225,20,123,0.3)]"
+                  style={{ backgroundColor: PINK, color: '#fff' }}
+                >
+                  Book a Clean
+                  <ChevronRight className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
+                </button>
+                <div className="flex items-center gap-3 text-white/60 hover:text-white cursor-pointer transition-colors group">
+                   <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#E1147B]">
+                      <Phone size={20} className="group-hover:text-[#E1147B]" />
+                   </div>
+                   <span className="font-bold tracking-widest text-sm uppercase">Call Experts</span>
+                </div>
+              </div>
             </div>
 
-            {/* RIGHT — overlapping composition */}
-            <div
-              className="relative flex justify-center lg:justify-end mt-12 lg:mt-0"
-              style={{ minHeight: '520px' }}
-            >
-              {/* Tall cleaner image placeholder */}
+            {/* RIGHT SIDE IMAGES */}
+            <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0" style={{ minHeight: '520px' }}>
               <div
-                className="relative rounded-3xl overflow-hidden"
+                className="relative rounded-3xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.6)]"
                 style={{
                   width: '340px',
                   height: '520px',
                   background: 'linear-gradient(160deg, #1a1a1a 0%, #242424 50%, #161616 100%)',
                   border: `1px solid rgba(${PINK_RGB},0.15)`,
-                  boxShadow: '0 40px 80px rgba(0,0,0,0.6)',
                 }}
               >
-                <div
-                  className="absolute inset-x-0 top-0 h-32 pointer-events-none"
-                  style={{ background: `linear-gradient(to bottom, rgba(${PINK_RGB},0.06), transparent)` }}
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
-                  style={{ background: 'linear-gradient(to top, #0a0a0a, transparent)' }}
-                />
                 <div className="w-full h-full flex flex-col items-center justify-center gap-5">
-                  <div
-                    className="w-24 h-24 rounded-full flex items-center justify-center"
-                    style={{
-                      border: `2px solid ${PINK}`,
-                      boxShadow: `0 0 20px rgba(${PINK_RGB},0.3)`,
-                    }}
-                  >
-                    <svg
-                      className="w-12 h-12"
-                      style={{ color: PINK }}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      viewBox="0 0 24 24"
-                    >
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center" style={{ border: `2px solid ${PINK}`, boxShadow: `0 0 20px rgba(${PINK_RGB},0.3)` }}>
+                    <svg className="w-12 h-12" style={{ color: PINK }} fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                   </div>
-                  <p className="text-gray-600 text-sm text-center leading-relaxed tracking-wide uppercase">
-                    Cleaner<br />Image
-                  </p>
+                  <p className="text-gray-600 text-sm text-center leading-relaxed tracking-wide uppercase">Professional<br />Cleaner Image</p>
                 </div>
               </div>
 
-              {/* Diamond KC Logo */}
-              <div
-                className="absolute"
-                style={{ bottom: '-24px', left: '-16px', zIndex: 10 }}
-              >
-                <div
-                  style={{
-                    width: '160px',
-                    height: '160px',
-                    transform: 'rotate(45deg)',
-                    border: `4px solid ${PINK}`,
-                    backgroundColor: '#0a0a0a',
-                    boxShadow: `0 0 30px rgba(${PINK_RGB},0.5), 0 0 60px rgba(${PINK_RGB},0.2), inset 0 0 20px rgba(${PINK_RGB},0.05)`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <div style={{ transform: 'rotate(-45deg)', textAlign: 'center' }}>
-                    <div className="font-black leading-none" style={{ fontSize: '2.5rem', color: PINK }}>
-                      KC
-                    </div>
-                    <div
-                      className="font-bold tracking-widest mt-1"
-                      style={{ fontSize: '0.6rem', color: `rgba(${PINK_RGB},0.5)` }}
-                    >
-                      LOGO
-                    </div>
+              {/* Overlapping Diamond KC Logo */}
+              <div className="absolute z-10" style={{ bottom: '-24px', left: '-16px' }}>
+                <div style={{ width: '160px', height: '160px', transform: 'rotate(45deg)', border: `4px solid ${PINK}`, backgroundColor: '#0a0a0a', boxShadow: `0 0 30px rgba(${PINK_RGB},0.5)`, display: 'flex', alignItems: 'center', justifyComtent: 'center' }}>
+                  <div style={{ transform: 'rotate(-45deg)', textAlign: 'center', width: '100%' }}>
+                    <div className="font-black leading-none" style={{ fontSize: '2.5rem', color: PINK }}>KC</div>
+                    <div className="font-bold tracking-widest mt-1 uppercase" style={{ fontSize: '0.6rem', color: `rgba(${PINK_RGB},0.5)` }}>Logo</div>
                   </div>
                 </div>
               </div>
@@ -219,128 +143,65 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 2 — WAVE DIVIDER */}
-      <div className="relative w-full" style={{ marginTop: '-200px', zIndex: 2 }}>
-        <svg
-          viewBox="0 0 1440 260"
-          preserveAspectRatio="none"
-          className="w-full block"
-          style={{ height: '260px' }}
-        >
-          <path
-            d="M0,180 C180,80 360,230 720,140 C1080,50 1260,200 1440,120 L1440,260 L0,260 Z"
-            fill={PINK}
-            opacity="0.08"
-          />
-          <path
-            d="M0,200 C200,100 440,240 720,155 C1000,70 1240,210 1440,135 L1440,260 L0,260 Z"
-            fill={PINK}
-            opacity="0.05"
-          />
-          <path
-            d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148 L1440,260 L0,260 Z"
-            fill="#111111"
-          />
-          <path
-            d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148"
-            fill="none"
-            stroke={PINK}
-            strokeWidth="2"
-            opacity="0.5"
-          />
-          <path
-            d="M0,228 C220,130 460,255 720,180 C980,105 1220,228 1440,165"
-            fill="none"
-            stroke={PINK}
-            strokeWidth="1"
-            opacity="0.18"
-          />
+      {/* WAVE TRANSITION */}
+      <div className="relative w-full z-[2]" style={{ marginTop: '-200px' }}>
+        <svg viewBox="0 0 1440 260" preserveAspectRatio="none" className="w-full block" style={{ height: '260px' }}>
+          <path d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148 L1440,260 L0,260 Z" fill="#111111" />
+          <path d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148" fill="none" stroke={PINK} strokeWidth="2" opacity="0.3" />
         </svg>
       </div>
 
-      {/* SECTION 3 — SERVICES & SOCIAL PROOF */}
-      <section
-        className="relative px-6 md:px-12 lg:px-20 pt-6 pb-20"
-        style={{ backgroundColor: '#111111', zIndex: 1 }}
-      >
-        <div className="max-w-5xl mx-auto">
+      {/* SECTION 3 — SERVICES & SOCIALS */}
+      <section className="relative px-6 md:px-12 lg:px-20 pt-6 pb-20 z-[1]" style={{ backgroundColor: '#111111' }}>
+        <div className="max-w-6xl mx-auto">
+          {/* Trust Bar UPGRADE */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-24 py-10 px-8 rounded-3xl border border-white/5 bg-[#0a0a0a]/50 backdrop-blur-sm shadow-xl">
+            <div className="flex flex-col items-center gap-3 text-center">
+              <ShieldCheck size={32} style={{ color: PINK }} />
+              <span className="font-black tracking-widest text-xs uppercase">Fully Insured</span>
+            </div>
+            <div className="flex flex-col items-center gap-3 text-center border-y sm:border-y-0 sm:border-x border-white/10 py-6 sm:py-0">
+              <UserCheck size={32} style={{ color: PINK }} />
+              <span className="font-black tracking-widest text-xs uppercase">Vetted Pros</span>
+            </div>
+            <div className="flex flex-col items-center gap-3 text-center">
+              <Clock size={32} style={{ color: PINK }} />
+              <span className="font-black tracking-widest text-xs uppercase">Flexible Booking</span>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-
-            {/* LEFT — Social proof */}
-            <div className="flex flex-col items-center lg:items-start gap-10">
-              <div className="flex flex-col items-center gap-6 w-full">
-                <h2
-                  className="text-2xl font-extrabold tracking-wide uppercase"
-                  style={{ color: PINK }}
-                >
-                  Find us on...
-                </h2>
-
-                <div className="flex gap-3 justify-center">
-                  {socialIcons.map(({ Icon, label }) => (
-                    <button
-                      key={label}
-                      aria-label={label}
-                      className="w-14 h-14 flex items-center justify-center text-gray-400 transition-all duration-200"
-                      style={{
-                        backgroundColor: '#1a1a1a',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                      }}
-                      onMouseEnter={e => {
-                        (e.currentTarget as HTMLButtonElement).style.color = PINK;
-                        (e.currentTarget as HTMLButtonElement).style.borderColor = PINK;
-                        (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 16px rgba(${PINK_RGB},0.3)`;
-                      }}
-                      onMouseLeave={e => {
-                        (e.currentTarget as HTMLButtonElement).style.color = '';
-                        (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.1)';
-                        (e.currentTarget as HTMLButtonElement).style.boxShadow = '';
-                      }}
-                    >
-                      <Icon />
-                    </button>
-                  ))}
-                </div>
-
-                <div className="flex gap-2 justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={30}
-                      fill={PINK}
-                      style={{ color: PINK, filter: `drop-shadow(0 0 6px rgba(${PINK_RGB},0.6))` }}
-                    />
-                  ))}
-                </div>
-
-                <p className="text-gray-500 text-sm text-center">5-star rated on Google</p>
+            {/* Social Proof */}
+            <div className="flex flex-col items-center lg:items-start">
+              <h2 className="text-2xl font-black tracking-[0.2em] uppercase mb-10" style={{ color: PINK }}>Find us on...</h2>
+              <div className="flex gap-4 mb-10">
+                {socialIcons.map(({ Icon, label }) => (
+                  <button key={label} className="w-16 h-16 flex items-center justify-center text-gray-500 bg-[#1a1a1a] border border-white/10 rounded-2xl transition-all duration-300 hover:text-[#E1147B] hover:border-[#E1147B] hover:shadow-[0_0_20px_rgba(225,20,123,0.25)]">
+                    <Icon />
+                  </button>
+                ))}
               </div>
+              <div className="flex gap-2 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={32} fill={PINK} style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(${PINK_RGB},0.6))` }} />
+                ))}
+              </div>
+              <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">5-star rated on Google</p>
             </div>
 
-            {/* RIGHT — Services WITH ANIMATED HOVER */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-10">
-                <h2 className="text-5xl md:text-6xl font-black" style={{ color: PINK }}>
-                  We Provide
-                </h2>
-                <Sparkles
-                  size={32}
-                  style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(${PINK_RGB},0.6))` }}
-                />
+            {/* SERVICES WITH SLIDE-HOVER EFFECT */}
+            <div>
+              <div className="flex items-center gap-4 mb-12">
+                <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter" style={{ color: PINK }}>We Provide</h2>
+                <Sparkles size={36} style={{ color: PINK, filter: `drop-shadow(0 0 10px rgba(${PINK_RGB},0.6))` }} />
               </div>
-
               <ul className="space-y-6">
                 {services.map((service, i) => (
-                  <li key={i} className="flex items-center gap-5 group cursor-default transition-transform duration-300 hover:translate-x-3">
-                    <span
-                      className="text-3xl font-black leading-none flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                      style={{ color: PINK, textShadow: `0 0 12px rgba(${PINK_RGB},0.6)` }}
-                    >
-                      ✓
-                    </span>
-                    <span className="text-2xl md:text-3xl font-semibold text-white leading-snug group-hover:text-gray-300 transition-colors duration-300">
-                      {service}
-                    </span>
+                  <li key={i} className="flex items-center gap-6 group cursor-default transition-all duration-300 hover:translate-x-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-white/10 flex items-center justify-center group-hover:border-[#E1147B] group-hover:bg-[#E1147B]/5 transition-all">
+                      <Check size={20} className="group-hover:text-[#E1147B] group-hover:scale-110 transition-all" strokeWidth={4} />
+                    </div>
+                    <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#E1147B] transition-colors">{service}</span>
                   </li>
                 ))}
               </ul>
@@ -349,97 +210,32 @@ const KairoCleanLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* PREMIUM BOXED TRUST BADGES */}
-      <section
-        className="relative px-6 md:px-12 py-10"
-        style={{ backgroundColor: '#0a0a0a', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.06)' }}
-      >
-        <div className="max-w-5xl mx-auto">
-          <div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16 py-8 px-6 rounded-3xl border border-zinc-800/80"
-            style={{ backgroundColor: '#111', boxShadow: '0 10px 30px rgba(0,0,0,0.6)' }}
-          >
-            {['Flexible Scheduling', 'Fully Insured', 'Vetted Professionals'].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <span
-                  className="text-2xl font-black"
-                  style={{ color: PINK, textShadow: `0 0 10px rgba(${PINK_RGB},0.5)` }}
-                >
-                  ✓
-                </span>
-                <span className="text-white font-semibold text-base tracking-wide">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA PILL */}
-      <section
-        className="relative px-4 md:px-8 pb-20 pt-6"
-        style={{ backgroundColor: '#0a0a0a', zIndex: 1 }}
-      >
-        <div className="max-w-6xl mx-auto">
+      {/* FINAL CTA PILL */}
+      <section className="relative px-4 md:px-8 pb-32 pt-12 z-[1]" style={{ backgroundColor: '#0a0a0a' }}>
+        <div className="max-w-6xl mx-auto group">
           <div
-            className="rounded-full flex flex-col sm:flex-row items-center justify-between px-10 md:px-16 py-10 md:py-12 gap-8 sm:gap-0 cursor-pointer transition-all duration-300 w-full"
-            style={{
-              border: `3px solid ${PINK}`,
-              backgroundColor: 'transparent',
-              boxShadow: `0 0 40px rgba(${PINK_RGB},0.45), 0 0 80px rgba(${PINK_RGB},0.2), 0 0 120px rgba(${PINK_RGB},0.08)`,
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 60px rgba(${PINK_RGB},0.65), 0 0 100px rgba(${PINK_RGB},0.3), 0 0 140px rgba(${PINK_RGB},0.12)`;
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px rgba(${PINK_RGB},0.45), 0 0 80px rgba(${PINK_RGB},0.2), 0 0 120px rgba(${PINK_RGB},0.08)`;
-            }}
+            className="rounded-full flex flex-col sm:flex-row items-center justify-between px-12 md:px-20 py-12 md:py-16 gap-8 sm:gap-0 cursor-pointer transition-all duration-500 shadow-[0_0_40px_rgba(225,20,123,0.3)] hover:shadow-[0_0_70px_rgba(225,20,123,0.5)] border-[3px]"
+            style={{ borderColor: PINK, backgroundColor: 'transparent' }}
           >
-            <div className="flex flex-col items-center sm:items-start">
-              <span className="text-3xl md:text-4xl font-extrabold leading-tight" style={{ color: PINK }}>
-                Call now for a
-              </span>
-              <span className="text-3xl md:text-4xl font-extrabold leading-tight" style={{ color: PINK }}>
-                free quote
-              </span>
+            <div className="text-center sm:text-left">
+              <span className="block text-4xl md:text-5xl font-black tracking-tight" style={{ color: PINK }}>Call now for a</span>
+              <span className="block text-4xl md:text-5xl font-black tracking-tight" style={{ color: PINK }}>free quote</span>
             </div>
-
-            <div
-              className="hidden sm:block w-px self-stretch"
-              style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
-            />
-
-            <div className="flex items-center gap-5">
-              <Phone
-                size={40}
-                style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(${PINK_RGB},0.6))` }}
-              />
-              <span className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-wide">
-                033 0043 1631
-              </span>
+            <div className="hidden sm:block w-[2px] h-24 bg-white/10 group-hover:bg-[#E1147B]/50 transition-colors" />
+            <div className="flex items-center gap-6">
+              <Phone size={50} style={{ color: PINK, filter: `drop-shadow(0 0 10px rgba(${PINK_RGB},0.6))` }} className="group-hover:rotate-12 transition-transform" />
+              <span className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter">033 0043 1631</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer
-        className="relative px-6 py-10 text-center"
-        style={{
-          backgroundColor: '#0a0a0a',
-          zIndex: 1,
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div className="space-y-1.5">
-          <p className="text-gray-300 font-semibold tracking-[0.2em] text-sm uppercase">
-            WWW.KAIROSECURITY.CO.UK
-          </p>
-          <p className="text-gray-400 text-sm">Enquiries@kairosecurity.co.uk</p>
-          <p className="font-black text-sm tracking-[0.25em] uppercase mt-3" style={{ color: PINK }}>
-            KAIRO SECURITY LTD
-          </p>
-          <p className="text-gray-600 text-xs">(Registered in England and Wales)</p>
-        </div>
+      <footer className="relative px-6 py-12 text-center z-[1] border-t border-white/5" style={{ backgroundColor: '#0a0a0a' }}>
+        <p className="text-gray-400 font-black tracking-[0.3em] text-sm uppercase mb-2">WWW.KAIROSECURITY.CO.UK</p>
+        <p className="text-gray-500 text-sm mb-6">Enquiries@kairosecurity.co.uk</p>
+        <p className="font-black text-base tracking-[0.25em] uppercase" style={{ color: PINK }}>KAIRO SECURITY LTD</p>
+        <p className="text-gray-600 text-[10px] mt-1 uppercase tracking-widest">(Registered in England and Wales)</p>
       </footer>
     </div>
   );
