@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import kairoCleanLogo from '../assets/image1_(2).png';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +23,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between py-4 h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            <img src={kairoCleanLogo} alt="KairoClean" className="h-12 w-auto" />
+            <span className="text-2xl font-black text-[#FF66C4] tracking-tight">KairoClean</span>
           </a>
 
           {/* Desktop Menu */}
@@ -33,7 +32,7 @@ export default function Navigation() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-xs lg:text-sm font-black uppercase tracking-widest text-white transition-colors duration-200 hover:text-[#E1147B]"
+                className="text-xs lg:text-sm font-black uppercase tracking-widest text-white transition-colors duration-200 hover:text-[#FF66C4]"
               >
                 {item.label}
               </a>
@@ -42,7 +41,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-white hover:text-[#E1147B] transition-colors z-50"
+            className="md:hidden p-2 text-white hover:text-[#FF66C4] transition-colors z-50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             type="button"
@@ -58,7 +57,7 @@ export default function Navigation() {
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-3 text-sm font-black uppercase tracking-widest text-white transition-colors hover:text-[#E1147B]"
+                className="block py-3 text-sm font-black uppercase tracking-widest text-white transition-colors hover:text-[#FF66C4]"
                 onClick={handleNavClick}
               >
                 {item.label}
