@@ -6,22 +6,11 @@ import {
 } from 'lucide-react';
 import logoImg from '../assets/image copy copy copy.png';
 import Navigation from '../components/Navigation';
-import SpongeWipeLoader from '../components/SpongeWipeLoader';
 
 export default function KairoClean() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', service: '', message: ''
   });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 2500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,9 +19,7 @@ export default function KairoClean() {
 
   return (
     <>
-      <SpongeWipeLoader onComplete={() => setIsLoading(false)} />
-
-      <div className={`w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B] transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
         <Navigation />
 
       {/* 2. HERO */}
