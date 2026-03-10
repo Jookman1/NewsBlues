@@ -74,32 +74,20 @@ const KairoCleanLanding: React.FC = () => {
   return (
     <div className="w-full bg-[#111111] text-white overflow-hidden relative font-sans">
 
-      {/* === HEXAGON BACKGROUND (top half only) === */}
-      <div className="absolute top-0 left-0 right-0 h-[60%] pointer-events-none overflow-hidden">
-        <svg
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-        >
+      {/* HEXAGON BACKGROUND */}
+      <div className="absolute top-0 left-0 right-0 h-[55%] pointer-events-none overflow-hidden z-0">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <pattern
-              id="hex-bg"
-              x="0"
-              y="0"
-              width="88"
-              height="100"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="hex-bg" x="0" y="0" width="88" height="100" patternUnits="userSpaceOnUse">
               <polygon
                 points="44,2 86,26 86,74 44,98 2,74 2,26"
                 fill="none"
-                stroke="rgba(225,20,123,0.12)"
+                stroke="rgba(225,20,123,0.13)"
                 strokeWidth="1"
               />
             </pattern>
             <linearGradient id="hex-fade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#111111" stopOpacity="0" />
+              <stop offset="40%" stopColor="#111111" stopOpacity="0" />
               <stop offset="100%" stopColor="#111111" stopOpacity="1" />
             </linearGradient>
           </defs>
@@ -111,7 +99,7 @@ const KairoCleanLanding: React.FC = () => {
       {/* ============================================================
           HERO SECTION
       ============================================================ */}
-      <section className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 pb-0">
+      <section className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 pb-40">
         <div className="max-w-7xl mx-auto">
 
           {/* Top badges */}
@@ -123,20 +111,20 @@ const KairoCleanLanding: React.FC = () => {
               KAIROCLEAN
             </span>
             <span
-              className="px-5 py-2 text-sm font-extrabold tracking-widest uppercase border border-[#E1147B]"
-              style={{ backgroundColor: '#1a1a1a', color: PINK }}
+              className="px-5 py-2 text-sm font-extrabold tracking-widest uppercase border"
+              style={{ backgroundColor: '#1a1a1a', color: PINK, borderColor: PINK }}
             >
               CLEANING SERVICES
             </span>
           </div>
 
-          {/* Hero grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start pb-16">
+          {/* Hero grid: left = headline, right = overlapping image composition */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-end">
 
-            {/* Left: Headline + Subheading */}
-            <div className="flex flex-col justify-start">
+            {/* LEFT: Headline */}
+            <div className="flex flex-col justify-end pb-4">
               <h1
-                className="text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight mb-6"
+                className="text-6xl md:text-7xl xl:text-8xl font-black leading-[1.0] tracking-tight mb-8"
                 style={{ color: PINK }}
               >
                 Where<br />
@@ -149,41 +137,47 @@ const KairoCleanLanding: React.FC = () => {
               </p>
             </div>
 
-            {/* Right: Hero image + Diamond logo */}
-            <div className="flex items-end justify-center lg:justify-end gap-6 lg:gap-10 relative min-h-[380px]">
+            {/* RIGHT: Overlapping image composition */}
+            <div className="relative flex justify-center lg:justify-end" style={{ minHeight: '480px' }}>
 
-              {/* Hero image placeholder */}
-              <div className="relative w-56 md:w-64 h-80 md:h-96 rounded-2xl overflow-hidden border border-gray-700 flex-shrink-0 self-end">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent z-10" />
-                <div
-                  className="w-full h-full flex flex-col items-center justify-center"
-                  style={{ background: 'linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%)' }}
-                >
+              {/* Large cleaner image placeholder */}
+              <div
+                className="relative w-72 md:w-80 lg:w-96 rounded-2xl overflow-hidden border border-gray-700"
+                style={{ height: '480px', background: 'linear-gradient(160deg, #1e1e1e 0%, #2d2d2d 60%, #1a1a1a 100%)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" style={{ height: '40%', top: 'auto' }} />
+                <div className="w-full h-full flex flex-col items-center justify-center gap-4">
                   <div
-                    className="w-16 h-16 rounded-full border-2 flex items-center justify-center mb-3"
+                    className="w-20 h-20 rounded-full border-2 flex items-center justify-center"
                     style={{ borderColor: PINK }}
                   >
-                    <svg className="w-8 h-8" style={{ color: PINK }} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10" style={{ color: PINK }} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                   </div>
-                  <p className="text-gray-500 text-xs text-center px-4">Professional Cleaner Image</p>
+                  <p className="text-gray-500 text-sm text-center px-6 leading-relaxed">
+                    Professional<br />Cleaner Image
+                  </p>
                 </div>
               </div>
 
-              {/* Diamond logo placeholder */}
-              <div className="flex-shrink-0 self-center">
+              {/* Diamond KC logo — absolute, overlapping bottom-left of image */}
+              <div
+                className="absolute z-20"
+                style={{ bottom: '-30px', left: '0px' }}
+              >
                 <div
-                  className="w-40 h-40 md:w-52 md:h-52 border-4 flex items-center justify-center"
+                  className="w-36 h-36 md:w-44 md:h-44 border-4 flex items-center justify-center shadow-2xl"
                   style={{
                     borderColor: PINK,
                     transform: 'rotate(45deg)',
-                    background: 'rgba(225,20,123,0.05)',
+                    background: 'rgba(17,17,17,0.92)',
+                    boxShadow: `0 0 40px rgba(225,20,123,0.35)`,
                   }}
                 >
-                  <div style={{ transform: 'rotate(-45deg)' }} className="text-center px-2">
-                    <div className="text-3xl font-black mb-1" style={{ color: PINK }}>KC</div>
-                    <div className="text-xs font-semibold text-gray-400 tracking-widest">LOGO</div>
+                  <div style={{ transform: 'rotate(-45deg)' }} className="text-center">
+                    <div className="text-4xl font-black leading-none" style={{ color: PINK }}>KC</div>
+                    <div className="text-xs font-bold text-gray-400 tracking-widest mt-1">LOGO</div>
                   </div>
                 </div>
               </div>
@@ -193,28 +187,33 @@ const KairoCleanLanding: React.FC = () => {
       </section>
 
       {/* ============================================================
-          SWEEPING WAVE DIVIDER
+          DRAMATIC WAVE DIVIDER — deeply swoops into hero
       ============================================================ */}
-      <div className="relative z-10 w-full" style={{ marginTop: '-2px' }}>
+      <div className="relative z-20 w-full" style={{ marginTop: '-160px' }}>
         <svg
-          viewBox="0 0 1440 130"
+          viewBox="0 0 1440 200"
           preserveAspectRatio="none"
           className="w-full block"
-          style={{ height: '130px' }}
+          style={{ height: '200px' }}
         >
+          {/* Deep pink glow layer */}
           <path
-            d="M0,20 C180,100 360,0 540,60 C720,120 900,10 1080,70 C1260,125 1380,40 1440,60 L1440,130 L0,130 Z"
+            d="M0,140 C200,60 400,190 720,110 C1040,30 1260,160 1440,90 L1440,200 L0,200 Z"
+            fill={PINK}
+            opacity="0.12"
+          />
+          {/* Dark fill layer — the main transition */}
+          <path
+            d="M0,160 C240,70 480,180 720,120 C960,60 1200,170 1440,100 L1440,200 L0,200 Z"
             fill="#1a1a1a"
           />
+          {/* Thin pink highlight on wave crest */}
           <path
-            d="M0,50 C200,110 400,20 600,75 C800,130 1000,30 1200,80 C1320,110 1400,55 1440,70 L1440,130 L0,130 Z"
-            fill={PINK}
-            opacity="0.18"
-          />
-          <path
-            d="M0,80 C300,40 500,110 720,70 C940,30 1150,100 1440,65 L1440,130 L0,130 Z"
-            fill={PINK}
-            opacity="0.09"
+            d="M0,160 C240,70 480,180 720,120 C960,60 1200,170 1440,100"
+            fill="none"
+            stroke={PINK}
+            strokeWidth="2.5"
+            opacity="0.55"
           />
         </svg>
       </div>
@@ -222,35 +221,35 @@ const KairoCleanLanding: React.FC = () => {
       {/* ============================================================
           MIDDLE CONTENT SECTION
       ============================================================ */}
-      <section className="relative z-10 bg-[#1a1a1a] px-6 md:px-12 lg:px-20 pt-12 pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 bg-[#1a1a1a] px-6 md:px-12 lg:px-20 pt-4 pb-20">
+        <div className="max-w-5xl mx-auto">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-            {/* === LEFT COLUMN: QR + Socials + Stars === */}
-            <div className="flex flex-col items-center lg:items-start gap-10">
+            {/* LEFT: QR + Socials + Stars */}
+            <div className="flex flex-col items-center lg:items-start gap-8">
 
-              {/* QR Code Block */}
-              <div className="flex flex-col items-center gap-3">
+              {/* QR Code */}
+              <div className="flex flex-col items-center gap-3 w-full">
                 <span
-                  className="text-sm font-extrabold tracking-[0.25em] uppercase"
+                  className="text-base font-extrabold tracking-[0.3em] uppercase"
                   style={{ color: PINK }}
                 >
                   Scan Me
                 </span>
-                <div
-                  className="w-44 h-44 md:w-52 md:h-52 bg-white p-3 rounded-sm shadow-lg shadow-pink-900/20"
+                <div className="w-56 h-56 md:w-64 md:h-64 bg-white p-3 rounded-sm shadow-xl"
+                  style={{ boxShadow: `0 0 30px rgba(225,20,123,0.2)` }}
                 >
                   <QRCodePlaceholder />
                 </div>
               </div>
 
-              {/* Socials */}
-              <div className="flex flex-col items-center lg:items-start gap-4">
+              {/* Socials + Stars together, centered */}
+              <div className="flex flex-col items-center gap-4 w-full">
                 <span className="text-sm font-semibold tracking-wide" style={{ color: PINK }}>
                   Find us on...
                 </span>
-                <div className="flex gap-3">
+                <div className="flex gap-3 justify-center">
                   {socialIcons.map(({ Icon, label }) => (
                     <button
                       key={label}
@@ -261,27 +260,22 @@ const KairoCleanLanding: React.FC = () => {
                     </button>
                   ))}
                 </div>
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={26}
-                    className="fill-gray-400 text-gray-400"
-                  />
-                ))}
+                {/* Stars centered directly under social icons */}
+                <div className="flex gap-2 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={28} className="fill-gray-400 text-gray-400" />
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* === RIGHT COLUMN: Services List === */}
+            {/* RIGHT: Services List */}
             <div className="flex flex-col">
               <div className="flex items-center gap-3 mb-8">
                 <h2 className="text-4xl md:text-5xl font-black" style={{ color: PINK }}>
                   We Provide
                 </h2>
-                <Sparkles size={28} style={{ color: PINK }} />
+                <Sparkles size={30} style={{ color: PINK }} />
               </div>
 
               <ul className="space-y-5">
@@ -293,7 +287,7 @@ const KairoCleanLanding: React.FC = () => {
                     >
                       ✓
                     </span>
-                    <span className="text-white text-xl font-semibold">{service}</span>
+                    <span className="text-white text-2xl font-semibold">{service}</span>
                   </li>
                 ))}
               </ul>
@@ -307,7 +301,7 @@ const KairoCleanLanding: React.FC = () => {
       ============================================================ */}
       <section className="relative z-10 bg-[#111111] px-6 md:px-12 lg:px-20 py-10 border-t border-gray-800">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16">
             {['Flexible Scheduling', 'Fully Insured', 'Vetted Professionals'].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <span className="text-2xl font-black" style={{ color: PINK }}>✓</span>
@@ -319,31 +313,34 @@ const KairoCleanLanding: React.FC = () => {
       </section>
 
       {/* ============================================================
-          BIG CTA PILL
+          MASSIVE CTA PILL
       ============================================================ */}
-      <section className="relative z-10 bg-[#111111] px-6 md:px-12 lg:px-20 py-12">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative z-10 bg-[#111111] px-4 md:px-8 py-14">
+        <div className="max-w-6xl mx-auto">
           <div
-            className="rounded-full border-2 flex flex-col sm:flex-row items-center justify-between px-8 md:px-14 py-6 md:py-8 gap-6 sm:gap-0 hover:bg-white/[0.02] transition-colors duration-300 cursor-pointer"
-            style={{ borderColor: PINK }}
+            className="rounded-full border-[3px] flex flex-col sm:flex-row items-center justify-between px-10 md:px-16 py-8 md:py-10 gap-8 sm:gap-0 cursor-pointer transition-all duration-300"
+            style={{
+              borderColor: PINK,
+              boxShadow: `0 0 50px rgba(225,20,123,0.4), 0 0 100px rgba(225,20,123,0.15)`,
+            }}
           >
-            {/* Left: Call to action text */}
+            {/* Left: CTA text */}
             <div className="flex flex-col items-center sm:items-start">
-              <span className="text-lg md:text-xl font-bold leading-snug" style={{ color: PINK }}>
+              <span className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: PINK }}>
                 Call now for a
               </span>
-              <span className="text-lg md:text-xl font-bold leading-snug" style={{ color: PINK }}>
+              <span className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: PINK }}>
                 free quote
               </span>
             </div>
 
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-14 bg-gray-600" />
+            {/* Vertical divider */}
+            <div className="hidden sm:block w-px h-16 bg-gray-600" />
 
-            {/* Right: Phone number */}
-            <div className="flex items-center gap-4">
-              <Phone size={28} style={{ color: PINK }} />
-              <span className="text-3xl md:text-4xl font-black text-white tracking-wide">
+            {/* Right: Phone */}
+            <div className="flex items-center gap-5">
+              <Phone size={36} style={{ color: PINK }} />
+              <span className="text-4xl md:text-5xl font-black text-white tracking-wide">
                 033 0043 1631
               </span>
             </div>
