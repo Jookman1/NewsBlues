@@ -1,258 +1,173 @@
 import React from 'react';
-import { Phone, Sparkles, Star, ChevronRight, ShieldCheck, UserCheck, Clock, Check } from 'lucide-react';
+import { 
+  Phone, Sparkles, Star, ChevronRight, ShieldCheck, 
+  UserCheck, Clock, Check, Building2, Home, 
+  Factory, PartyPopper, Calendar, Trophy 
+} from 'lucide-react';
 
 const PINK = '#E1147B';
 const PINK_RGB = '225,20,123';
 
-// Custom Social SVGs
-const TikTokIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.03-8.36a10.27 10.27 0 0 0 5.86 1.65V5.13a4.85 4.85 0 0 1-2.06-.44z" />
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-  </svg>
-);
-
-const WhatsAppIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378L2 15l1.785 5.042a9.9 9.9 0 005.232 1.523c5.448 0 9.886-4.434 9.889-9.882.002-5.462-4.415-9.89-9.856-9.89-2.64 0-5.122 1.03-6.988 2.898a9.825 9.825 0 00-2.892 6.994c-.003 1.792.476 3.545 1.388 5.083l-1.56 5.683 5.803-1.524a9.9 9.9 0 004.976 1.326h.004c5.446 0 9.882-4.434 9.885-9.882a9.826 9.826 0 00-2.894-6.993A9.826 9.826 0 0012.051 2.12z" />
-  </svg>
-);
-
 const services = [
-  'Office Cleaning',
-  'End-of-tenancy Cleans',
-  'Commercial Cleaning',
-  'Domestic Cleaning',
-  'After-event Cleaning',
-  'Regular or One-off Cleans',
-];
-
-const socialIcons = [
-  { Icon: TikTokIcon, label: 'TikTok' },
-  { Icon: FacebookIcon, label: 'Facebook' },
-  { Icon: InstagramIcon, label: 'Instagram' },
-  { Icon: WhatsAppIcon, label: 'WhatsApp' },
+  { title: 'Office Cleaning', desc: 'Professional janitorial services for corporate environments, ensuring a productive and sterile workspace.', icon: Building2 },
+  { title: 'End-of-tenancy', desc: 'Deep cleaning solutions tailored for landlords and tenants to guarantee deposit returns and property standards.', icon: Home },
+  { title: 'Commercial Cleaning', desc: 'Heavy-duty cleaning for warehouses, retail spaces, and industrial facilities with precision.', icon: Factory },
+  { title: 'Domestic Cleaning', desc: 'Elite home cleaning services that bring the hotel-standard sparkle to your private residence.', icon: Sparkles },
+  { title: 'After-event Cleaning', desc: 'Rapid response cleaning for venues and private events. We remove the mess while you recover.', icon: PartyPopper },
+  { title: 'Regular/One-off', desc: 'Flexible cleaning schedules. Whether it is a weekly shine or a deep one-off blast, we handle it.', icon: Calendar },
 ];
 
 const KairoCleanLanding: React.FC = () => {
   return (
-    <div
-      className="w-full text-white overflow-hidden relative font-sans"
-      style={{ backgroundColor: '#0a0a0a' }}
-    >
-      {/* FIXED HEXAGON TEXTURE */}
-      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="kc-hex" x="0" y="0" width="80" height="92" patternUnits="userSpaceOnUse">
-              <polygon
-                points="40,2 78,23 78,69 40,90 2,69 2,23"
-                fill="none"
-                stroke={`rgba(${PINK_RGB},0.07)`}
-                strokeWidth="1"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#kc-hex)" />
-        </svg>
-      </div>
+    <div className="w-full text-white overflow-hidden relative font-sans bg-[#0a0a0a]">
+      
+      {/* 1. ELITE HERO SECTION */}
+      <section className="relative px-6 md:px-12 lg:px-20 pt-24 pb-32 z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+               <div className="h-px w-12 bg-[#E1147B]"></div>
+               <span className="text-[#E1147B] font-black tracking-[0.3em] uppercase text-sm">Elite Cleaning Division</span>
+            </div>
+            <h1 className="text-7xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 uppercase">
+              Where <span style={{ color: PINK }}>Precision</span><br />
+              Meets <span style={{ color: PINK }}>Perfection</span>
+            </h1>
+            <p className="text-zinc-400 text-xl max-w-lg mb-10 leading-relaxed italic font-light">
+              The gold standard in professional cleaning. Reliable, vetted, and relentlessly thorough.
+            </p>
+            <div className="flex gap-6">
+              <button className="px-10 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 active:scale-95" style={{ backgroundColor: PINK, color: '#fff' }}>
+                Book Now
+              </button>
+              <button className="px-10 py-4 font-black uppercase tracking-widest text-sm border transition-all hover:bg-white/5" style={{ borderColor: PINK, color: PINK }}>
+                Contact Us
+              </button>
+            </div>
+          </div>
+          
+          <div className="relative flex justify-center">
+             <div className="w-full max-w-md aspect-[4/5] bg-zinc-900/50 border border-zinc-800 rounded-2xl relative overflow-hidden flex items-center justify-center">
+                <span className="text-zinc-700 font-black tracking-widest uppercase opacity-20 rotate-12 text-4xl">KairoClean Visual</span>
+                {/* Overlapping Diamond Logo */}
+                <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-[#0a0a0a] border-4 border-[#E1147B] rotate-45 flex items-center justify-center shadow-[0_0_40px_rgba(225,20,123,0.3)]">
+                  <div className="-rotate-45 text-center">
+                    <span className="text-4xl font-black" style={{ color: PINK }}>KC</span>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
 
-      {/* SECTION 1 — HERO */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-16 pb-48 md:pb-56 z-[1]">
+      {/* 2. OUR SERVICES GRID (3x2 Layout like KairoSec) */}
+      <section className="relative px-6 py-24 bg-[#0d0d0d] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
-          {/* Badges */}
-          <div className="flex items-stretch w-fit mb-12 shadow-[0_0_20px_rgba(225,20,123,0.1)] transition-transform hover:scale-105">
-            <span className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-l-full" style={{ backgroundColor: PINK, color: '#0a0a0a' }}>
-              KAIROCLEAN
-            </span>
-            <span className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-r-full border-t border-b border-r" style={{ color: PINK, borderColor: PINK, backgroundColor: 'transparent' }}>
-              CLEANING SERVICES
-            </span>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-black uppercase tracking-tight mb-4">Our Services</h2>
+            <p className="text-zinc-500 max-w-2xl mx-auto tracking-wide uppercase text-sm font-bold">Comprehensive cleaning solutions tailored to your standards</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
-            {/* LEFT SIDE CONTENT */}
-            <div>
-              <h1 className="text-7xl md:text-8xl xl:text-9xl font-black leading-[0.95] tracking-tight mb-8" style={{ color: PINK, filter: `drop-shadow(0 0 15px rgba(${PINK_RGB}, 0.2))` }}>
-                Where<br />Precision<br />Meets<br />Perfection
-              </h1>
-              <p className="text-gray-400 italic text-xl md:text-2xl font-light leading-relaxed max-w-md">
-                Experience the new elite standard in professional cleaning. Reliable, insured, and spotless.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <div key={i} className="p-10 border border-zinc-800 bg-[#0a0a0a] hover:border-[#E1147B]/50 transition-all group cursor-default">
+                <s.icon className="w-10 h-10 mb-6 group-hover:scale-110 transition-transform" style={{ color: PINK }} />
+                <h3 className="text-xl font-black uppercase mb-4 tracking-wide group-hover:text-[#E1147B] transition-colors">{s.title}</h3>
+                <p className="text-zinc-500 leading-relaxed text-sm font-medium">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. ABOUT KAIROCLEAN (Split Layout like KairoSec) */}
+      <section className="relative px-6 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black uppercase tracking-tight">About KairoClean</h2>
+            <p className="text-[#E1147B] font-bold tracking-[0.2em] uppercase text-xs mt-2">Precision at Kairo Security Ltd</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            {/* Left Column: Story */}
+            <div className="lg:col-span-5 p-10 border border-zinc-800 bg-[#0d0d0d]">
+              <p className="text-zinc-300 leading-[1.8] text-lg font-light mb-6 italic">
+                "In my role as the Managing Director, I recognized a gap in the market for cleaning services that shared the same tactical precision as our security operations."
               </p>
+              <p className="text-zinc-400 leading-[1.8]">
+                Whether actively maintaining frontline hygiene or meticulously orchestrating deep-clean logistics behind the scenes, my commitment is unwavering. We deliver a tailored, efficient cleaning approach that aligns seamlessly with your needs.
+              </p>
+              <div className="mt-10 pt-10 border-t border-zinc-800">
+                 <h4 className="text-[#E1147B] font-black uppercase tracking-widest text-sm mb-2">Our Commitment</h4>
+                 <p className="text-zinc-500 text-sm">Superior cleaning solutions precisely tailored to your requirements, maintaining the highest standards of excellence.</p>
+              </div>
+            </div>
+
+            {/* Right Column: 2x2 Value Grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { label: '10+ Years', sub: 'Industry Experience', icon: Trophy },
+                { label: 'Expert Team', sub: 'Professional Staff', icon: UserCheck },
+                { label: 'Excellence', sub: 'Highest Standards', icon: ShieldCheck },
+                { label: 'Tailored', sub: 'Custom Solutions', icon: Sparkles }
+              ].map((val, idx) => (
+                <div key={idx} className="p-10 border border-zinc-800 bg-[#0d0d0d] flex flex-col items-center text-center">
+                  <val.icon className="w-8 h-8 mb-4" style={{ color: PINK }} />
+                  <h5 className="text-xl font-black uppercase tracking-widest mb-1">{val.label}</h5>
+                  <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">{val.sub}</p>
+                </div>
+              ))}
               
-              {/* UPGRADED HERO CTAs */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-10">
-                <button
-                  className="flex items-center gap-3 px-8 py-4 rounded-full font-black text-lg uppercase transition-all duration-300 group shadow-[0_0_30px_rgba(225,20,123,0.4)] hover:shadow-[0_0_50px_rgba(225,20,123,0.6)]"
-                  style={{ backgroundColor: PINK, color: '#fff' }}
-                >
-                  Book a Clean
-                  <ChevronRight className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
-                </button>
-                <div className="flex items-center gap-3 text-white/60 hover:text-white cursor-pointer transition-all group">
-                   <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#E1147B] group-hover:bg-[#E1147B]/10 transition-all">
-                      <Phone size={20} className="group-hover:text-[#E1147B] group-hover:scale-110 transition-all" />
-                   </div>
-                   <span className="font-bold tracking-widest text-sm uppercase group-hover:text-[#E1147B]">Call Experts</span>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT SIDE IMAGES */}
-            <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0" style={{ minHeight: '520px' }}>
-              <div
-                className="relative rounded-3xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.6)] group cursor-pointer"
-                style={{
-                  width: '340px',
-                  height: '520px',
-                  background: 'linear-gradient(160deg, #1a1a1a 0%, #242424 50%, #161616 100%)',
-                  border: `1px solid rgba(${PINK_RGB},0.15)`,
-                }}
-              >
-                <div className="absolute inset-0 bg-[#E1147B] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-                <div className="w-full h-full flex flex-col items-center justify-center gap-5">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110" style={{ border: `2px solid ${PINK}`, boxShadow: `0 0 20px rgba(${PINK_RGB},0.3)` }}>
-                    <svg className="w-12 h-12" style={{ color: PINK }} fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600 text-sm text-center leading-relaxed tracking-wide uppercase font-bold">Professional<br />Cleaner Image</p>
-                </div>
-              </div>
-
-              {/* Overlapping Diamond KC Logo */}
-              <div className="absolute z-10 hover:scale-110 transition-transform duration-500 cursor-help" style={{ bottom: '-24px', left: '-16px' }}>
-                <div style={{ width: '160px', height: '160px', transform: 'rotate(45deg)', border: `4px solid ${PINK}`, backgroundColor: '#0a0a0a', boxShadow: `0 0 40px rgba(${PINK_RGB},0.4)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ transform: 'rotate(-45deg)', textAlign: 'center', width: '100%' }}>
-                    <div className="font-black leading-none" style={{ fontSize: '2.5rem', color: PINK, filter: `drop-shadow(0 0 10px rgba(${PINK_RGB}, 0.5))` }}>KC</div>
-                    <div className="font-bold tracking-widest mt-1 uppercase" style={{ fontSize: '0.6rem', color: `rgba(${PINK_RGB},0.5)` }}>Logo</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WAVE TRANSITION */}
-      <div className="relative w-full z-[2]" style={{ marginTop: '-200px' }}>
-        <svg viewBox="0 0 1440 260" preserveAspectRatio="none" className="w-full block" style={{ height: '260px' }}>
-          <path d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148 L1440,260 L0,260 Z" fill="#111111" />
-          <path d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148" fill="none" stroke={PINK} strokeWidth="2" opacity="0.4" />
-        </svg>
-      </div>
-
-      {/* SECTION 3 — SERVICES & SOCIALS */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-6 pb-20 z-[1]" style={{ backgroundColor: '#111111' }}>
-        <div className="max-w-6xl mx-auto">
-          {/* ELITE TRUST BAR */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-24 py-12 px-8 rounded-[40px] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md shadow-2xl relative">
-            <div className="absolute inset-0 rounded-[40px] border border-[#E1147B]/10 pointer-events-none"></div>
-            <div className="flex flex-col items-center gap-4 text-center group">
-              <ShieldCheck size={44} className="group-hover:scale-110 group-hover:text-white transition-all duration-300" style={{ color: PINK }} />
-              <div className="flex flex-col gap-1">
-                <span className="font-black tracking-widest text-xs uppercase">Fully Insured</span>
-                <span className="text-[10px] text-white/40 uppercase font-bold tracking-tighter">Peace of mind</span>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4 text-center border-y sm:border-y-0 sm:border-x border-white/10 py-8 sm:py-0 group">
-              <UserCheck size={44} className="group-hover:scale-110 group-hover:text-white transition-all duration-300" style={{ color: PINK }} />
-              <div className="flex flex-col gap-1">
-                <span className="font-black tracking-widest text-xs uppercase">Vetted Pros</span>
-                <span className="text-[10px] text-white/40 uppercase font-bold tracking-tighter">Elite Cleaners</span>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4 text-center group">
-              <Clock size={44} className="group-hover:scale-110 group-hover:text-white transition-all duration-300" style={{ color: PINK }} />
-              <div className="flex flex-col gap-1">
-                <span className="font-black tracking-widest text-xs uppercase">Flexible Booking</span>
-                <span className="text-[10px] text-white/40 uppercase font-bold tracking-tighter">On your schedule</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-            {/* Social Proof */}
-            <div className="flex flex-col items-center lg:items-start">
-              <h2 className="text-2xl font-black tracking-[0.2em] uppercase mb-12" style={{ color: PINK }}>Find us on...</h2>
-              <div className="flex gap-5 mb-12">
-                {socialIcons.map(({ Icon, label }) => (
-                  <button key={label} className="w-16 h-16 flex items-center justify-center text-gray-500 bg-[#0a0a0a] border border-white/10 rounded-2xl transition-all duration-300 hover:text-[#E1147B] hover:border-[#E1147B] hover:shadow-[0_0_25px_rgba(225,20,123,0.3)] hover:-translate-y-2">
-                    <Icon />
-                  </button>
-                ))}
-              </div>
-              <div className="flex gap-2 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={36} fill={PINK} style={{ color: PINK, filter: `drop-shadow(0 0 10px rgba(${PINK_RGB},0.7))` }} className="animate-pulse" />
-                ))}
-              </div>
-              <p className="text-gray-500 font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">5-star rated on Google Reviews</p>
-            </div>
-
-            {/* SERVICES WITH DYNAMIC HOVER */}
-            <div>
-              <div className="flex items-center gap-5 mb-12 group">
-                <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter group-hover:text-white transition-colors duration-500" style={{ color: PINK }}>We Provide</h2>
-                <Sparkles size={40} style={{ color: PINK, filter: `drop-shadow(0 0 12px rgba(${PINK_RGB},0.7))` }} className="group-hover:rotate-12 transition-transform duration-500" />
-              </div>
-              <ul className="space-y-6">
-                {services.map((service, i) => (
-                  <li key={i} className="flex items-center gap-6 group cursor-default transition-all duration-300 hover:translate-x-4">
-                    <div className="w-12 h-12 rounded-2xl border-2 border-white/10 flex items-center justify-center group-hover:border-[#E1147B] group-hover:bg-[#E1147B]/10 transition-all duration-300 group-hover:rotate-6">
-                      <Check size={24} className="group-hover:text-[#E1147B] group-hover:scale-125 transition-all duration-300" strokeWidth={5} />
+              {/* Wide Card Below Grid */}
+              <div className="md:col-span-2 p-10 border border-[#E1147B]/20 bg-[#E1147B]/5">
+                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="text-center md:text-left">
+                       <p className="text-white font-black uppercase tracking-[0.2em]">Ready for a spotless property?</p>
+                       <p className="text-zinc-400 text-sm">Join the hundreds of satisfied commercial and domestic clients.</p>
                     </div>
-                    <span className="text-2xl md:text-4xl font-black text-white/90 group-hover:text-white tracking-tight transition-colors">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL GLOWING CTA PILL */}
-      <section className="relative px-4 md:px-8 pb-36 pt-16 z-[1]" style={{ backgroundColor: '#0a0a0a' }}>
-        <div className="max-w-6xl mx-auto group">
-          <div
-            className="rounded-[60px] flex flex-col sm:flex-row items-center justify-between px-12 md:px-20 py-14 md:py-20 gap-8 sm:gap-0 cursor-pointer transition-all duration-500 shadow-[0_0_50px_rgba(225,20,123,0.4)] hover:shadow-[0_0_100px_rgba(225,20,123,0.7)] border-[4px] hover:scale-[1.02] active:scale-[0.98]"
-            style={{ borderColor: PINK, backgroundColor: '#0a0a0a' }}
-          >
-            <div className="text-center sm:text-left">
-              <span className="block text-4xl md:text-6xl font-black tracking-tighter uppercase mb-1" style={{ color: PINK }}>Call now for a</span>
-              <span className="block text-4xl md:text-6xl font-black tracking-tighter uppercase" style={{ color: PINK }}>free quote</span>
-            </div>
-            <div className="hidden sm:block w-[3px] h-32 bg-white/10 group-hover:bg-[#E1147B]/40 transition-colors" />
-            <div className="flex items-center gap-8">
-              <div className="p-6 rounded-full border-2 border-[#E1147B]/20 bg-[#E1147B]/5 group-hover:bg-[#E1147B]/20 group-hover:border-[#E1147B] transition-all duration-500">
-                <Phone size={54} style={{ color: PINK, filter: `drop-shadow(0 0 12px rgba(${PINK_RGB},0.8))` }} className="group-hover:rotate-12 transition-transform" />
+                    <button className="px-8 py-3 font-black uppercase text-xs tracking-widest border border-[#E1147B] text-[#E1147B] hover:bg-[#E1147B] hover:text-white transition-all">
+                       Get Started
+                    </button>
+                 </div>
               </div>
-              <span className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">033 0043 1631</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PREMIUM FOOTER */}
-      <footer className="relative px-6 py-16 text-center z-[1] border-t border-white/10 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-white/40 font-black tracking-[0.4em] text-xs md:text-sm uppercase mb-3 hover:text-white transition-colors cursor-pointer">WWW.KAIROSECURITY.CO.UK</p>
-          <p className="text-white/30 text-xs md:text-sm mb-10 font-bold uppercase tracking-widest">Enquiries@kairosecurity.co.uk</p>
-          <div className="w-20 h-0.5 bg-[#E1147B]/30 mx-auto mb-10"></div>
-          <p className="font-black text-lg md:text-xl tracking-[0.3em] uppercase mb-2" style={{ color: PINK, filter: `drop-shadow(0 0 5px rgba(${PINK_RGB}, 0.3))` }}>KAIRO SECURITY LTD</p>
-          <p className="text-white/20 text-[10px] uppercase font-black tracking-widest">(Registered in England and Wales)</p>
+      {/* 4. FINAL CTA PILL (THE "G" BUTTON) */}
+      <section className="px-6 pb-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="p-8 md:p-12 rounded-full border-[3px] flex flex-col md:flex-row items-center justify-between gap-8 transition-all hover:shadow-[0_0_60px_rgba(225,20,123,0.4)]" style={{ borderColor: PINK }}>
+            <div className="text-center md:text-left">
+               <span className="block text-4xl font-black uppercase tracking-tighter" style={{ color: PINK }}>Call now for a</span>
+               <span className="block text-4xl font-black uppercase tracking-tighter" style={{ color: PINK }}>free quote</span>
+            </div>
+            <div className="flex items-center gap-6">
+               <Phone size={48} style={{ color: PINK }} />
+               <span className="text-5xl md:text-7xl font-black tracking-tighter">033 0043 1631</span>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-8 mt-12 opacity-50">
+             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Fully Insured</div>
+             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Vetted Pros</div>
+             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Flexible Bookings</div>
+          </div>
         </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-12 px-6 border-t border-white/5 text-center">
+        <p className="text-zinc-600 text-[10px] font-black tracking-[0.4em] uppercase mb-4">WWW.KAIROSECURITY.CO.UK</p>
+        <div className="flex justify-center gap-6 mb-8">
+           <Star fill={PINK} stroke={PINK} size={16} />
+           <Star fill={PINK} stroke={PINK} size={16} />
+           <Star fill={PINK} stroke={PINK} size={16} />
+           <Star fill={PINK} stroke={PINK} size={16} />
+           <Star fill={PINK} stroke={PINK} size={16} />
+        </div>
+        <p className="text-[#E1147B] text-xs font-black tracking-[0.2em] uppercase">Kairo Security Ltd</p>
       </footer>
     </div>
   );
