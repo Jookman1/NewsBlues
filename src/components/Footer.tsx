@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { smoothScrollToId } from '../utils/smoothScroll';
+import footerLogo from '../assets/kairosec-footer-logo.png';
 
 const REQUIRED_CLICKS = 6;
 const RESET_MS = 3000;
@@ -40,7 +41,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-3 mb-6">
               <div className="relative flex-shrink-0">
                 <img
-                  src="/src/assets/KairoSecuritybluelogonew copy copy.png"
+                  src={footerLogo}
                   alt="Kairosec Logo"
                   className="h-12 w-12 cursor-pointer select-none"
                   onClick={handleLogoClick}
