@@ -7,6 +7,7 @@ import {
 import kairoCleanLogo from '../assets/image1_(2).png';
 import Navigation from '../components/Navigation';
 import heroLogo from '../assets/image copy copy.png';
+import kairocleanHeroBg from '../assets/kairoclean-hero-new.png';
 import { getPatternBackground } from '../utils/theme';
 
 const services = [
@@ -125,8 +126,16 @@ export default function KairoClean() {
         <Navigation />
 
       {/* 2. HERO */}
-      <section id="hero" className="px-6 py-12 pt-32 text-center relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <section id="hero" className="px-6 py-12 pt-32 text-center relative overflow-hidden">
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{
+            backgroundImage: `url(${kairocleanHeroBg})`,
+            filter: 'blur(3px) brightness(0.45) saturate(0.9)',
+          }}
+        />
+        <div className="max-w-5xl mx-auto relative z-10">
           {/* --- ADDED IMAGE HERE --- */}
           <img
             src={kairoCleanLogo}

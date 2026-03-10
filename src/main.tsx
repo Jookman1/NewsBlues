@@ -3,6 +3,13 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Home as KairoSecHome } from './pages/Home.tsx';
 import App from './App.tsx';
+import faviconUrl from './assets/KairoSecuritybluelogonew.png';
+
+// Set favicon
+const faviconEl = document.querySelector("link[rel~='icon']") as HTMLLinkElement ?? (() => {
+  const el = document.createElement('link'); el.rel = 'icon'; document.head.appendChild(el); return el;
+})();
+faviconEl.href = faviconUrl;
 import KairoClean from './pages/KairoClean.tsx';
 import AdminLogin from './pages/AdminLogin.tsx';
 import Dashboard from './pages/Dashboard.tsx';

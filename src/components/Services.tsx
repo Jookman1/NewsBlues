@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, Users, Camera, Home, Key, Sparkles } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import kairoSecLogo from '../assets/KairoSecuritybluelogonew.png';
+import servicesBg from '../assets/services-bg.png';
 
 const services = [
   {
@@ -38,7 +39,15 @@ const services = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 pt-32 relative">
+    <section id="services" className="py-24 pt-32 relative overflow-hidden">
+      {/* Security team background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center pointer-events-none"
+        style={{
+          backgroundImage: `url(${servicesBg})`,
+          filter: 'blur(2px) brightness(0.18) saturate(0.7)',
+        }}
+      />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
           <div className="text-center mb-20">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, Phone, Star, Sparkles, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
 import heroImage from '../assets/image copy copy copy copy copy copy copy copy copy copy.png';
+import heroBg from '../assets/kairoclean-hero-bg.png';
 
 const PINK = '#FF66C4';
 
@@ -46,7 +47,16 @@ const socialIcons = [
 export default function KairoCleanLanding() {
   return (
     <div className="relative bg-[#0a0a0a] text-white overflow-hidden min-h-screen font-sans selection:bg-[#FF66C4] selection:text-white">
-      
+
+      {/* Hero background photo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center pointer-events-none z-0"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          filter: 'blur(2px) brightness(0.22) saturate(0.8)',
+        }}
+      />
+
       {/* ELITE BACKGROUND TEXTURE */}
       <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
