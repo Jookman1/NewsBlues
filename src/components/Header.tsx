@@ -39,8 +39,8 @@ export const Header: React.FC = () => {
               className="flex items-center space-x-4 cursor-pointer group"
               onClick={handleLogoClick}
             >
-              <span className="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300 bg-gradient-to-r from-white to-blue-100 bg-clip-text">
-                KAIROCLEAN
+              <span className="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300">
+                KairoClean
               </span>
             </div>
 
