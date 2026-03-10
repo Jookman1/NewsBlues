@@ -1,176 +1,221 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
-  Phone, Sparkles, Star, ChevronRight, ShieldCheck, 
-  UserCheck, Clock, Check, Building2, Home, 
-  Factory, PartyPopper, Calendar, Trophy 
+  Sparkles, ShieldCheck, Clock, UserCheck, 
+  ChevronRight, Phone, Mail, MapPin, 
+  Home, Building2, PartyPopper, Trash2, 
+  CheckCircle2, Brush
 } from 'lucide-react';
 
 const PINK = '#E1147B';
 const PINK_RGB = '225,20,123';
 
-const services = [
-  { title: 'Office Cleaning', desc: 'Professional janitorial services for corporate environments, ensuring a productive and sterile workspace.', icon: Building2 },
-  { title: 'End-of-tenancy', desc: 'Deep cleaning solutions tailored for landlords and tenants to guarantee deposit returns and property standards.', icon: Home },
-  { title: 'Commercial Cleaning', desc: 'Heavy-duty cleaning for warehouses, retail spaces, and industrial facilities with precision.', icon: Factory },
-  { title: 'Domestic Cleaning', desc: 'Elite home cleaning services that bring the hotel-standard sparkle to your private residence.', icon: Sparkles },
-  { title: 'After-event Cleaning', desc: 'Rapid response cleaning for venues and private events. We remove the mess while you recover.', icon: PartyPopper },
-  { title: 'Regular/One-off', desc: 'Flexible cleaning schedules. Whether it is a weekly shine or a deep one-off blast, we handle it.', icon: Calendar },
-];
+export default function KairoClean() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    serviceType: '',
+    propertyType: '',
+    message: '',
+    datePreferred: ''
+  });
 
-const KairoCleanLanding: React.FC = () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const webhookUrl = 'YOUR_MAKE_WEBHOOK_URL';
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        alert('Booking request sent successfully!');
+        setFormData({ name: '', email: '', phone: '', serviceType: '', propertyType: '', message: '', datePreferred: '' });
+      }
+    } catch (error) {
+      alert('Error submitting request.');
+    }
+  };
+
   return (
-    <div className="w-full text-white overflow-hidden relative font-sans bg-[#0a0a0a]">
+    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-[#E1147B]">
       
-      {/* 1. ELITE HERO SECTION */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-24 pb-32 z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-               <div className="h-px w-12 bg-[#E1147B]"></div>
-               <span className="text-[#E1147B] font-black tracking-[0.3em] uppercase text-sm">Elite Cleaning Division</span>
+      {/* 1. TOP LOGO & HERO SECTION */}
+      <section className="relative pt-12 pb-32 px-6 overflow-hidden">
+        {/* Diamond Logo at Top */}
+        <div className="flex justify-center mb-16 relative z-10">
+          <div className="w-32 h-32 bg-[#0a0a0a] border-4 border-[#E1147B] rotate-45 flex items-center justify-center shadow-[0_0_30px_rgba(225,20,123,0.4)] transition-transform hover:scale-110 duration-500 cursor-pointer">
+            <div className="-rotate-45 text-center">
+              <span className="text-3xl font-black tracking-tighter" style={{ color: PINK }}>KC</span>
+              <p className="text-[8px] font-bold tracking-[0.3em] uppercase opacity-50">KairoClean</p>
             </div>
-            <h1 className="text-7xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 uppercase">
+          </div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex mb-8 rounded-full overflow-hidden border border-[#E1147B]">
+              <span className="bg-[#E1147B] text-black font-black px-6 py-2 text-xs tracking-widest uppercase">Elite Division</span>
+              <span className="px-6 py-2 text-xs font-bold tracking-widest uppercase text-[#E1147B]">Premium Cleaning</span>
+            </div>
+            <h1 className="text-6xl md:text-[7rem] font-black leading-[0.9] tracking-tighter uppercase mb-8">
               Where <span style={{ color: PINK }}>Precision</span><br />
               Meets <span style={{ color: PINK }}>Perfection</span>
             </h1>
-            <p className="text-zinc-400 text-xl max-w-lg mb-10 leading-relaxed italic font-light">
-              The gold standard in professional cleaning. Reliable, vetted, and relentlessly thorough.
+            <p className="text-xl md:text-2xl text-zinc-400 italic font-light mb-12 max-w-2xl mx-auto">
+              Reliable cleaners with high standards and flexible bookings.
             </p>
-            <div className="flex gap-6">
-              <button className="px-10 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 active:scale-95" style={{ backgroundColor: PINK, color: '#fff' }}>
-                Book Now
-              </button>
-              <button className="px-10 py-4 font-black uppercase tracking-widest text-sm border transition-all hover:bg-white/5" style={{ borderColor: PINK, color: PINK }}>
-                Contact Us
-              </button>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <a href="#book" className="px-12 py-5 font-black uppercase tracking-widest text-sm transition-all hover:bg-white hover:text-[#E1147B] shadow-[0_0_20px_rgba(225,20,123,0.3)]" style={{ backgroundColor: PINK }}>Book Now</a>
+               <a href="#services" className="px-12 py-5 font-black uppercase tracking-widest text-sm border transition-all hover:bg-white/5" style={{ borderColor: PINK, color: PINK }}>Our Services</a>
             </div>
-          </div>
-          
-          <div className="relative flex justify-center">
-             <div className="w-full max-w-md aspect-[4/5] bg-zinc-900/50 border border-zinc-800 rounded-2xl relative overflow-hidden flex items-center justify-center">
-                <span className="text-zinc-700 font-black tracking-widest uppercase opacity-20 rotate-12 text-4xl">KairoClean Visual</span>
-                {/* Overlapping Diamond Logo */}
-                <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-[#0a0a0a] border-4 border-[#E1147B] rotate-45 flex items-center justify-center shadow-[0_0_40px_rgba(225,20,123,0.3)]">
-                  <div className="-rotate-45 text-center">
-                    <span className="text-4xl font-black" style={{ color: PINK }}>KC</span>
-                  </div>
-                </div>
-             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. OUR SERVICES GRID (3x2 Layout like KairoSec) */}
-      <section className="relative px-6 py-24 bg-[#0d0d0d] border-y border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-black uppercase tracking-tight mb-4">Our Services</h2>
-            <p className="text-zinc-500 max-w-2xl mx-auto tracking-wide uppercase text-sm font-bold">Comprehensive cleaning solutions tailored to your standards</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <div key={i} className="p-10 border border-zinc-800 bg-[#0a0a0a] hover:border-[#E1147B]/50 transition-all group cursor-default">
-                <s.icon className="w-10 h-10 mb-6 group-hover:scale-110 transition-transform" style={{ color: PINK }} />
-                <h3 className="text-xl font-black uppercase mb-4 tracking-wide group-hover:text-[#E1147B] transition-colors">{s.title}</h3>
-                <p className="text-zinc-500 leading-relaxed text-sm font-medium">{s.desc}</p>
+      {/* 2. SERVICES GRID (Based on KairoSec Services Layout) */}
+      <section id="services" className="py-24 bg-[#0d0d0d] border-y border-white/5 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <h2 className="text-4xl md:text-5xl font-black uppercase text-center mb-16 tracking-tighter italic">Our <span style={{ color: PINK }}>Services</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cleaningServices.map((service, index) => (
+              <div key={index} className="bg-zinc-900/50 p-10 border border-zinc-800 hover:border-[#E1147B]/50 transition-all group group cursor-pointer">
+                <div className="mb-6 p-4 bg-[#0a0a0a] w-fit border border-zinc-800 group-hover:border-[#E1147B]/50 transition-colors">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-black uppercase mb-4 tracking-wide group-hover:text-[#E1147B] transition-colors">{service.title}</h3>
+                <p className="text-zinc-500 leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. ABOUT KAIROCLEAN (Split Layout like KairoSec) */}
-      <section className="relative px-6 py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black uppercase tracking-tight">About KairoClean</h2>
-            <p className="text-[#E1147B] font-bold tracking-[0.2em] uppercase text-xs mt-2">Precision at Kairo Security Ltd</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Left Column: Story */}
-            <div className="lg:col-span-5 p-10 border border-zinc-800 bg-[#0d0d0d]">
-              <p className="text-zinc-300 leading-[1.8] text-lg font-light mb-6 italic">
-                "In my role as the Managing Director, I recognized a gap in the market for cleaning services that shared the same tactical precision as our security operations."
-              </p>
-              <p className="text-zinc-400 leading-[1.8]">
-                Whether actively maintaining frontline hygiene or meticulously orchestrating deep-clean logistics behind the scenes, my commitment is unwavering. We deliver a tailored, efficient cleaning approach that aligns seamlessly with your needs.
-              </p>
-              <div className="mt-10 pt-10 border-t border-zinc-800">
-                 <h4 className="text-[#E1147B] font-black uppercase tracking-widest text-sm mb-2">Our Commitment</h4>
-                 <p className="text-zinc-500 text-sm">Superior cleaning solutions precisely tailored to your requirements, maintaining the highest standards of excellence.</p>
-              </div>
+      {/* 3. ABOUT & STANDARDS (Based on KairoSec About Split Layout) */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* Left side: The Mission */}
+            <div className="lg:col-span-5 bg-zinc-900/30 p-10 border border-zinc-800 relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-4 opacity-10">
+                 <Sparkles size={120} style={{ color: PINK }} />
+               </div>
+               <h2 className="text-4xl font-black uppercase mb-8 leading-none">The <span style={{ color: PINK }}>KairoClean</span> Standard</h2>
+               <p className="text-zinc-300 leading-relaxed mb-6 italic text-lg font-light">
+                 "We've brought the same tactical precision from our security background into the cleaning industry. Every corner, every surface, every time."
+               </p>
+               <p className="text-zinc-400 leading-relaxed mb-10">
+                 KairoClean was built to cater to clients who demand more than just a surface-level wipe down. We provide an elite service tailored precisely to residential and commercial requirements.
+               </p>
+               <div className="space-y-4">
+                  {['Flexible Scheduling', 'Fully Insured', 'Vetted Professionals'].map(item => (
+                    <div key={item} className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs">
+                      <CheckCircle2 size={18} style={{ color: PINK }} /> {item}
+                    </div>
+                  ))}
+               </div>
             </div>
 
-            {/* Right Column: 2x2 Value Grid */}
+            {/* Right side: 2x2 Grid (Process/Values) */}
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { label: '10+ Years', sub: 'Industry Experience', icon: Trophy },
-                { label: 'Expert Team', sub: 'Professional Staff', icon: UserCheck },
-                { label: 'Excellence', sub: 'Highest Standards', icon: ShieldCheck },
-                { label: 'Tailored', sub: 'Custom Solutions', icon: Sparkles }
-              ].map((val, idx) => (
-                <div key={idx} className="p-10 border border-zinc-800 bg-[#0d0d0d] flex flex-col items-center text-center">
-                  <val.icon className="w-8 h-8 mb-4" style={{ color: PINK }} />
-                  <h5 className="text-xl font-black uppercase tracking-widest mb-1">{val.label}</h5>
-                  <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">{val.sub}</p>
-                </div>
-              ))}
-              
-              {/* Wide Card Below Grid */}
-              <div className="md:col-span-2 p-10 border border-[#E1147B]/20 bg-[#E1147B]/5">
-                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="text-center md:text-left">
-                       <p className="text-white font-black uppercase tracking-[0.2em]">Ready for a spotless property?</p>
-                       <p className="text-zinc-400 text-sm">Join the hundreds of satisfied commercial and domestic clients.</p>
-                    </div>
-                    <button className="px-8 py-3 font-black uppercase text-xs tracking-widest border border-[#E1147B] text-[#E1147B] hover:bg-[#E1147B] hover:text-white transition-all">
-                       Get Started
-                    </button>
+               {standards.map((s, i) => (
+                 <div key={i} className="bg-[#0d0d0d] p-8 border border-zinc-800 flex flex-col items-center text-center group hover:bg-zinc-900/50 transition-colors">
+                   <div className="mb-4 text-[#E1147B] group-hover:scale-110 transition-transform">
+                     {s.icon}
+                   </div>
+                   <h4 className="text-xl font-black uppercase tracking-widest mb-2">{s.title}</h4>
+                   <p className="text-zinc-500 text-xs font-bold leading-relaxed">{s.desc}</p>
                  </div>
-              </div>
+               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. FINAL CTA PILL (THE "G" BUTTON) */}
-      <section className="px-6 pb-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="p-8 md:p-12 rounded-full border-[3px] flex flex-col md:flex-row items-center justify-between gap-8 transition-all hover:shadow-[0_0_60px_rgba(225,20,123,0.4)]" style={{ borderColor: PINK }}>
-            <div className="text-center md:text-left">
-               <span className="block text-4xl font-black uppercase tracking-tighter" style={{ color: PINK }}>Call now for a</span>
-               <span className="block text-4xl font-black uppercase tracking-tighter" style={{ color: PINK }}>free quote</span>
+      {/* 4. BOOKING FORM (Based on KairoSec Join Form Layout) */}
+      <section id="book" className="py-24 bg-[#0d0d0d] border-t border-white/5 px-6 italic">
+        <div className="container mx-auto max-w-4xl">
+           <div className="bg-[#0a0a0a] p-10 md:p-16 border border-[#E1147B]/30 shadow-[0_0_50px_rgba(225,20,123,0.1)]">
+              <h2 className="text-4xl md:text-5xl font-black uppercase mb-4 text-center">Book Your <span style={{ color: PINK }}>Clean</span></h2>
+              <p className="text-zinc-500 text-center mb-12 uppercase tracking-widest text-sm font-bold underline decoration-[#E1147B]">Get a free quote within 24 hours</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block text-[10px] font-black uppercase tracking-widest mb-2 text-[#E1147B]">Full Name</label>
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-zinc-900/50 border border-zinc-800 p-4 focus:border-[#E1147B] outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-black uppercase tracking-widest mb-2 text-[#E1147B]">Phone Number</label>
+                    <input type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-zinc-900/50 border border-zinc-800 p-4 focus:border-[#E1147B] outline-none transition-colors" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black uppercase tracking-widest mb-2 text-[#E1147B]">Service Required</label>
+                  <select required value={formData.serviceType} onChange={(e) => setFormData({...formData, serviceType: e.target.value})} className="w-full bg-zinc-900/50 border border-zinc-800 p-4 focus:border-[#E1147B] outline-none transition-colors appearance-none">
+                    <option value="">Select Service</option>
+                    {services.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black uppercase tracking-widest mb-2 text-[#E1147B]">Tell us about the property</label>
+                  <textarea rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full bg-zinc-900/50 border border-zinc-800 p-4 focus:border-[#E1147B] outline-none transition-colors resize-none" placeholder="Number of rooms, specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" className="w-full py-5 font-black uppercase tracking-[0.3em] transition-all hover:tracking-[0.5em] shadow-[0_0_30px_rgba(225,20,123,0.2)]" style={{ backgroundColor: PINK, color: '#fff' }}>
+                  Send Request
+                </button>
+              </form>
+           </div>
+        </div>
+      </section>
+
+      {/* 5. CONTACT & FOOTER */}
+      <footer className="py-20 px-6 border-t border-white/5">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-16">
+            <div className="flex flex-col items-center">
+              <Phone size={24} className="mb-4" style={{ color: PINK }} />
+              <p className="text-xl font-black">033 0043 1631</p>
             </div>
-            <div className="flex items-center gap-6">
-               <Phone size={48} style={{ color: PINK }} />
-               <span className="text-5xl md:text-7xl font-black tracking-tighter">033 0043 1631</span>
+            <div className="flex flex-col items-center border-y md:border-y-0 md:border-x border-white/10 py-8 md:py-0">
+              <Mail size={24} className="mb-4" style={{ color: PINK }} />
+              <p className="text-xl font-black">Enquiries@kairosecurity.co.uk</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <MapPin size={24} className="mb-4" style={{ color: PINK }} />
+              <p className="text-xl font-black uppercase tracking-widest">United Kingdom</p>
             </div>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-8 mt-12 opacity-50">
-             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Fully Insured</div>
-             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Vetted Pros</div>
-             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest"><Check size={16} /> Flexible Bookings</div>
+          <div className="text-center pt-12 border-t border-white/5 opacity-50">
+            <div className="flex justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, i) => <Star key={i} size={14} fill={PINK} stroke={PINK} />)}
+            </div>
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] mb-4">WWW.KAIROSECURITY.CO.UK</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: PINK }}>Kairo Security Ltd (Clean Division)</p>
           </div>
         </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-12 px-6 border-t border-white/5 text-center">
-        <p className="text-zinc-600 text-[10px] font-black tracking-[0.4em] uppercase mb-4">WWW.KAIROSECURITY.CO.UK</p>
-        <div className="flex justify-center gap-6 mb-8">
-           <Star fill={PINK} stroke={PINK} size={16} />
-           <Star fill={PINK} stroke={PINK} size={16} />
-           <Star fill={PINK} stroke={PINK} size={16} />
-           <Star fill={PINK} stroke={PINK} size={16} />
-           <Star fill={PINK} stroke={PINK} size={16} />
-        </div>
-        <p className="text-[#E1147B] text-xs font-black tracking-[0.2em] uppercase">Kairo Security Ltd</p>
       </footer>
     </div>
   );
-};
+}
 
-export default KairoCleanLanding;
+const cleaningServices = [
+  { icon: <Building2 />, title: "Office Cleaning", description: "Elite janitorial services for corporate spaces, ensuring your office reflects your professionalism." },
+  { icon: <Home />, title: "End-of-Tenancy", description: "Military-grade deep cleaning to guarantee deposit returns and landlord satisfaction." },
+  { icon: <ShieldCheck />, title: "Commercial", description: "Heavy-duty cleaning for warehouses, retail, and industrial sites with tactical efficiency." },
+  { icon: <Brush />, title: "Domestic", description: "Bespoke cleaning for high-end residential properties. We treat your home like a showroom." },
+  { icon: <PartyPopper />, title: "After-Event", description: "Rapid response cleaning for venues and parties. We vanish the mess while you recover." },
+  { icon: <Trash2 />, title: "One-Off Deep", description: "The ultimate reset. A top-to-bottom blast that clears every missed corner and hidden dust." }
+];
+
+const standards = [
+  { icon: <Clock size={32} />, title: "Arrival", desc: "Respectful parking, safety hazard checks, and clear communication on start." },
+  { icon: <Sparkles size={32} />, title: "Order", desc: "Top-to-bottom methodology: Declutter, Dust, Clean, Vacuum, then Mop last." },
+  { icon: <CheckCircle2 size={32} />, title: "Final Check", desc: "Streak-free glass, equipment inventory, and property security verification." },
+  { icon: <Users size={32} />, title: "Trust", desc: "Only vetted professionals trained in the KairoClean tactical standard." }
+];
