@@ -1,6 +1,5 @@
 import React from 'react';
-import kairosecImg from '../assets/image0.png';
-import kairocleanImg from '../assets/image1.png';
+import { Lock, Sparkles } from 'lucide-react';
 
 interface LogoProps {
   className?: string;
@@ -10,20 +9,29 @@ interface LogoProps {
 
 export default function Logo({ className = '', size = 'md', brand = 'kairosec' }: LogoProps) {
   const sizes = {
-    sm: 'h-10',
-    md: 'h-16',
-    lg: 'h-28',
-    xl: 'h-40',
+    sm: 24,
+    md: 40,
+    lg: 80,
+    xl: 120,
   };
 
-  const logo = brand === 'kairoclean' ? kairocleanImg : kairosecImg;
-  const alt = brand === 'kairoclean' ? 'Kairoclean Logo' : 'Kairosec Logo';
+  const iconSize = sizes[size];
+
+  if (brand === 'kairoclean') {
+    return (
+      <Sparkles
+        size={iconSize}
+        className={`text-pink-400 drop-shadow-2xl ${className}`}
+        strokeWidth={1.5}
+      />
+    );
+  }
 
   return (
-    <img
-      src={logo}
-      alt={alt}
-      className={`${sizes[size]} w-auto object-contain drop-shadow-2xl ${className}`}
+    <Lock
+      size={iconSize}
+      className={`text-blue-400 drop-shadow-2xl ${className}`}
+      strokeWidth={1.5}
     />
   );
 }
