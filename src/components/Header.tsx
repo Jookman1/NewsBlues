@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { smoothScrollToId } from '../utils/smoothScroll';
+import Logo from './Logo';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,11 +39,7 @@ export const Header: React.FC = () => {
               className="flex items-center space-x-5 cursor-pointer group flex-shrink-0"
               onClick={handleLogoClick}
             >
-              <img
-                src="/rfowler%20logos.png"
-                alt="Kairosec Logo"
-                className="h-20 w-20 transition-all duration-300 group-hover:scale-110"
-              />
+              <Logo brand="kairosec" size="md" className="transition-all duration-300 group-hover:scale-110" />
               <span className="text-xl font-bold text-white tracking-wide group-hover:text-blue-100 transition-colors duration-300 hidden sm:inline">
                 KAIROSEC
               </span>
