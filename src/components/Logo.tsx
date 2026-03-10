@@ -10,10 +10,10 @@ interface LogoProps {
 
 export default function Logo({ className = '', size = 'md', brand = 'kairosec' }: LogoProps) {
   const sizes = {
-    sm: 'h-8',
-    md: 'h-12',
-    lg: 'h-24',
-    xl: 'h-32',
+    sm: 'h-10',
+    md: 'h-16',
+    lg: 'h-28',
+    xl: 'h-40',
   };
 
   const logo = brand === 'kairoclean' ? kairocleanImg : kairosecImg;
@@ -23,7 +23,7 @@ export default function Logo({ className = '', size = 'md', brand = 'kairosec' }
     <img
       src={logo}
       alt={alt}
-      className={`${sizes[size]} w-auto object-contain ${className}`}
+      className={`${sizes[size]} w-auto object-contain drop-shadow-2xl ${className}`}
     />
   );
 }

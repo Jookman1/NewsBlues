@@ -9,15 +9,15 @@ export const KairoClean: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-pink-900/10 via-transparent to-pink-900/10"></div>
 
       <div className="relative z-10 text-center">
-        <div className="mb-8 flex justify-center">
-          <Logo brand="kairoclean" size="xl" />
+        <div className="mb-12 flex justify-center animate-fade-in">
+          <Logo brand="kairoclean" size="xl" className="drop-shadow-[0_0_30px_rgba(236,72,153,0.6)]" />
         </div>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          <span className="text-white">Kairo</span>
-          <span className="text-pink-400" style={{ textShadow: '0 0 30px rgba(236, 72, 153, 0.9)' }}>Clean</span>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight">
+          <span className="text-white">KAIRO</span>
+          <span className="text-pink-400" style={{ textShadow: '0 0 40px rgba(236, 72, 153, 0.9), 0 0 80px rgba(236, 72, 153, 0.5)' }}>CLEAN</span>
         </h1>
-        <p className="text-gray-400 text-lg md:text-xl">Coming soon...</p>
+        <p className="text-gray-300 text-xl md:text-2xl font-light tracking-wide">Coming soon...</p>
       </div>
     </div>
   );
