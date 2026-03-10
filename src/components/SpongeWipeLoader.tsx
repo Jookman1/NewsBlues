@@ -16,34 +16,32 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
     };
   }, [onComplete]);
 
-  const WindowCleaner = () => (
-    <svg width="100" height="100" viewBox="0 0 100 100" className="drop-shadow-2xl">
+  const Brush = () => (
+    <svg width="120" height="140" viewBox="0 0 120 140" className="drop-shadow-2xl">
       <defs>
-        <linearGradient id="poleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: '#d1d5db', stopOpacity: 1 }} />
-          <stop offset="50%" style={{ stopColor: '#f3f4f6', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#d1d5db', stopOpacity: 1 }} />
+        <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style={{ stopColor: '#92400e', stopOpacity: 1 }} />
+          <stop offset="50%" style={{ stopColor: '#b45309', stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: '#92400e', stopOpacity: 1 }} />
         </linearGradient>
       </defs>
 
-      <line x1="50" y1="0" x2="50" y2="35" stroke="url(#poleGrad)" strokeWidth="6" strokeLinecap="round" />
+      <rect x="35" y="0" width="50" height="40" rx="6" fill="url(#handleGrad)" />
+      <circle cx="60" cy="20" r="18" fill="#a16207" opacity="0.6" />
 
-      <rect x="30" y="20" width="40" height="35" rx="4" fill="#64748b" />
-      <rect x="33" y="23" width="34" height="29" fill="#e5e7eb" />
+      <line x1="45" y1="35" x2="45" y2="65" stroke="#b45309" strokeWidth="4" strokeLinecap="round" />
+      <line x1="60" y1="35" x2="60" y2="65" stroke="#b45309" strokeWidth="4" strokeLinecap="round" />
+      <line x1="75" y1="35" x2="75" y2="65" stroke="#b45309" strokeWidth="4" strokeLinecap="round" />
 
-      <ellipse cx="43" cy="33" rx="6" ry="8" fill="#9ca3af" opacity="0.5" />
-      <ellipse cx="57" cy="39" rx="7" ry="10" fill="#9ca3af" opacity="0.4" />
-      <circle cx="50" cy="50" r="5" fill="#9ca3af" opacity="0.35" />
-
-      <ellipse cx="50" cy="62" rx="20" ry="12" fill="#ef4444" opacity="0.9" />
-      <ellipse cx="50" cy="58" rx="18" ry="10" fill="#f87171" />
-
-      <g opacity="0.8">
-        <ellipse cx="35" cy="58" rx="3" ry="6" fill="#60a5fa" />
-        <ellipse cx="65" cy="58" rx="3" ry="6" fill="#60a5fa" />
-        <ellipse cx="43" cy="66" rx="2" ry="4" fill="#60a5fa" />
-        <ellipse cx="57" cy="66" rx="2" ry="4" fill="#60a5fa" />
+      <g>
+        {[0, 5, 10, 15, 20, 25, 30].map((offset) => (
+          <line key={offset} x1={30 + offset} y1="65" x2={25 + offset} y2="130" stroke="#f59e0b" strokeWidth="3" opacity="0.9" />
+        ))}
       </g>
+
+      <ellipse cx="60" cy="75" rx="28" ry="12" fill="#fbbf24" opacity="0.8" />
+      <ellipse cx="60" cy="90" rx="26" ry="20" fill="#fcd34d" opacity="0.7" />
+      <ellipse cx="60" cy="110" rx="24" ry="18" fill="#fde047" opacity="0.6" />
     </svg>
   );
 
@@ -87,97 +85,134 @@ export default function SpongeWipeLoader({ onComplete }: { onComplete: () => voi
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[100] pointer-events-none overflow-hidden bg-gradient-to-b from-sky-300 to-blue-200"
+          className="fixed inset-0 z-[100] pointer-events-none overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-100/20 to-amber-200/30" />
-
-          <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-amber-900/40 to-transparent" />
-
-          {/* Grass layer */}
-          {Array.from({ length: 30 }).map((_, i) => (
-            <motion.div
-              key={`grass-${i}`}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0 }}
-              transition={{ delay: i * 0.08, duration: 0.4 }}
-              style={{
-                left: `${(i * 13) % 100}%`,
-                top: `${70 + Math.random() * 20}%`,
-              }}
-            >
-              <Grass x={0} y={0} />
-            </motion.div>
-          ))}
-
-          {/* Dirt particles */}
-          {Array.from({ length: 25 }).map((_, i) => (
-            <motion.div
-              key={`dirt-${i}`}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.3 }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${30 + Math.random() * 50}%`,
-              }}
-            >
-              <Dirt x={0} y={0} />
-            </motion.div>
-          ))}
-
-          {/* Spiderwebs */}
-          {Array.from({ length: 4 }).map((_, i) => (
-            <motion.div
-              key={`web-${i}`}
-              initial={{ opacity: 0.7 }}
-              animate={{ opacity: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.4 }}
-              style={{
-                left: `${20 + i * 20}%`,
-                top: `${10 + Math.random() * 30}%`,
-              }}
-            >
-              <SpiderWeb x={0} y={0} />
-            </motion.div>
-          ))}
-
-          {/* Spiders */}
-          {Array.from({ length: 3 }).map((_, i) => (
-            <motion.div
-              key={`spider-${i}`}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0 }}
-              transition={{ delay: i * 0.12, duration: 0.3 }}
-              style={{
-                left: `${30 + i * 25}%`,
-                top: `${15 + Math.random() * 25}%`,
-              }}
-            >
-              <Spider x={0} y={0} />
-            </motion.div>
-          ))}
-
-          {/* Brush moving down */}
+          {/* Dirty overlay - covers everything initially */}
           <motion.div
-            className="absolute left-1/2 -translate-x-1/2 will-change-transform"
-            initial={{ y: -100 }}
-            animate={{ y: window.innerHeight + 100 }}
+            className="absolute inset-0 z-10"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Gradient dirt background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-sky-300" />
+
+            {/* Heavy grime at top */}
+            <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-black/80 via-gray-800/60 to-transparent" />
+
+            {/* Splatter and dirt effects */}
+            <div className="absolute inset-0">
+              {Array.from({ length: 100 }).map((_, i) => (
+                <div
+                  key={`grime-${i}`}
+                  className="absolute bg-gray-900/40 rounded-full"
+                  style={{
+                    width: Math.random() * 40 + 10,
+                    height: Math.random() * 40 + 10,
+                    left: Math.random() * 100 + '%',
+                    top: Math.random() * 100 + '%',
+                    opacity: Math.random() * 0.6 + 0.3,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Grass layer */}
+            {Array.from({ length: 30 }).map((_, i) => (
+              <motion.div
+                key={`grass-${i}`}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                style={{
+                  left: `${(i * 13) % 100}%`,
+                  top: `${70 + Math.random() * 20}%`,
+                  zIndex: 11,
+                }}
+              >
+                <Grass x={0} y={0} />
+              </motion.div>
+            ))}
+
+            {/* Dirt particles */}
+            {Array.from({ length: 25 }).map((_, i) => (
+              <motion.div
+                key={`dirt-${i}`}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.3 }}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${30 + Math.random() * 50}%`,
+                  zIndex: 11,
+                }}
+              >
+                <Dirt x={0} y={0} />
+              </motion.div>
+            ))}
+
+            {/* Spiderwebs */}
+            {Array.from({ length: 4 }).map((_, i) => (
+              <motion.div
+                key={`web-${i}`}
+                initial={{ opacity: 0.7 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: i * 0.15, duration: 0.4 }}
+                style={{
+                  left: `${20 + i * 20}%`,
+                  top: `${10 + Math.random() * 30}%`,
+                  zIndex: 11,
+                }}
+              >
+                <SpiderWeb x={0} y={0} />
+              </motion.div>
+            ))}
+
+            {/* Spiders */}
+            {Array.from({ length: 3 }).map((_, i) => (
+              <motion.div
+                key={`spider-${i}`}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: i * 0.12, duration: 0.3 }}
+                style={{
+                  left: `${30 + i * 25}%`,
+                  top: `${15 + Math.random() * 25}%`,
+                  zIndex: 11,
+                }}
+              >
+                <Spider x={0} y={0} />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Brush moving down - reveals clean page below */}
+          <motion.div
+            className="absolute left-1/2 -translate-x-1/2 will-change-transform z-20"
+            initial={{ y: -150 }}
+            animate={{ y: window.innerHeight + 50 }}
             transition={{
               duration: 2.8,
               ease: 'easeInOut',
             }}
           >
-            <WindowCleaner />
+            <Brush />
           </motion.div>
 
-          {/* Clean area overlay */}
+          {/* Clean sweep area - mask revealing the page */}
           <motion.div
-            className="absolute left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-b from-white/20 to-transparent rounded-full pointer-events-none"
-            initial={{ y: -100 }}
-            animate={{ y: window.innerHeight + 100 }}
+            className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none"
+            style={{
+              width: '100vw',
+              height: 150,
+              background: 'linear-gradient(to bottom, rgba(255,255,255,0.95), transparent)',
+              boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
+            }}
+            initial={{ y: -150 }}
+            animate={{ y: window.innerHeight + 50 }}
             transition={{
               duration: 2.8,
               ease: 'easeInOut',
