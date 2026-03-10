@@ -218,4 +218,4 @@ const standards = [
   { icon: <Sparkles size={32} />, title: "Order", desc: "Top-to-bottom methodology: Declutter, Dust, Clean, Vacuum, then Mop last." },
   { icon: <CheckCircle2 size={32} />, title: "Final Check", desc: "Streak-free glass, equipment inventory, and property security verification." },
   { icon: <Users size={32} />, title: "Trust", desc: "Only vetted professionals trained in the KairoClean tactical standard." }
-];
+];ß
