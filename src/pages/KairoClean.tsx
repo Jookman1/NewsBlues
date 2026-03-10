@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  Phone, Mail, MapPin, Sparkles, Star, ChevronRight, 
+import {
+  Phone, Mail, MapPin, Sparkles, Star, ChevronRight,
   Shield, Users, Building2, Check, Clock, Home,
   Trash2, PartyPopper
 } from 'lucide-react';
+import logoImg from '../assets/image1_(1).png';
+import Navigation from '../components/Navigation';
 
 export default function KairoClean() {
   const [formData, setFormData] = useState({
@@ -17,21 +19,17 @@ export default function KairoClean() {
 
   return (
     <div className="w-full text-white bg-[#0a0a0a] min-h-screen relative font-sans selection:bg-[#E1147B]">
-      
+      <Navigation />
+
       {/* 1. LOGO TOP */}
-      <header className="flex justify-center pt-16 pb-8 relative z-10">
-        <div className="w-32 h-32 bg-[#0a0a0a] border-4 border-[#E1147B] rotate-45 flex items-center justify-center shadow-[0_0_40px_rgba(225,20,123,0.3)]">
-          <div className="-rotate-45 text-center">
-            <span className="text-4xl font-black text-[#E1147B]">KC</span>
-            <p className="text-[10px] font-bold tracking-widest uppercase opacity-40">Clean</p>
-          </div>
-        </div>
+      <header className="flex justify-center pt-32 pb-8 relative z-10">
+        <img src={logoImg} alt="KairoClean Logo" className="w-40 h-40 object-contain" />
       </header>
 
       {/* 2. HERO */}
-      <section className="px-6 py-12 text-center relative z-10">
+      <section id="hero" className="px-6 py-12 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-[7.5rem] font-black uppercase leading-[0.9] tracking-tighter mb-8 italic">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic">
             Where <span className="text-[#E1147B]">Precision</span><br />
             Meets <span className="text-[#E1147B]">Perfection</span>
           </h1>
@@ -47,7 +45,7 @@ export default function KairoClean() {
       </section>
 
       {/* 3. SERVICES (3x2 Grid) */}
-      <section className="px-6 py-24 bg-[#0d0d0d] border-y border-white/5 relative">
+      <section id="services" className="px-6 py-24 bg-[#0d0d0d] border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-5xl font-black uppercase mb-16 tracking-tight italic">Our <span className="text-[#E1147B]">Services</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -70,7 +68,7 @@ export default function KairoClean() {
       </section>
 
       {/* 4. ABOUT (Split Layout) */}
-      <section className="px-6 py-24">
+      <section id="about" className="px-6 py-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5 p-12 border border-zinc-800 bg-[#0d0d0d] shadow-xl">
             <h2 className="text-4xl font-black uppercase mb-8 leading-none italic text-[#E1147B]">The Standard</h2>
@@ -132,7 +130,7 @@ export default function KairoClean() {
       </section>
 
       {/* 6. CALL PILL */}
-      <section className="px-6 py-24 text-center bg-[#0a0a0a]">
+      <section id="contact" className="px-6 py-24 text-center bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto rounded-[100px] border-[4px] border-[#E1147B] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-10 mb-20 shadow-2xl hover:shadow-[0_0_80px_rgba(225,20,123,0.3)] transition-all">
           <div className="text-center md:text-left">
              <span className="block text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#E1147B]">Direct Line</span>
