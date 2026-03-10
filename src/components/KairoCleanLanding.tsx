@@ -2,7 +2,7 @@ import React from 'react';
 import { Check, Phone, Star, Sparkles, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
 
-const PINK = '#E1147B';
+const PINK = '#FF66C4';
 
 // Custom Social SVGs
 const TikTokIcon = () => (
@@ -44,14 +44,14 @@ const socialIcons = [
 
 export default function KairoCleanLanding() {
   return (
-    <div className="relative bg-[#0a0a0a] text-white overflow-hidden min-h-screen font-sans selection:bg-[#E1147B] selection:text-white">
+    <div className="relative bg-[#0a0a0a] text-white overflow-hidden min-h-screen font-sans selection:bg-[#FF66C4] selection:text-white">
       
       {/* ELITE BACKGROUND TEXTURE */}
       <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="kc-hex" x="0" y="0" width="60" height="69.28" patternUnits="userSpaceOnUse">
-              <path d="M30 0L60 17.32v34.64L30 69.28L0 51.96V17.32L30 0z" fill="none" stroke="#E1147B" strokeWidth="1"/>
+              <path d="M30 0L60 17.32v34.64L30 69.28L0 51.96V17.32L30 0z" fill="none" stroke="#FF66C4" strokeWidth="1"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#kc-hex)" />
@@ -59,7 +59,7 @@ export default function KairoCleanLanding() {
       </div>
       
       {/* Top Gradient Glow */}
-      <div className="absolute top-0 left-1/4 w-1/2 h-96 bg-[#E1147B] rounded-full blur-[150px] opacity-10 pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-1/4 w-1/2 h-96 bg-[#FF66C4] rounded-full blur-[150px] opacity-10 pointer-events-none z-0"></div>
 
       {/* --- HERO SECTION --- */}
       <div className="max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-32 relative z-10">
@@ -68,18 +68,18 @@ export default function KairoCleanLanding() {
           {/* Left Side: Marketing Copy (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start z-20">
             {/* Premium Badges */}
-            <div className="flex items-center gap-3 mb-8 rounded-full overflow-hidden border border-[#E1147B]/50 shadow-[0_0_20px_rgba(225,20,123,0.15)] bg-[#0a0a0a] px-2 py-2">
+            <div className="flex items-center gap-3 mb-8 rounded-full overflow-hidden border border-[#FF66C4]/50 shadow-[0_0_20px_rgba(255,102,196,0.15)] bg-[#0a0a0a] px-2 py-2">
               <Logo brand="kairoclean" size="sm" className="transition-all duration-300" />
-              <span className="bg-[#E1147B] text-white font-black px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
+              <span className="bg-[#FF66C4] text-white font-black px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
                 KAIROCLEAN
               </span>
-              <span className="text-[#E1147B] font-bold px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
+              <span className="text-[#FF66C4] font-bold px-4 py-1.5 text-xs md:text-sm tracking-[0.2em] uppercase">
                 Cleaning Services
               </span>
             </div>
             
             {/* Headline */}
-            <h1 className="text-6xl md:text-7xl lg:text-[6.5rem] font-black text-transparent bg-clip-text bg-gradient-to-b from-[#E1147B] to-[#b30f60] leading-[0.95] mb-6 tracking-tighter uppercase drop-shadow-sm">
+            <h1 className="text-6xl md:text-7xl lg:text-[6.5rem] font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FF66C4] to-[#b30f60] leading-[0.95] mb-6 tracking-tighter uppercase drop-shadow-sm">
               Where<br />
               Precision<br />
               Meets<br />
@@ -91,7 +91,7 @@ export default function KairoCleanLanding() {
             </p>
 
             {/* Immediate Action CTA */}
-            <button className="group relative flex items-center gap-4 bg-[#E1147B] text-white px-8 py-4 rounded-full font-black text-lg tracking-wide uppercase transition-all duration-300 hover:bg-white hover:text-[#E1147B] shadow-[0_0_30px_rgba(225,20,123,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+            <button className="group relative flex items-center gap-4 bg-[#FF66C4] text-white px-8 py-4 rounded-full font-black text-lg tracking-wide uppercase transition-all duration-300 hover:bg-white hover:text-[#FF66C4] shadow-[0_0_30px_rgba(255,102,196,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
               <span>Get a Free Quote</span>
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" strokeWidth={3} />
             </button>
@@ -101,7 +101,7 @@ export default function KairoCleanLanding() {
           <div className="lg:col-span-5 relative w-full max-w-md mx-auto mt-10 lg:mt-0 pb-12 pr-6">
              {/* Main Cleaner Image */}
              <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-2xl border border-zinc-800/80 shadow-[0_30px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col items-center justify-center group cursor-pointer">
-                <div className="absolute inset-0 bg-[#E1147B] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#FF66C4] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="w-20 h-20 rounded-full border border-zinc-700/50 bg-[#111] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
                   <svg className="w-8 h-8 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
@@ -113,11 +113,11 @@ export default function KairoCleanLanding() {
              </div>
              
              {/* Overlapping Diamond Logo */}
-             <div className="absolute -bottom-4 -left-8 w-44 h-44 bg-[#0a0a0a] border-[3px] border-[#E1147B] rotate-45 z-30 shadow-[0_0_40px_rgba(225,20,123,0.35)] flex items-center justify-center backdrop-blur-md">
+             <div className="absolute -bottom-4 -left-8 w-44 h-44 bg-[#0a0a0a] border-[3px] border-[#FF66C4] rotate-45 z-30 shadow-[0_0_40px_rgba(255,102,196,0.35)] flex items-center justify-center backdrop-blur-md">
                 <div className="-rotate-45 text-center flex flex-col items-center">
-                  <span className="text-[#E1147B] font-black text-5xl tracking-tighter drop-shadow-md">KC</span>
-                  <div className="h-0.5 w-8 bg-[#E1147B]/30 my-1"></div>
-                  <span className="text-[#E1147B]/80 text-[10px] font-bold tracking-[0.2em] uppercase">Logo</span>
+                  <span className="text-[#FF66C4] font-black text-5xl tracking-tighter drop-shadow-md">KC</span>
+                  <div className="h-0.5 w-8 bg-[#FF66C4]/30 my-1"></div>
+                  <span className="text-[#FF66C4]/80 text-[10px] font-bold tracking-[0.2em] uppercase">Logo</span>
                 </div>
              </div>
           </div>
@@ -126,9 +126,9 @@ export default function KairoCleanLanding() {
 
       {/* --- WAVE DIVIDER --- */}
       <div className="relative z-20 -mt-24 md:-mt-32">
-        <svg viewBox="0 0 1440 180" className="w-full h-auto drop-shadow-[0_-5px_25px_rgba(225,20,123,0.15)]" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 180" className="w-full h-auto drop-shadow-[0_-5px_25px_rgba(255,102,196,0.15)]" preserveAspectRatio="none">
           <path d="M0,90 C320,220 420,-30 720,90 C1020,220 1120,-30 1440,90 L1440,180 L0,180 Z" fill="#111111"></path>
-          <path d="M0,95 C320,225 420,-25 720,95 C1020,225 1120,-25 1440,95 L1440,180 L0,180 Z" fill="#E1147B" opacity="0.15"></path>
+          <path d="M0,95 C320,225 420,-25 720,95 C1020,225 1120,-25 1440,95 L1440,180 L0,180 Z" fill="#FF66C4" opacity="0.15"></path>
         </svg>
       </div>
 
@@ -138,13 +138,13 @@ export default function KairoCleanLanding() {
            
            {/* Left: Socials & Stars */}
            <div className="flex flex-col items-center md:items-end md:text-right pt-4">
-              <h3 className="text-[#E1147B] text-xl md:text-2xl font-black uppercase tracking-widest mb-8">Find us on...</h3>
+              <h3 className="text-[#FF66C4] text-xl md:text-2xl font-black uppercase tracking-widest mb-8">Find us on...</h3>
               <div className="flex gap-4 justify-center md:justify-end mb-8 w-full">
                 {socialIcons.map(({ Icon, label }) => (
                   <button
                     key={label}
                     aria-label={label}
-                    className="w-14 h-14 flex items-center justify-center text-zinc-400 bg-[#0a0a0a] border border-zinc-800 rounded-xl hover:border-[#E1147B] hover:text-[#E1147B] hover:shadow-[0_0_20px_rgba(225,20,123,0.3)] hover:-translate-y-1 transition-all duration-300"
+                    className="w-14 h-14 flex items-center justify-center text-zinc-400 bg-[#0a0a0a] border border-zinc-800 rounded-xl hover:border-[#FF66C4] hover:text-[#FF66C4] hover:shadow-[0_0_20px_rgba(255,102,196,0.3)] hover:-translate-y-1 transition-all duration-300"
                   >
                     <Icon />
                   </button>
@@ -152,7 +152,7 @@ export default function KairoCleanLanding() {
               </div>
               <div className="flex space-x-2 mb-4 justify-center md:justify-end w-full">
                  {[1,2,3,4,5].map(i => (
-                   <Star key={i} size={28} className="fill-[#E1147B] text-[#E1147B] drop-shadow-[0_0_8px_rgba(225,20,123,0.5)]" />
+                   <Star key={i} size={28} className="fill-[#FF66C4] text-[#FF66C4] drop-shadow-[0_0_8px_rgba(255,102,196,0.5)]" />
                  ))}
               </div>
               <p className="text-zinc-400 text-sm font-medium w-full text-center md:text-right tracking-wide uppercase">5-star rated on Google</p>
@@ -161,14 +161,14 @@ export default function KairoCleanLanding() {
            {/* Right: Services List */}
            <div className="flex flex-col items-center md:items-start border-t md:border-t-0 md:border-l border-zinc-800/50 pt-12 md:pt-0 md:pl-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-10 flex items-center gap-4">
-                 We <span className="text-[#E1147B]">Provide</span>
-                 <Sparkles className="w-10 h-10 text-[#E1147B] drop-shadow-[0_0_10px_rgba(225,20,123,0.6)]" />
+                 We <span className="text-[#FF66C4]">Provide</span>
+                 <Sparkles className="w-10 h-10 text-[#FF66C4] drop-shadow-[0_0_10px_rgba(255,102,196,0.6)]" />
               </h2>
               <ul className="space-y-6 text-lg md:text-xl font-semibold w-full">
                  {services.map(service => (
                    <li key={service} className="flex items-center gap-5 text-zinc-200 group cursor-default">
-                     <div className="bg-[#1a1a1a] p-2 rounded-full border border-zinc-800 group-hover:border-[#E1147B] group-hover:shadow-[0_0_15px_rgba(225,20,123,0.4)] transition-all duration-300">
-                       <Check className="text-[#E1147B] w-5 h-5" strokeWidth={4} />
+                     <div className="bg-[#1a1a1a] p-2 rounded-full border border-zinc-800 group-hover:border-[#FF66C4] group-hover:shadow-[0_0_15px_rgba(255,102,196,0.4)] transition-all duration-300">
+                       <Check className="text-[#FF66C4] w-5 h-5" strokeWidth={4} />
                      </div>
                      <span className="group-hover:translate-x-2 group-hover:text-white transition-transform duration-300">{service}</span>
                    </li>
@@ -186,33 +186,33 @@ export default function KairoCleanLanding() {
           <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 md:gap-16 mb-20 w-full bg-[#111] py-8 rounded-3xl border border-zinc-800/50 shadow-xl">
              {['Flexible Scheduling', 'Fully Insured', 'Vetted Professionals'].map(text => (
                <div key={text} className="flex items-center gap-4 text-base md:text-lg font-bold text-white">
-                 <Check className="text-[#E1147B] w-6 h-6 drop-shadow-[0_0_8px_rgba(225,20,123,0.5)]" strokeWidth={4}/>
+                 <Check className="text-[#FF66C4] w-6 h-6 drop-shadow-[0_0_8px_rgba(255,102,196,0.5)]" strokeWidth={4}/>
                  <span className="tracking-wide">{text}</span>
                </div>
              ))}
           </div>
 
           {/* MASSIVE GLOWING CTA BUTTON */}
-          <div className="w-full max-w-4xl border-[3px] border-[#E1147B] rounded-full shadow-[0_0_40px_rgba(225,20,123,0.3)] hover:shadow-[0_0_60px_rgba(225,20,123,0.5)] hover:border-white bg-[#0a0a0a] flex flex-col md:flex-row items-center justify-between p-2 mb-20 overflow-hidden transition-all duration-300 cursor-pointer group">
+          <div className="w-full max-w-4xl border-[3px] border-[#FF66C4] rounded-full shadow-[0_0_40px_rgba(255,102,196,0.3)] hover:shadow-[0_0_60px_rgba(255,102,196,0.5)] hover:border-white bg-[#0a0a0a] flex flex-col md:flex-row items-center justify-between p-2 mb-20 overflow-hidden transition-all duration-300 cursor-pointer group">
              
              <div className="flex-1 text-center md:text-left py-8 px-10">
-               <span className="block text-[#E1147B] group-hover:text-white transition-colors text-3xl md:text-4xl font-black leading-tight drop-shadow-md">Call now for a</span>
-               <span className="block text-[#E1147B] group-hover:text-white transition-colors text-3xl md:text-4xl font-black leading-tight drop-shadow-md">free quote</span>
+               <span className="block text-[#FF66C4] group-hover:text-white transition-colors text-3xl md:text-4xl font-black leading-tight drop-shadow-md">Call now for a</span>
+               <span className="block text-[#FF66C4] group-hover:text-white transition-colors text-3xl md:text-4xl font-black leading-tight drop-shadow-md">free quote</span>
              </div>
 
-             <div className="hidden md:block w-px h-28 bg-zinc-800 group-hover:bg-[#E1147B] transition-colors"></div>
+             <div className="hidden md:block w-px h-28 bg-zinc-800 group-hover:bg-[#FF66C4] transition-colors"></div>
 
-             <div className="flex-1 flex items-center justify-center gap-5 py-8 px-6 w-full md:w-auto bg-[#E1147B]/10 rounded-b-full md:rounded-none group-hover:bg-[#E1147B]/20 transition-colors">
-               <Phone className="text-[#E1147B] group-hover:text-white w-10 h-10 drop-shadow-[0_0_8px_rgba(225,20,123,0.6)] group-hover:rotate-12 transition-all" />
+             <div className="flex-1 flex items-center justify-center gap-5 py-8 px-6 w-full md:w-auto bg-[#FF66C4]/10 rounded-b-full md:rounded-none group-hover:bg-[#FF66C4]/20 transition-colors">
+               <Phone className="text-[#FF66C4] group-hover:text-white w-10 h-10 drop-shadow-[0_0_8px_rgba(255,102,196,0.6)] group-hover:rotate-12 transition-all" />
                <span className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-lg">033 0043 1631</span>
              </div>
           </div>
 
           {/* Footer Info */}
           <div className="text-center space-y-3">
-             <p className="text-zinc-300 font-semibold tracking-[0.2em] text-sm md:text-base uppercase hover:text-[#E1147B] cursor-pointer transition-colors">WWW.KAIROSECURITY.CO.UK</p>
+             <p className="text-zinc-300 font-semibold tracking-[0.2em] text-sm md:text-base uppercase hover:text-[#FF66C4] cursor-pointer transition-colors">WWW.KAIROSECURITY.CO.UK</p>
              <p className="text-zinc-500 text-sm hover:text-white cursor-pointer transition-colors">Enquiries@kairosecurity.co.uk</p>
-             <p className="text-[#E1147B] text-sm md:text-base font-black tracking-[0.25em] uppercase pt-4 drop-shadow-sm">KAIRO SECURITY LTD</p>
+             <p className="text-[#FF66C4] text-sm md:text-base font-black tracking-[0.25em] uppercase pt-4 drop-shadow-sm">KAIRO SECURITY LTD</p>
              <p className="text-zinc-600 text-xs">(Registered in England and Wales)</p>
           </div>
           
