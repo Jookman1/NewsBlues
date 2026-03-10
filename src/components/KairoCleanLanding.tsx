@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, Phone, Star, Sparkles, ChevronRight } from 'lucide-react';
+import Logo from './Logo';
 
 const PINK = '#E1147B';
 
@@ -67,13 +68,16 @@ export default function KairoCleanLanding() {
           {/* Left Side: Marketing Copy (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start z-20">
             {/* Premium Badges */}
-            <div className="flex mb-8 rounded-full overflow-hidden border border-[#E1147B]/50 shadow-[0_0_20px_rgba(225,20,123,0.15)] bg-[#0a0a0a]">
-              <span className="bg-[#E1147B] text-white font-black px-6 py-2.5 text-xs md:text-sm tracking-[0.2em] uppercase">
-                KairoClean
-              </span>
-              <span className="text-[#E1147B] font-bold px-6 py-2.5 text-xs md:text-sm tracking-[0.2em] uppercase">
-                Cleaning Services
-              </span>
+            <div className="flex items-center gap-4 mb-8">
+              <Logo brand="kairoclean" size="sm" className="transition-all duration-300" />
+              <div className="flex rounded-full overflow-hidden border border-[#E1147B]/50 shadow-[0_0_20px_rgba(225,20,123,0.15)] bg-[#0a0a0a]">
+                <span className="bg-[#E1147B] text-white font-black px-6 py-2.5 text-xs md:text-sm tracking-[0.2em] uppercase">
+                  KAIROCLEAN
+                </span>
+                <span className="text-[#E1147B] font-bold px-6 py-2.5 text-xs md:text-sm tracking-[0.2em] uppercase">
+                  Cleaning Services
+                </span>
+              </div>
             </div>
             
             {/* Headline */}
