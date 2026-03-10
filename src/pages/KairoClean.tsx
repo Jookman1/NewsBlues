@@ -22,7 +22,7 @@ export default function KairoClean() {
       <Navigation />
 
       {/* 2. HERO */}
-      <section id="hero" className="px-6 py-12 text-center relative z-10">
+      <section id="hero" className="px-6 py-12 pt-32 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[1] tracking-tight mb-8 italic">
             Where <span className="text-[#E1147B]">Precision</span><br />
