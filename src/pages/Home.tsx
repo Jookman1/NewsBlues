@@ -8,19 +8,22 @@ import { JoinTeam } from '../components/JoinTeam';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { ScrollProgress } from '../components/ScrollProgress';
+import { PageTransition } from '../components/PageTransition';
 
 export const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black">
-      <ScrollProgress />
-      <Header />
-      <About />
-      <Services />
-      <Statistics />
-      <Testimonials />
-      <JoinTeam />
-      <Contact />
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="min-h-screen bg-black">
+        <ScrollProgress />
+        <Header />
+        <About />
+        <Services />
+        <Statistics />
+        <Testimonials />
+        <JoinTeam />
+        <Contact />
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };

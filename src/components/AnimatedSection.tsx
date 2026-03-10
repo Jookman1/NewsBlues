@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimations';
 
 interface AnimatedSectionProps {
@@ -9,7 +9,7 @@ interface AnimatedSectionProps {
   duration?: number;
 }
 
-export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+export const AnimatedSection: React.FC<AnimatedSectionProps> = React.memo(({
   children,
   className = '',
   animation = 'fadeInUp',
@@ -18,9 +18,9 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 }) => {
   const { elementRef, isVisible } = useScrollAnimation({ delay });
 
-  const getAnimationClasses = () => {
+  const animationClasses = useMemo(() => {
     const baseClasses = `transition-all duration-${duration} ease-out`;
-    
+
     if (!isVisible) {
       switch (animation) {
         case 'fadeInUp':
@@ -37,16 +37,16 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           return `${baseClasses} opacity-0 translate-y-8`;
       }
     }
-    
+
     return `${baseClasses} opacity-100 translate-y-0 translate-x-0 scale-100`;
-  };
+  }, [isVisible, animation, duration]);
 
   return (
     <div
       ref={elementRef}
-      className={`${getAnimationClasses()} ${className}`}
+      className={`${animationClasses} ${className}`}
     >
       {children}
     </div>
   );
-};
+});

@@ -22,9 +22,9 @@ const testimonials = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-24 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             What Our Team Says
           </h2>
@@ -32,7 +32,7 @@ export const Testimonials: React.FC = () => {
             Hear from our valued team members
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <div

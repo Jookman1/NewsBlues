@@ -9,9 +9,9 @@ const stats = [
 
 export const Statistics: React.FC = () => {
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-24 bg-black">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
               <div className="mb-4">

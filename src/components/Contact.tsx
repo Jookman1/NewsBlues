@@ -57,8 +57,8 @@ export const Contact: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contact" className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto text-center">
             <div className="bg-gray-900/50 backdrop-blur-sm border border-green-500/30 rounded-xl p-12">
               <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
@@ -82,8 +82,8 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-black">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

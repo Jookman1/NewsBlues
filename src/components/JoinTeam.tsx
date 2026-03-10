@@ -33,9 +33,9 @@ export const JoinTeam: React.FC = () => {
   };
 
   return (
-    <section id="join" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section id="join" className="py-24 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Join Our Team
           </h2>

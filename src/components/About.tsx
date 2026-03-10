@@ -4,10 +4,10 @@ import { AnimatedSection } from './AnimatedSection';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-black">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               About Kairo Security
             </h2>
@@ -17,7 +17,7 @@ export const About: React.FC = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <AnimatedSection animation="fadeInLeft" delay={200}>
             <div className="space-y-8">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-500/30 transition-all duration-500">
