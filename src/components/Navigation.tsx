@@ -23,7 +23,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between py-4 h-20">
           {/* Logo */}
-         <span class="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300 hidden sm:inline bg-gradient-to-r from-white to-blue-100 bg-clip-text">KAIROSEC</span>
+          <a href="#hero" className="flex items-center gap-2">
+            <img src={kairoCleanLogos} alt="KairoClean" className="h-12 w-auto" />
           </a>
 
           {/* Desktop Menu */}
