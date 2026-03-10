@@ -9,7 +9,7 @@ export default function Navigation() {
     { label: 'Home', href: '#hero' },
     { label: 'Services', href: '#services' },
     { label: 'About', href: '#about' },
-    { label: 'Keiro Clean', href: '/keiro-clean' },
+    { label: 'Kairo Clean', href: '/keiro-clean' },
     { label: 'Book Now', href: '#book-form' },
     { label: 'Contact', href: '#contact' }
   ];
