@@ -4,7 +4,7 @@ import {
   Shield, Users, Building2, Check, Clock, Home,
   Trash2, PartyPopper
 } from 'lucide-react';
-import logoImg from '../assets/image copy copy copy.png';
+import logoImg from '../assets/image1_(1).png';
 import Navigation from '../components/Navigation';
 
 export default function KairoClean() {
