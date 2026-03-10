@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-black">
+    <section id="about" className="py-24 bg-black pt-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection animation="fadeInUp" delay={100}>
           <div className="text-center mb-20">
