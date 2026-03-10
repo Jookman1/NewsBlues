@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import { smoothScrollToId } from '../utils/smoothScroll';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,7 +65,39 @@ export const Header: React.FC = () => {
                 </button>
               ))}
             </nav>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={28} className="text-blue-400" /> : <Menu size={28} className="text-white" />}
+            </button>
           </div>
+
+          {isMenuOpen && (
+            <div className="md:hidden border-t border-gray-700 animate-fade-in-up">
+              <div className="flex flex-col space-y-1 px-0 py-4 pb-6">
+                {[
+                  { id: 'services', label: 'Home' },
+                  { id: 'about', label: 'About Us' },
+                  { id: 'contact', label: 'Services' },
+                  { id: 'join', label: 'Join the Team' }
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      handleNavClick(item.id);
+                      setIsMenuOpen(false);
+                    }}
+                    className="px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 text-base font-medium text-left"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </header>
     </>
