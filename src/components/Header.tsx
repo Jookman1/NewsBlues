@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
                       handleNavClick(item.id);
                       setIsMenuOpen(false);
                     }}
-                    className="px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 text-base font-medium text-left"
+                    className="px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 text-base font-medium text-left text-gray-300 hover:text-blue-400"
                   >
                     {item.label}
                   </button>
