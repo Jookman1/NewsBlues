@@ -24,7 +24,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between py-4 h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            <img src={kairoCleanLogos} alt="KairoClean" className="h-12 w-auto" />
+            <img src={kairoCleanLogo} alt="KairoClean" className="h-12 w-auto" />
           </a>
 
           {/* Desktop Menu */}
