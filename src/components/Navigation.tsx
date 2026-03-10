@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +19,9 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#0a0a0a] border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between py-2 h-20">
-          <a href="#hero" className="flex-shrink-0">
-            <img src={logo} alt="Kairo Clean" className="h-16 w-auto" />
+        <div className="flex items-center justify-between py-4 h-20">
+          <a href="#hero" className="font-black text-[#E1147B] text-lg md:text-xl tracking-widest uppercase whitespace-nowrap">
+            Kairo Clean
           </a>
 
           {/* Desktop Menu */}
