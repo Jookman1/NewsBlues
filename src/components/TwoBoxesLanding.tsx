@@ -11,7 +11,7 @@ export const TwoBoxesLanding: React.FC = () => {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 w-full max-w-7xl h-full lg:h-auto lg:py-0 py-8">
           <a
-            href="/"
+            href="/kairosec"
             className="relative group cursor-pointer h-full lg:h-auto lg:min-h-[600px] flex flex-col items-stretch justify-stretch"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 blur"></div>

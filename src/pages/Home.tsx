@@ -1,21 +1,12 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection';
-import ServicesSection from '../components/ServicesSection';
-import StatsSection from '../components/StatsSection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import ContactForm from '../components/ContactForm';
-import CoursesSection from '../components/CoursesSection';
-import { FEATURES } from '../config/features';
+import { TwoBoxesLanding } from '../components/TwoBoxesLanding';
+import { ScrollProgress } from '../components/ScrollProgress';
 
-export default function Home() {
+export const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <HeroSection />
-      <ServicesSection />
-      <StatsSection />
-      <TestimonialsSection />
-      {FEATURES.COURSES_ENABLED && <CoursesSection />}
-      <ContactForm />
+    <div className="min-h-screen bg-black w-screen overflow-hidden">
+      <ScrollProgress />
+      <TwoBoxesLanding />
     </div>
   );
-}
+};
