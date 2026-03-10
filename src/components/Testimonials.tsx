@@ -22,7 +22,7 @@ const testimonials = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-gray-900">
+    <section className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -37,14 +37,14 @@ export const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:-translate-y-1"
+              className="group bg-black/40 backdrop-blur-md border border-gray-700 rounded-xl p-8 hover:border-blue-500/60 hover:bg-black/60 transition-all duration-300 transform hover:-translate-y-1"
             >
               <Quote className="h-8 w-8 text-blue-400 mb-6 group-hover:text-blue-300 transition-colors duration-300" />
-              
+
               <p className="text-gray-300 text-lg leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
                 "{testimonial.quote}"
               </p>
-              
+
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-lg">

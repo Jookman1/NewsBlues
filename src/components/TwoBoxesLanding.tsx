@@ -1,74 +1,163 @@
-import React from 'react';
-import { Lock, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import kairoSecLogo from '../assets/KairoSecuritybluelogonew.png';
+import kairoCleanLogo from '../assets/image1_(3).png';
 
 export const TwoBoxesLanding: React.FC = () => {
+  const [hoveredPanel, setHoveredPanel] = useState<'kairosec' | 'kairoclean' | null>(null);
+
   return (
-    <section className="h-screen w-screen bg-black relative overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 hexagon-pattern opacity-30"></div>
+    <section className="w-full h-screen bg-black relative overflow-hidden flex flex-col">
+      {/* KairoSec - Top Panel */}
+      <a
+        href="/kairosec"
+        onMouseEnter={() => setHoveredPanel('kairosec')}
+        onMouseLeave={() => setHoveredPanel(null)}
+        className="h-1/2 w-full relative group cursor-pointer overflow-hidden flex items-center justify-center"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+          style={{
+            backgroundImage: 'url(https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+            backgroundPosition: 'center',
+            filter: `blur(12px) brightness(${hoveredPanel === 'kairosec' ? 0.8 : 0.5}) contrast(1.3) hue-rotate(10deg) saturate(1.1)`,
+            transform: `scale(${hoveredPanel === 'kairosec' ? 1.05 : 1})`,
+          }}
+        ></div>
 
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-pink-900/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/60 via-blue-900/40 to-black/60 mix-blend-multiply"></div>
 
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 w-full max-w-7xl h-full lg:h-auto lg:py-0 py-8">
-          <a
-            href="/kairosec"
-            className="relative group cursor-pointer h-full lg:h-auto lg:min-h-[600px] flex flex-col items-stretch justify-stretch"
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
+          <div
+            className="backdrop-blur-2xl bg-white/14 border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 max-w-lg w-full"
+            style={{
+              boxShadow: hoveredPanel === 'kairosec'
+                ? '0 0 80px rgba(59, 130, 246, 0.5), inset 0 0 80px rgba(59, 130, 246, 0.15)'
+                : '0 20px 60px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(255, 255, 255, 0.08)',
+            }}
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 blur"></div>
+            <div
+              className={`relative mb-6 flex justify-center transition-all duration-500 ${
+                hoveredPanel === 'kairosec' ? 'scale-125' : 'scale-100'
+              }`}
+            >
+              <div
+                className={`absolute inset-0 rounded-full transition-all duration-500 ${
+                  hoveredPanel === 'kairosec' ? 'blur-3xl opacity-80' : 'blur-2xl opacity-25'
+                }`}
+                style={{ backgroundColor: '#3B82F6' }}
+              ></div>
 
-            <div className="relative bg-black border-2 border-blue-500/50 rounded-lg p-8 md:p-12 lg:p-16 flex flex-col items-center justify-center text-center hover:border-blue-400 transition-all duration-500 h-full">
-              <div className="absolute top-6 lg:top-8 left-1/2 transform -translate-x-1/2 text-white text-xs lg:text-sm font-bold tracking-widest hidden lg:block">
-                PC LAYOUT
-              </div>
-
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 lg:mb-12 text-blue-400 tracking-wide" style={{ textShadow: '0 0 20px rgba(59, 130, 246, 0.8)' }}>
-                WHERE VIGILANCE<br />MEETS BRILLIANCE
-              </h2>
-
-              <div className="relative mb-6 lg:mb-12 group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
-                <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-50"></div>
-                <div className="relative diamond-icon blue-glow">
-                  <Lock className="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 text-blue-400" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                <span className="text-white">Kairo</span>
-                <span className="text-blue-400" style={{ textShadow: '0 0 30px rgba(59, 130, 246, 0.9)' }}>Sec</span>
-              </h1>
+              <img
+                src={kairoSecLogo}
+                alt="KairoSec"
+                className="h-32 w-auto relative z-10 transition-all duration-500"
+                style={{
+                  filter: 'drop-shadow(0 0 15px rgba(59, 130, 246, 0.5))',
+                }}
+              />
             </div>
-          </a>
 
-          <a
-            href="/kairoclean"
-            className="relative group cursor-pointer h-full lg:h-auto lg:min-h-[600px] flex flex-col items-stretch justify-stretch"
-          >
-            <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 blur"></div>
+            <h2
+              className="text-sm md:text-base font-bold mb-4 text-blue-100 tracking-wider"
+              style={{ letterSpacing: '0.15em' }}
+            >
+              WHERE VIGILANCE<br />MEETS BRILLIANCE
+            </h2>
 
-            <div className="relative bg-black border-2 border-pink-500/50 rounded-lg p-8 md:p-12 lg:p-16 flex flex-col items-center justify-center text-center hover:border-pink-400 transition-all duration-500 h-full">
-              <div className="absolute top-6 lg:top-8 left-1/2 transform -translate-x-1/2 text-white text-xs lg:text-sm font-bold tracking-widest hidden lg:block">
-                PC LAYOUT
-              </div>
-
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 lg:mb-12 text-pink-400 tracking-wide" style={{ textShadow: '0 0 20px rgba(236, 72, 153, 0.8)' }}>
-                WHERE PRECISION<br />MEETS PERFECTION
-              </h2>
-
-              <div className="relative mb-6 lg:mb-12 group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
-                <div className="absolute inset-0 bg-pink-500 rounded-full blur-3xl opacity-50"></div>
-                <div className="relative diamond-icon pink-glow">
-                  <Sparkles className="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 text-pink-400" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                <span className="text-white">Kairo</span>
-                <span className="text-pink-400" style={{ textShadow: '0 0 30px rgba(236, 72, 153, 0.9)' }}>Clean</span>
-              </h1>
-            </div>
-          </a>
+            <h1 className="text-3xl md:text-4xl font-black tracking-tight">
+              <span className="text-white">Kairo</span>
+              <span
+                className="text-blue-400 transition-colors duration-500"
+                style={{
+                  textShadow: hoveredPanel === 'kairosec'
+                    ? '0 0 50px rgba(59, 130, 246, 1)'
+                    : '0 0 25px rgba(59, 130, 246, 0.7)',
+                }}
+              >
+                Sec
+              </span>
+            </h1>
+          </div>
         </div>
-      </div>
+      </a>
+
+      {/* Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+      {/* KairoClean - Bottom Panel */}
+      <a
+        href="/kairoclean"
+        onMouseEnter={() => setHoveredPanel('kairoclean')}
+        onMouseLeave={() => setHoveredPanel(null)}
+        className="h-1/2 w-full relative group cursor-pointer overflow-hidden flex items-center justify-center"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+          style={{
+            backgroundImage: 'url(https://images.pexels.com/photos/6267613/pexels-photo-6267613.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+            backgroundPosition: 'center',
+            filter: `blur(12px) brightness(${hoveredPanel === 'kairoclean' ? 0.8 : 0.5}) contrast(1.3) hue-rotate(340deg) saturate(1.2)`,
+            transform: `scale(${hoveredPanel === 'kairoclean' ? 1.05 : 1})`,
+          }}
+        ></div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-pink-950/60 via-pink-900/40 to-black/60 mix-blend-multiply"></div>
+
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
+          <div
+            className="backdrop-blur-2xl bg-white/14 border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 max-w-lg w-full"
+            style={{
+              boxShadow: hoveredPanel === 'kairoclean'
+                ? '0 0 80px rgba(207, 102, 196, 0.5), inset 0 0 80px rgba(207, 102, 196, 0.15)'
+                : '0 20px 60px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(255, 255, 255, 0.08)',
+            }}
+          >
+            <div
+              className={`relative mb-6 flex justify-center transition-all duration-500 ${
+                hoveredPanel === 'kairoclean' ? 'scale-125' : 'scale-100'
+              }`}
+            >
+              <div
+                className={`absolute inset-0 rounded-full transition-all duration-500 ${
+                  hoveredPanel === 'kairoclean' ? 'blur-3xl opacity-80' : 'blur-2xl opacity-25'
+                }`}
+                style={{ backgroundColor: '#CF66C4' }}
+              ></div>
+
+              <img
+                src={kairoCleanLogo}
+                alt="KairoClean"
+                className="h-32 w-auto relative z-10 transition-all duration-500"
+                style={{
+                  filter: 'drop-shadow(0 0 15px rgba(207, 102, 196, 0.6))',
+                }}
+              />
+            </div>
+
+            <h2
+              className="text-sm md:text-base font-bold mb-4 text-pink-100 tracking-wider"
+              style={{ letterSpacing: '0.15em' }}
+            >
+              WHERE PRECISION<br />MEETS PERFECTION
+            </h2>
+
+            <h1 className="text-3xl md:text-4xl font-black tracking-tight">
+              <span className="text-white">Kairo</span>
+              <span
+                className="transition-colors duration-500"
+                style={{
+                  color: '#CF66C4',
+                  textShadow: hoveredPanel === 'kairoclean'
+                    ? '0 0 50px rgba(207, 102, 196, 1)'
+                    : '0 0 25px rgba(207, 102, 196, 0.7)',
+                }}
+              >
+                Clean
+              </span>
+            </h1>
+          </div>
+        </div>
+      </a>
     </section>
   );
 };

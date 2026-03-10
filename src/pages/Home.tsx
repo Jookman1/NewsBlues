@@ -9,11 +9,22 @@ import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { ScrollProgress } from '../components/ScrollProgress';
 import { PageTransition } from '../components/PageTransition';
+import { getPatternBackground } from '../utils/theme';
 
 export const Home: React.FC = () => {
+  const patternStyle = getPatternBackground('kairosec');
+
   return (
     <PageTransition>
-      <div className="min-h-screen bg-black">
+      <div
+        className="min-h-screen"
+        style={{
+          backgroundColor: patternStyle.backgroundColor,
+          backgroundImage: patternStyle.backgroundImage,
+          backgroundSize: patternStyle.backgroundSize,
+          backgroundAttachment: patternStyle.backgroundAttachment,
+        }}
+      >
         <ScrollProgress />
         <Header />
         <Services />

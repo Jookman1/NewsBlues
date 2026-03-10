@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
-import kairosecLogo from '../assets/image0.png';
+import { useLocation } from 'react-router-dom';
 
 interface LogoProps {
   className?: string;
@@ -9,26 +9,25 @@ interface LogoProps {
 }
 
 export default function Logo({ className = '', size = 'md', brand = 'kairosec' }: LogoProps) {
-  const sizes = {
-    sm: 'h-12',
-    md: 'h-20',
-    lg: 'h-32',
-    xl: 'h-48',
+  const location = useLocation();
+  const isCleanPage = location.pathname.includes('clean');
+  const effectiveBrand = brand === 'kairosec' && isCleanPage ? 'kairoclean' : brand;
+
+  const textSizes = {
+    sm: 'text-sm',
+    md: 'text-lg',
+    lg: 'text-3xl',
+    xl: 'text-4xl',
   };
 
-  if (brand === 'kairoclean') {
-    const iconSizes = {
-      sm: 24,
-      md: 40,
-      lg: 80,
-      xl: 120,
-    };
-    const textSizes = {
-      sm: 'text-sm',
-      md: 'text-lg',
-      lg: 'text-3xl',
-      xl: 'text-4xl',
-    };
+  const iconSizes = {
+    sm: 24,
+    md: 40,
+    lg: 80,
+    xl: 120,
+  };
+
+  if (effectiveBrand === 'kairoclean') {
     return (
       <div className={`flex items-center gap-2 ${className}`}>
         <Sparkles
@@ -36,7 +35,7 @@ export default function Logo({ className = '', size = 'md', brand = 'kairosec' }
           className="text-pink-400 drop-shadow-2xl"
           strokeWidth={1.5}
         />
-        <span className={`${textSizes[size]} font-bold text-pink-400 drop-shadow-2xl`}>
+        <span className={`${textSizes[size]} font-black uppercase text-pink-400 drop-shadow-2xl`}>
           KairoClean
         </span>
       </div>
@@ -44,10 +43,10 @@ export default function Logo({ className = '', size = 'md', brand = 'kairosec' }
   }
 
   return (
-    <img
-      src={kairosecLogo}
-      alt="Kairosec Logo"
-      className={`${sizes[size]} w-auto object-contain drop-shadow-2xl ${className}`}
-    />
+    <div className={`flex items-center gap-2 ${className}`}>
+      <span className={`${textSizes[size]} font-black uppercase text-white drop-shadow-2xl tracking-tight`}>
+        <span className="text-white">Kairo</span><span className="text-blue-400">Sec</span>
+      </span>
+    </div>
   );
 }
