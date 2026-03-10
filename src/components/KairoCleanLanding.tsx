@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Sparkles, Star } from 'lucide-react';
 
-const PINK = '#E1147B';
+const PINK = '#FF66C4';
 
 const TikTokIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -27,33 +27,6 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const QRCodePlaceholder = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-    <rect x="5" y="5" width="35" height="35" rx="2" stroke={PINK} strokeWidth="3" />
-    <rect x="14" y="14" width="17" height="17" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="60" y="5" width="35" height="35" rx="2" stroke={PINK} strokeWidth="3" />
-    <rect x="69" y="14" width="17" height="17" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="5" y="60" width="35" height="35" rx="2" stroke={PINK} strokeWidth="3" />
-    <rect x="14" y="69" width="17" height="17" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="60" y="60" width="8" height="8" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="72" y="60" width="8" height="8" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="84" y="60" width="11" height="8" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="60" y="72" width="8" height="8" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="72" y="72" width="8" height="8" rx="1" fill={PINK} opacity="0.5" />
-    <rect x="84" y="72" width="11" height="8" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="60" y="84" width="8" height="11" rx="1" fill={PINK} opacity="0.7" />
-    <rect x="72" y="84" width="23" height="11" rx="1" fill={PINK} opacity="0.5" />
-    <line x1="47" y1="5" x2="47" y2="22" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="53" y1="5" x2="53" y2="14" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="47" y1="28" x2="47" y2="40" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="53" y1="22" x2="53" y2="40" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="5" y1="47" x2="22" y2="47" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="5" y1="53" x2="14" y2="53" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="28" y1="47" x2="40" y2="47" stroke={PINK} strokeWidth="3" opacity="0.6" />
-    <line x1="22" y1="53" x2="40" y2="53" stroke={PINK} strokeWidth="3" opacity="0.6" />
-  </svg>
-);
-
 const services = [
   'Office Cleaning',
   'End-of-tenancy Cleans',
@@ -72,59 +45,63 @@ const socialIcons = [
 
 const KairoCleanLanding: React.FC = () => {
   return (
-    <div className="w-full bg-[#111111] text-white overflow-hidden relative font-sans">
-
-      {/* HEXAGON BACKGROUND */}
-      <div className="absolute top-0 left-0 right-0 h-[55%] pointer-events-none overflow-hidden z-0">
+    <div
+      className="w-full text-white overflow-hidden relative font-sans"
+      style={{ backgroundColor: '#0a0a0a' }}
+    >
+      {/* FIXED HEXAGON TEXTURE */}
+      <div
+        className="fixed inset-0 pointer-events-none"
+        style={{ zIndex: 0 }}
+        aria-hidden="true"
+      >
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <pattern id="hex-bg" x="0" y="0" width="88" height="100" patternUnits="userSpaceOnUse">
+            <pattern id="kc-hex" x="0" y="0" width="80" height="92" patternUnits="userSpaceOnUse">
               <polygon
-                points="44,2 86,26 86,74 44,98 2,74 2,26"
+                points="40,2 78,23 78,69 40,90 2,69 2,23"
                 fill="none"
-                stroke="rgba(225,20,123,0.13)"
+                stroke="rgba(255,102,196,0.07)"
                 strokeWidth="1"
               />
             </pattern>
-            <linearGradient id="hex-fade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="40%" stopColor="#111111" stopOpacity="0" />
-              <stop offset="100%" stopColor="#111111" stopOpacity="1" />
-            </linearGradient>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hex-bg)" />
-          <rect width="100%" height="100%" fill="url(#hex-fade)" />
+          <rect width="100%" height="100%" fill="url(#kc-hex)" />
         </svg>
       </div>
 
       {/* ============================================================
-          HERO SECTION
+          SECTION 1 — HERO
       ============================================================ */}
-      <section className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 pb-40">
+      <section
+        className="relative px-6 md:px-12 lg:px-20 pt-16 pb-48 md:pb-56"
+        style={{ zIndex: 1 }}
+      >
         <div className="max-w-7xl mx-auto">
 
-          {/* Top badges */}
-          <div className="flex items-center gap-0 mb-10 w-fit">
+          {/* Badges */}
+          <div className="flex items-stretch w-fit mb-12">
             <span
-              className="px-5 py-2 text-sm font-extrabold tracking-widest uppercase"
-              style={{ backgroundColor: PINK, color: '#111111' }}
+              className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-l-full"
+              style={{ backgroundColor: PINK, color: '#0a0a0a' }}
             >
               KAIROCLEAN
             </span>
             <span
-              className="px-5 py-2 text-sm font-extrabold tracking-widest uppercase border"
-              style={{ backgroundColor: '#1a1a1a', color: PINK, borderColor: PINK }}
+              className="px-6 py-2.5 text-sm font-black tracking-[0.25em] uppercase rounded-r-full border-t border-b border-r"
+              style={{ color: PINK, borderColor: PINK, backgroundColor: 'transparent' }}
             >
               CLEANING SERVICES
             </span>
           </div>
 
-          {/* Hero grid: left = headline, right = overlapping image composition */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-end">
+          {/* Hero two-column */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
 
-            {/* LEFT: Headline */}
-            <div className="flex flex-col justify-end pb-4">
+            {/* LEFT */}
+            <div>
               <h1
-                className="text-6xl md:text-7xl xl:text-8xl font-black leading-[1.0] tracking-tight mb-8"
+                className="text-7xl md:text-8xl xl:text-9xl font-black leading-[0.95] tracking-tight mb-8"
                 style={{ color: PINK }}
               >
                 Where<br />
@@ -132,52 +109,98 @@ const KairoCleanLanding: React.FC = () => {
                 Meets<br />
                 Perfection
               </h1>
-              <p className="text-gray-300 italic text-lg md:text-xl font-light leading-relaxed max-w-sm">
+              <p className="text-gray-400 italic text-xl md:text-2xl font-light leading-relaxed max-w-md">
                 Reliable cleaners with high standards &amp; flexible bookings.
               </p>
             </div>
 
-            {/* RIGHT: Overlapping image composition */}
-            <div className="relative flex justify-center lg:justify-end" style={{ minHeight: '480px' }}>
-
-              {/* Large cleaner image placeholder */}
+            {/* RIGHT — overlapping composition */}
+            <div
+              className="relative flex justify-center lg:justify-end"
+              style={{ minHeight: '520px' }}
+            >
+              {/* Tall cleaner image placeholder */}
               <div
-                className="relative w-72 md:w-80 lg:w-96 rounded-2xl overflow-hidden border border-gray-700"
-                style={{ height: '480px', background: 'linear-gradient(160deg, #1e1e1e 0%, #2d2d2d 60%, #1a1a1a 100%)' }}
+                className="relative rounded-3xl overflow-hidden"
+                style={{
+                  width: '340px',
+                  height: '520px',
+                  background: 'linear-gradient(160deg, #1a1a1a 0%, #242424 50%, #161616 100%)',
+                  border: '1px solid rgba(255,102,196,0.15)',
+                  boxShadow: '0 40px 80px rgba(0,0,0,0.6)',
+                }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" style={{ height: '40%', top: 'auto' }} />
-                <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+                {/* Faint inner glow top */}
+                <div
+                  className="absolute inset-x-0 top-0 h-32 pointer-events-none"
+                  style={{ background: 'linear-gradient(to bottom, rgba(255,102,196,0.06), transparent)' }}
+                />
+                {/* Fade bottom */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
+                  style={{ background: 'linear-gradient(to top, #0a0a0a, transparent)' }}
+                />
+
+                <div className="w-full h-full flex flex-col items-center justify-center gap-5">
                   <div
-                    className="w-20 h-20 rounded-full border-2 flex items-center justify-center"
-                    style={{ borderColor: PINK }}
+                    className="w-24 h-24 rounded-full flex items-center justify-center"
+                    style={{
+                      border: `2px solid ${PINK}`,
+                      boxShadow: `0 0 20px rgba(255,102,196,0.3)`,
+                    }}
                   >
-                    <svg className="w-10 h-10" style={{ color: PINK }} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <svg
+                      className="w-12 h-12"
+                      style={{ color: PINK }}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                   </div>
-                  <p className="text-gray-500 text-sm text-center px-6 leading-relaxed">
-                    Professional<br />Cleaner Image
+                  <p className="text-gray-600 text-sm text-center leading-relaxed tracking-wide uppercase">
+                    Cleaner<br />Image
                   </p>
                 </div>
               </div>
 
-              {/* Diamond KC logo — absolute, overlapping bottom-left of image */}
+              {/* Diamond KC Logo — absolute, overlapping bottom-left */}
               <div
-                className="absolute z-20"
-                style={{ bottom: '-30px', left: '0px' }}
+                className="absolute"
+                style={{
+                  bottom: '-24px',
+                  left: '-16px',
+                  zIndex: 10,
+                }}
               >
                 <div
-                  className="w-36 h-36 md:w-44 md:h-44 border-4 flex items-center justify-center shadow-2xl"
                   style={{
-                    borderColor: PINK,
+                    width: '160px',
+                    height: '160px',
                     transform: 'rotate(45deg)',
-                    background: 'rgba(17,17,17,0.92)',
-                    boxShadow: `0 0 40px rgba(225,20,123,0.35)`,
+                    border: `4px solid ${PINK}`,
+                    backgroundColor: '#0a0a0a',
+                    boxShadow: `0 0 30px rgba(255,102,196,0.5), 0 0 60px rgba(255,102,196,0.2), inset 0 0 20px rgba(255,102,196,0.05)`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
-                  <div style={{ transform: 'rotate(-45deg)' }} className="text-center">
-                    <div className="text-4xl font-black leading-none" style={{ color: PINK }}>KC</div>
-                    <div className="text-xs font-bold text-gray-400 tracking-widest mt-1">LOGO</div>
+                  <div style={{ transform: 'rotate(-45deg)', textAlign: 'center' }}>
+                    <div
+                      className="font-black leading-none"
+                      style={{ fontSize: '2.5rem', color: PINK }}
+                    >
+                      KC
+                    </div>
+                    <div
+                      className="font-bold tracking-widest mt-1"
+                      style={{ fontSize: '0.6rem', color: 'rgba(255,102,196,0.5)' }}
+                    >
+                      LOGO
+                    </div>
                   </div>
                 </div>
               </div>
@@ -187,107 +210,149 @@ const KairoCleanLanding: React.FC = () => {
       </section>
 
       {/* ============================================================
-          DRAMATIC WAVE DIVIDER — deeply swoops into hero
+          SECTION 2 — DRAMATIC WAVE DIVIDER
       ============================================================ */}
-      <div className="relative z-20 w-full" style={{ marginTop: '-160px' }}>
+      <div
+        className="relative w-full"
+        style={{ marginTop: '-200px', zIndex: 2 }}
+      >
         <svg
-          viewBox="0 0 1440 200"
+          viewBox="0 0 1440 260"
           preserveAspectRatio="none"
           className="w-full block"
-          style={{ height: '200px' }}
+          style={{ height: '260px' }}
         >
-          {/* Deep pink glow layer */}
+          {/* Pink glow ghost layer */}
           <path
-            d="M0,140 C200,60 400,190 720,110 C1040,30 1260,160 1440,90 L1440,200 L0,200 Z"
+            d="M0,180 C180,80 360,230 720,140 C1080,50 1260,200 1440,120 L1440,260 L0,260 Z"
             fill={PINK}
-            opacity="0.12"
+            opacity="0.08"
           />
-          {/* Dark fill layer — the main transition */}
+          {/* Second ghost for depth */}
           <path
-            d="M0,160 C240,70 480,180 720,120 C960,60 1200,170 1440,100 L1440,200 L0,200 Z"
-            fill="#1a1a1a"
+            d="M0,200 C200,100 440,240 720,155 C1000,70 1240,210 1440,135 L1440,260 L0,260 Z"
+            fill={PINK}
+            opacity="0.05"
           />
-          {/* Thin pink highlight on wave crest */}
+          {/* Main dark fill */}
           <path
-            d="M0,160 C240,70 480,180 720,120 C960,60 1200,170 1440,100"
+            d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148 L1440,260 L0,260 Z"
+            fill="#111111"
+          />
+          {/* Pink crest stroke */}
+          <path
+            d="M0,215 C220,110 460,245 720,165 C980,85 1220,215 1440,148"
             fill="none"
             stroke={PINK}
-            strokeWidth="2.5"
-            opacity="0.55"
+            strokeWidth="2"
+            opacity="0.5"
+          />
+          {/* Thin secondary echo */}
+          <path
+            d="M0,228 C220,130 460,255 720,180 C980,105 1220,228 1440,165"
+            fill="none"
+            stroke={PINK}
+            strokeWidth="1"
+            opacity="0.18"
           />
         </svg>
       </div>
 
       {/* ============================================================
-          MIDDLE CONTENT SECTION
+          SECTION 3 — SERVICES & SOCIAL PROOF
       ============================================================ */}
-      <section className="relative z-10 bg-[#1a1a1a] px-6 md:px-12 lg:px-20 pt-4 pb-20">
+      <section
+        className="relative px-6 md:px-12 lg:px-20 pt-6 pb-20"
+        style={{ backgroundColor: '#111111', zIndex: 1 }}
+      >
         <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-
-            {/* LEFT: QR + Socials + Stars */}
-            <div className="flex flex-col items-center lg:items-start gap-8">
-
-              {/* QR Code */}
-              <div className="flex flex-col items-center gap-3 w-full">
-                <span
-                  className="text-base font-extrabold tracking-[0.3em] uppercase"
+            {/* LEFT — Social proof */}
+            <div className="flex flex-col items-center lg:items-start gap-10">
+              <div className="flex flex-col items-center gap-6 w-full">
+                <h2
+                  className="text-2xl font-extrabold tracking-wide uppercase"
                   style={{ color: PINK }}
                 >
-                  Scan Me
-                </span>
-                <div className="w-56 h-56 md:w-64 md:h-64 bg-white p-3 rounded-sm shadow-xl"
-                  style={{ boxShadow: `0 0 30px rgba(225,20,123,0.2)` }}
-                >
-                  <QRCodePlaceholder />
-                </div>
-              </div>
-
-              {/* Socials + Stars together, centered */}
-              <div className="flex flex-col items-center gap-4 w-full">
-                <span className="text-sm font-semibold tracking-wide" style={{ color: PINK }}>
                   Find us on...
-                </span>
+                </h2>
+
+                {/* Social icons */}
                 <div className="flex gap-3 justify-center">
                   {socialIcons.map(({ Icon, label }) => (
                     <button
                       key={label}
                       aria-label={label}
-                      className="w-12 h-12 border border-white/30 flex items-center justify-center text-white hover:border-[#E1147B] hover:text-[#E1147B] transition-colors duration-200"
+                      className="w-14 h-14 flex items-center justify-center text-gray-400 transition-all duration-200"
+                      style={{
+                        backgroundColor: '#1a1a1a',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLButtonElement).style.color = PINK;
+                        (e.currentTarget as HTMLButtonElement).style.borderColor = PINK;
+                        (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 0 16px rgba(255,102,196,0.3)`;
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLButtonElement).style.color = '';
+                        (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.1)';
+                        (e.currentTarget as HTMLButtonElement).style.boxShadow = '';
+                      }}
                     >
                       <Icon />
                     </button>
                   ))}
                 </div>
-                {/* Stars centered directly under social icons */}
+
+                {/* 5 stars centered under icons */}
                 <div className="flex gap-2 justify-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={28} className="fill-gray-400 text-gray-400" />
+                    <Star
+                      key={i}
+                      size={30}
+                      fill={PINK}
+                      style={{ color: PINK, filter: `drop-shadow(0 0 6px rgba(255,102,196,0.6))` }}
+                    />
                   ))}
                 </div>
+
+                <p className="text-gray-500 text-sm text-center">5-star rated on Google</p>
               </div>
             </div>
 
-            {/* RIGHT: Services List */}
+            {/* RIGHT — Services */}
             <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-8">
-                <h2 className="text-4xl md:text-5xl font-black" style={{ color: PINK }}>
+              <div className="flex items-center gap-3 mb-10">
+                <h2
+                  className="text-5xl md:text-6xl font-black"
+                  style={{ color: PINK }}
+                >
                   We Provide
                 </h2>
-                <Sparkles size={30} style={{ color: PINK }} />
+                <Sparkles
+                  size={32}
+                  style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(255,102,196,0.6))` }}
+                />
               </div>
 
-              <ul className="space-y-5">
+              <ul className="space-y-6">
                 {services.map((service, i) => (
-                  <li key={i} className="flex items-center gap-4">
+                  <li key={i} className="flex items-center gap-5">
                     <span
-                      className="text-2xl font-black leading-none flex-shrink-0"
-                      style={{ color: PINK }}
+                      className="text-3xl font-black leading-none flex-shrink-0"
+                      style={{
+                        color: PINK,
+                        textShadow: `0 0 12px rgba(255,102,196,0.6)`,
+                      }}
                     >
                       ✓
                     </span>
-                    <span className="text-white text-2xl font-semibold">{service}</span>
+                    <span
+                      className="text-2xl md:text-3xl font-semibold text-white leading-snug"
+                    >
+                      {service}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -297,14 +362,22 @@ const KairoCleanLanding: React.FC = () => {
       </section>
 
       {/* ============================================================
-          TRUST BADGES
+          SECTION 4 — TRUST BADGES
       ============================================================ */}
-      <section className="relative z-10 bg-[#111111] px-6 md:px-12 lg:px-20 py-10 border-t border-gray-800">
+      <section
+        className="relative px-6 md:px-12 py-10"
+        style={{ backgroundColor: '#0a0a0a', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      >
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16">
             {['Flexible Scheduling', 'Fully Insured', 'Vetted Professionals'].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <span className="text-2xl font-black" style={{ color: PINK }}>✓</span>
+                <span
+                  className="text-2xl font-black"
+                  style={{ color: PINK, textShadow: `0 0 10px rgba(255,102,196,0.5)` }}
+                >
+                  ✓
+                </span>
                 <span className="text-white font-semibold text-base tracking-wide">{item}</span>
               </div>
             ))}
@@ -313,34 +386,56 @@ const KairoCleanLanding: React.FC = () => {
       </section>
 
       {/* ============================================================
-          MASSIVE CTA PILL
+          SECTION 4 — HERO CTA PILL
       ============================================================ */}
-      <section className="relative z-10 bg-[#111111] px-4 md:px-8 py-14">
+      <section
+        className="relative px-4 md:px-8 pb-20 pt-6"
+        style={{ backgroundColor: '#0a0a0a', zIndex: 1 }}
+      >
         <div className="max-w-6xl mx-auto">
           <div
-            className="rounded-full border-[3px] flex flex-col sm:flex-row items-center justify-between px-10 md:px-16 py-8 md:py-10 gap-8 sm:gap-0 cursor-pointer transition-all duration-300"
+            className="rounded-full flex flex-col sm:flex-row items-center justify-between px-10 md:px-16 py-10 md:py-12 gap-8 sm:gap-0 cursor-pointer transition-all duration-300 w-full"
             style={{
-              borderColor: PINK,
-              boxShadow: `0 0 50px rgba(225,20,123,0.4), 0 0 100px rgba(225,20,123,0.15)`,
+              border: `3px solid ${PINK}`,
+              backgroundColor: 'transparent',
+              boxShadow: `0 0 40px rgba(255,102,196,0.45), 0 0 80px rgba(255,102,196,0.2), 0 0 120px rgba(255,102,196,0.08)`,
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 60px rgba(255,102,196,0.65), 0 0 100px rgba(255,102,196,0.3), 0 0 140px rgba(255,102,196,0.12)`;
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px rgba(255,102,196,0.45), 0 0 80px rgba(255,102,196,0.2), 0 0 120px rgba(255,102,196,0.08)`;
             }}
           >
-            {/* Left: CTA text */}
+            {/* Left */}
             <div className="flex flex-col items-center sm:items-start">
-              <span className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: PINK }}>
+              <span
+                className="text-3xl md:text-4xl font-extrabold leading-tight"
+                style={{ color: PINK }}
+              >
                 Call now for a
               </span>
-              <span className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: PINK }}>
+              <span
+                className="text-3xl md:text-4xl font-extrabold leading-tight"
+                style={{ color: PINK }}
+              >
                 free quote
               </span>
             </div>
 
-            {/* Vertical divider */}
-            <div className="hidden sm:block w-px h-16 bg-gray-600" />
+            {/* Divider */}
+            <div
+              className="hidden sm:block w-px self-stretch"
+              style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
+            />
 
-            {/* Right: Phone */}
+            {/* Right */}
             <div className="flex items-center gap-5">
-              <Phone size={36} style={{ color: PINK }} />
-              <span className="text-4xl md:text-5xl font-black text-white tracking-wide">
+              <Phone
+                size={40}
+                style={{ color: PINK, filter: `drop-shadow(0 0 8px rgba(255,102,196,0.6))` }}
+              />
+              <span className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-wide">
                 033 0043 1631
               </span>
             </div>
@@ -351,16 +446,26 @@ const KairoCleanLanding: React.FC = () => {
       {/* ============================================================
           FOOTER
       ============================================================ */}
-      <footer className="relative z-10 bg-[#111111] border-t border-gray-800 px-6 py-10 text-center">
-        <div className="space-y-1">
-          <p className="text-white font-semibold tracking-widest text-sm uppercase">
+      <footer
+        className="relative px-6 py-10 text-center"
+        style={{
+          backgroundColor: '#0a0a0a',
+          zIndex: 1,
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+        }}
+      >
+        <div className="space-y-1.5">
+          <p className="text-gray-300 font-semibold tracking-[0.2em] text-sm uppercase">
             WWW.KAIROSECURITY.CO.UK
           </p>
-          <p className="text-white text-sm">Enquiries@kairosecurity.co.uk</p>
-          <p className="font-bold text-sm tracking-widest uppercase mt-3" style={{ color: PINK }}>
+          <p className="text-gray-400 text-sm">Enquiries@kairosecurity.co.uk</p>
+          <p
+            className="font-black text-sm tracking-[0.25em] uppercase mt-3"
+            style={{ color: PINK }}
+          >
             KAIRO SECURITY LTD
           </p>
-          <p className="text-gray-500 text-xs mt-1">(Registered in England and Wales)</p>
+          <p className="text-gray-600 text-xs">(Registered in England and Wales)</p>
         </div>
       </footer>
     </div>
