@@ -33,9 +33,9 @@ export const Header: React.FC = () => {
           : 'bg-black/90 backdrop-blur-sm border-b border-gray-800'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-24 gap-4">
             <div
-              className="flex items-center space-x-5 cursor-pointer group"
+              className="flex items-center space-x-5 cursor-pointer group flex-shrink-0"
               onClick={handleLogoClick}
             >
               <img
@@ -43,12 +43,12 @@ export const Header: React.FC = () => {
                 alt="Kairo Security Logo"
                 className="h-20 w-20 transition-all duration-300 group-hover:scale-110"
               />
-              <span className="text-xl font-bold text-white tracking-wide group-hover:text-blue-100 transition-colors duration-300">
+              <span className="text-xl font-bold text-white tracking-wide group-hover:text-blue-100 transition-colors duration-300 hidden sm:inline">
                 KAIRO SECURITY
               </span>
             </div>
 
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 flex-1 justify-center">
               {[
                 { id: 'services', label: 'Home' },
                 { id: 'about', label: 'About Us' },
@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300 flex-shrink-0"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={28} className="text-blue-400" /> : <Menu size={28} className="text-white" />}
