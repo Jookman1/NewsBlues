@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header } from '../components/Header';
-import { LogosShowcase } from '../components/LogosShowcase';
 import { About } from '../components/About';
 import { Services } from '../components/Services';
 import { Statistics } from '../components/Statistics';
@@ -17,7 +16,6 @@ export const Home: React.FC = () => {
       <div className="min-h-screen bg-black">
         <ScrollProgress />
         <Header />
-        <LogosShowcase />
         <Services />
         <About />
         <Statistics />
