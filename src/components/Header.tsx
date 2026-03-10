@@ -39,8 +39,9 @@ export const Header: React.FC = () => {
               className="flex items-center space-x-4 cursor-pointer group"
               onClick={handleLogoClick}
             >
-              <span className="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300">
-                KairoClean
+              <Logo brand="kairosec" size="md" className="transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+              <span className="text-2xl font-bold text-white tracking-wider group-hover:text-blue-100 transition-all duration-300 hidden sm:inline bg-gradient-to-r from-white to-blue-100 bg-clip-text">
+                KAIROSEC
               </span>
             </div>
 
