@@ -47,9 +47,9 @@ export const Hero: React.FC = () => {
         <div className="animate-fade-in-up">
           {/* Main Logo - Made Much Bigger */}
           <div className="mb-8 flex justify-center">
-            <img 
-              src="/rfowler%20logos.png" 
-              alt="Kairo Security Logo" 
+            <img
+              src="/rfowler%20logos.png"
+              alt="Kairosec Logo"
               className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80 xl:h-96 xl:w-96 drop-shadow-2xl hover:scale-105 transition-transform duration-500 filter brightness-110"
             />
           </div>

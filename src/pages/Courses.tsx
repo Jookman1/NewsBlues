@@ -92,6 +92,6 @@ const benefits = [
   {
     icon: <Users className="h-12 w-12 text-primary mx-auto" />,
     title: "Job Opportunities",
-    description: "Direct access to job opportunities with Kairo Security Ltd."
+    description: "Direct access to job opportunities with Kairosec Ltd."
   }
 ];

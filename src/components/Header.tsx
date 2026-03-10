@@ -40,11 +40,11 @@ export const Header: React.FC = () => {
             >
               <img
                 src="/rfowler%20logos.png"
-                alt="Kairo Security Logo"
+                alt="Kairosec Logo"
                 className="h-20 w-20 transition-all duration-300 group-hover:scale-110"
               />
               <span className="text-xl font-bold text-white tracking-wide group-hover:text-blue-100 transition-colors duration-300 hidden sm:inline">
-                KAIRO SECURITY
+                KAIROSEC
               </span>
             </div>
 

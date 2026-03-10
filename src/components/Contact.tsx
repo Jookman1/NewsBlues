@@ -116,7 +116,7 @@ export const Contact: React.FC = () => {
               <input type="hidden" name="_honey" style={{ display: 'none' }} />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#contact'} />
-              <input type="hidden" name="_subject" value="New Contact Form Submission - Kairo Security" />
+              <input type="hidden" name="_subject" value="New Contact Form Submission - Kairosec" />
               <input type="hidden" name="_template" value="table" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

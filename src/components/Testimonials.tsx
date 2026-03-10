@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 const testimonials = [
   {
     name: "CALLUM READMAN",
-    quote: "Kairo is a really good company to work for. Great management team and always willing to help when needed."
+    quote: "Kairosec is a really good company to work for. Great management team and always willing to help when needed."
   },
   {
     name: "DEAN WOOD", 

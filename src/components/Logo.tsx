@@ -15,8 +15,8 @@ export default function Logo({ className = '', size = 'md' }: LogoProps) {
 
   return (
     <img
-      src="https://i.imgur.com/CHctNu1.png" // Direct image link
-      alt="Kairo Security Logo"
+      src="https://i.imgur.com/CHctNu1.png"
+      alt="Kairosec Logo"
       className={`${sizes[size]} w-auto object-contain ${className}`}
     />
   );
